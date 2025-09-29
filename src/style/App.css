@@ -1,0 +1,75 @@
+
+
+html,
+body {
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+  background-color: #c2deff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* background-color: #FEECD8; */
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  direction: rtl;
+  width: 100%;
+  max-width: 430px;
+  height:91vh;
+  background-color: #003F88;
+  font-family: 'askim';
+  overflow: hidden;
+  position: relative;
+}
+.bahad6 {
+  position: absolute;
+  left: 0.3rem;
+  z-index: 2;
+}
+.til-logo {
+  position: absolute;
+  bottom: 1rem;
+  right: 0.3rem;
+  z-index: 2;
+}
+.bg-container {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+}
+@font-face {
+  font-family: "rubik";
+  src: url("@/assets/fonts/Rubik-Regular.ttf");
+}
+@font-face {
+  font-family: "abraham";
+  src: url("@/assets/fonts/Abraham-Regular.ttf");
+}
+@media (max-width: 380px) {
+  .bg-container {
+    top: 57%;
+    width: 31rem;
+    height: 70rem;
+  }
+}
+
+ 
+
+
