@@ -38,7 +38,7 @@ function OpeningPage() {
         <div className={`div-about ${showAbout ? "fade-in" : "fade-out"}`}>
           {showAbout && (
             <>
-              <h3 className="list-text-about">מפתחת ראשית:</h3>
+              <h3 className="list-text-about">מפתחת ראשית: </h3>
               <p className="list-text-about">רב"ט מאיה מרום</p>
               <h3 className="list-text-about">גרפיקה:</h3>
               <p className="list-text-about">רב"ט מאיה מרום</p>
