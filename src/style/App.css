@@ -29,7 +29,7 @@ body {
   direction: rtl;
   width: 100%;
   max-width: 430px;
-  height:91vh;
+  height: 47rem;
   background-color: #003F88;
   font-family: 'askim';
   overflow: hidden;
@@ -43,7 +43,7 @@ body {
 .til-logo {
   position: absolute;
   bottom: 1rem;
-  right: 0.3rem;
+  right: 1rem;
   z-index: 2;
 }
 .bg-container {

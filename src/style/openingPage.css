@@ -1,10 +1,25 @@
+/* Fade-out של OpeningPage */
 .opening-page {
-    transition: opacity 1s ease; /* מעבר חלק */
-  }
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.opening-page.fade-out1 {
+  opacity: 0;
+}
+
+/* Fade-in של openText */
+.fade-in-text {
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  } 
+}
   
-  .fade-out1 {
-    opacity: 0; /* פייד אאוט */
-  }
 .about-btn {
     position: absolute;
     border: none;
@@ -56,6 +71,9 @@
 .fade-out {
     opacity: 0;
     transition: opacity 0.4s ease;
+}
+.fade-out1.hidden {
+  display: none;
 }
 
 .main-items {
@@ -117,9 +135,9 @@
   
   .cloud {
     position: absolute;
-    top: 50px; /* גובה הענן */
+    top: 4rem; /* גובה הענן */
     left: 0;
-    width: 7rem; /* רוחב הענן */
+    width: 9rem; /* רוחב הענן */
     animation: moveCloud 4s ease-in-out infinite alternate;
     opacity: 0.9;
   }
@@ -134,9 +152,9 @@
   
   .cloud2 {
     position: absolute;
-    top: 50px; /* גובה הענן */
+    top: 3.5rem; /* גובה הענן */
     left: 0;
-    width: 150px; /* רוחב הענן */
+    width: 9rem; /* רוחב הענן */
     animation: moveCloud1 4s ease-in-out infinite alternate;
     opacity: 0.9;
   }
@@ -158,6 +176,22 @@
   }
   .start-btn:hover {
     transform: scale(1.1); /* גדילה של 10% */
+  }
+  .openText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* מרכז אנכית */
+    z-index: 3;
+  }
+  
+  .open-text1 {
+    font-family: "rubik";
+    font-size: 1.5rem;
+    text-align: center;
+    color: #FFEE97;
+    position: relative;
+    top: -16rem;
   }
 
 /* @media (max-width: 400px) {
