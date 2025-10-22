@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../style/openingPage.css";
-import Details from "../components/Details";
+import Details from "../Details";
 import myData from "../data/myData.json";
 import carGraphic from "../assets/images/openingPage/carGraphic.png";
 import cloud from "../assets/images/openingPage/cloud.png";
