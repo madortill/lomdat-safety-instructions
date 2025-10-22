@@ -1,0 +1,47 @@
+.details-container {
+    width: 15rem;
+    height: 15rem;
+    background-color: #FFEE97;
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+}
+
+.details-title {
+    font-size: 1.3rem;
+    font-family: "rubik";
+    font-weight: 700;
+    color: #003F88;
+    width: 13rem;
+    text-align: center;
+    position: relative;
+    top: 1rem;
+    right: 1rem;
+}
+
+.input1-details {
+    position: relative;
+    top: 2.2rem;
+    right: 2rem;
+    font-family: "rubik";
+    font-weight: 550;
+    color: #003F88;
+    width: 10rem;
+}
+
+.input2-details {
+    position: relative;
+    top: 3.5rem;
+    right: 2rem;
+    font-family: "rubik";
+    font-weight: 550;
+    color: #003F88;
+    width: 10rem;
+}
+.error-text {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+  }

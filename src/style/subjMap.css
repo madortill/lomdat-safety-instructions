@@ -1,0 +1,62 @@
+.container-map {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 26rem;
+    height: 40rem;
+    background-image: url('../assets/images/subjMap/mapRoad.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.progressCar {
+    width: 7rem;
+    position: relative;
+    top: 1.4rem;
+    right: 8rem;
+}
+.map-title-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-top: 2.3rem;
+}
+.map-title {
+    position: relative;
+    /* top: 2.8rem; */
+    font-size: 2.6rem;
+    font-family: "abraham";
+    color: #FFEE97;
+  }
+  .map-sec-title {
+    position: relative;
+    /* top: 3rem; */
+    font-size: 1.3rem;
+    font-family: "rubik";
+    color: #FFEE97;
+  }
+
+  @media (max-width: 380px) {
+    .container-map {
+        width: 23.5rem;
+        top: 52%;
+    }
+    .progressCar {
+        width: 6rem;
+        top: 3.5rem;
+        right: 7.3rem;
+    }
+  }
+  @media (max-width: 350px) {
+    .container-map {
+        width: 22rem;  
+        top: 50%;
+    }
+    .progressCar {
+        width: 5.5rem;
+        top: 4.6rem;
+        right: 6.8rem;
+    }
+  }

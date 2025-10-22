@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import "../style/openingPage.css";
+import Details from "../components/Details";
+import myData from "../data/myData.json";
 import carGraphic from "../assets/images/openingPage/carGraphic.png";
 import cloud from "../assets/images/openingPage/cloud.png";
 import cloud2 from "../assets/images/openingPage/cloud2.png";
 import startBtn from "../assets/images/openingPage/startBtn.svg";
 
-function OpeningPage() {
+function OpeningPage({ goToMap }) {
+  const headTitleText = myData.openingPage[0].text;
+  const openText1 = myData.openingPage[1].text;
+  const openText2 = myData.openingPage[2].text;
+  const nextBtnText = myData.openingPage[3].text;
+
   const [showAbout, setShowAbout] = useState(false);
   const [carMoving, setCarMoving] = useState(false);
   const [btnClicked, setBtnClicked] = useState(false);
@@ -13,12 +20,20 @@ function OpeningPage() {
   const [hidden, setHidden] = useState(false);
   const [showText, setShowText] = useState(false);
 
+  // state של השדות
+  const [name, setName] = useState("");
+  const [personalNumber, setPersonalNumber] = useState("");
+
   const toggleAbout = () => setShowAbout((prev) => !prev);
 
   const handleStart = () => {
     setCarMoving(true);
     setBtnClicked(true);
   };
+
+  // בדיקה האם הטופס תקין
+  const isDetailsValid =
+    name.trim().includes(" ") && !/\d/.test(name) && /^\d{7}$/.test(personalNumber);
 
   return (
     <>
@@ -28,7 +43,7 @@ function OpeningPage() {
           onTransitionEnd={() => {
             if (fadeOut) {
               setHidden(true);
-              setShowText(true); // מראה את הטקסט אחרי שהמסך נעלם
+              setShowText(true);
             }
           }}
         >
@@ -38,7 +53,7 @@ function OpeningPage() {
 
           {showAbout && (
             <div className="div-about fade-in">
-              <h3 className="list-text-about">מפתחת ראשית: </h3>
+              <h3 className="list-text-about">מפתחת ראשית:</h3>
               <p className="list-text-about">רב"ט מאיה מרום</p>
               <h3 className="list-text-about">גרפיקה:</h3>
               <p className="list-text-about">רב"ט מאיה מרום</p>
@@ -56,7 +71,7 @@ function OpeningPage() {
               <img src={cloud} alt="cloud" className="cloud" />
             </div>
 
-            <p className="title">הוראות בטיחות בנהיגה</p>
+            <p className="title">{headTitleText}</p>
 
             <div className="cloud2-container">
               <img src={cloud2} alt="cloud" className="cloud2" />
@@ -83,7 +98,25 @@ function OpeningPage() {
 
       {showText && (
         <div className="openText fade-in-text">
-          <p className="open-text1">ברוכים הבאים למסלול שלנו!</p>
+          <p className="open-text1">{openText1}</p>
+          <p className="open-text2">{openText2}</p>
+
+          {/* כאן Details */}
+          <Details
+            name={name}
+            setName={setName}
+            personalNumber={personalNumber}
+            setPersonalNumber={setPersonalNumber}
+          />
+
+          {/* הכפתור מחוץ ל-Details */}
+          <button
+            className="next-btn-opening"
+            disabled={!isDetailsValid}
+            onClick={goToMap}
+          >
+           {nextBtnText}
+          </button>
         </div>
       )}
     </>

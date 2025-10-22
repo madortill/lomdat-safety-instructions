@@ -1,0 +1,13 @@
+{
+"openingPage": [
+    {"text": "הוראות בטיחות בנהיגה", "id": "main-title"},
+    {"text": "ברוכים הבאים למסלול שלנו!", "id":"open-text1"},
+    {"text": "היום אתם תלמדו איך לנהוג בצורה בטוחה ואיך להתמודד עם סיטואציות מורכבות בזמן נהיגה", "id": "open-text2"},
+    {"text": "סעו לעמוד הבא!", "id": "next-btn-opening"}
+],
+"details": [
+    {"text": "יאללה תכניסו שם מלא ומספר אישי", "id": "details-text"},
+    {"text": "שם מלא:", "id": "details-name"},
+    {"text": "מספר אישי", "id": "details-nam"}
+]
+}

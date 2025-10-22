@@ -183,6 +183,7 @@
     align-items: center;
     justify-content: center; /* מרכז אנכית */
     z-index: 3;
+    margin-top: 3rem;
   }
   
   .open-text1 {
@@ -191,8 +192,43 @@
     text-align: center;
     color: #FFEE97;
     position: relative;
-    top: -16rem;
+    top: -15rem;
   }
+  .open-text2 {
+    font-family: "rubik";
+    width: 21rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #FFEE97;
+    position: relative;
+    top: -13rem;
+  }
+  .next-btn-opening {
+    width: 6rem;
+    height: 5rem;
+    background-image: url('../assets/images/openingPage/driveNextBtn.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 10rem;
+    right: 6rem;
+    background-color: transparent; /* אין צבע רקע */
+    border: none;                  /* אין מסגרת */
+    cursor: pointer;               /* עכבר מראה שהוא לחיץ */
+    outline: none;                 /* מסגרת ברירת מחדל של פוקוס נעלמת */
+    padding: 0; 
+    font-family: "rubik";
+    font-weight: 700; 
+    color: #003F88;
+
+}
+.next-btn-opening:disabled {
+  cursor: not-allowed;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  color: #666;
+}
 
 /* @media (max-width: 400px) {
     .carGraphic {
