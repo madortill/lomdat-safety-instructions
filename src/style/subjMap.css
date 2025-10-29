@@ -11,10 +11,10 @@
     background-repeat: no-repeat;
 }
 .progressCar {
-    width: 7rem;
-    position: relative;
-    top: 1.4rem;
-    right: 8rem;
+    width: 6rem;
+    position: absolute;
+    top: 2rem;
+    right: 18rem;
 }
 .map-title-container {
     display: flex;
@@ -37,6 +37,55 @@
     font-family: "rubik";
     color: #FFEE97;
   }
+  .subjects-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .subject {
+    width: 5rem;
+  }
+  .roadside {
+    position: relative;
+    top: -1.5rem;
+    left: 4.5rem;
+  }
+  .distance {
+    position: relative;
+    top: -6.5rem;
+    left: -4.5rem;
+  }
+  .animals {
+    position: relative;
+    top: -7.5rem;
+    left: -3.3rem;
+  }
+  .wheel {
+    position: relative;
+    top: -11rem;
+    left: 8.3rem;
+  }
+  .fire {
+    position: relative;
+    top: -13rem;
+    left: 2.5rem;
+  }
+  .turning-over {
+    position: relative;
+    top: -21rem;
+    left: -7.5rem;
+  }
+  .practice {
+    position: relative;
+    top: -22.3rem;
+    left: -3rem;
+  }
+  /* .subjects.introduction {
+    position: relative;
+    top: 3rem;
+  } */
 
   @media (max-width: 380px) {
     .container-map {
@@ -46,7 +95,7 @@
     .progressCar {
         width: 6rem;
         top: 3.5rem;
-        right: 7.3rem;
+        right: 16rem;
     }
   }
   @media (max-width: 350px) {
@@ -57,6 +106,6 @@
     .progressCar {
         width: 5.5rem;
         top: 4.6rem;
-        right: 6.8rem;
+        right: 15rem;
     }
   }

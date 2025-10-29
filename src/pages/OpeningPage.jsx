@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../style/openingPage.css";
 import Details from "../components/Details";
 import myData from "../data/myData.json";
@@ -7,7 +8,9 @@ import cloud from "../assets/images/openingPage/cloud.png";
 import cloud2 from "../assets/images/openingPage/cloud2.png";
 import startBtn from "../assets/images/openingPage/startBtn.svg";
 
-function OpeningPage({ goToMap }) {
+function OpeningPage() {
+  const navigate = useNavigate();
+
   const headTitleText = myData.openingPage[0].text;
   const openText1 = myData.openingPage[1].text;
   const openText2 = myData.openingPage[2].text;
@@ -113,7 +116,7 @@ function OpeningPage({ goToMap }) {
           <button
             className="next-btn-opening"
             disabled={!isDetailsValid}
-            onClick={goToMap}
+            onClick={() => navigate("/Home")}
           >
            {nextBtnText}
           </button>

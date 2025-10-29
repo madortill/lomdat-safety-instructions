@@ -184,6 +184,7 @@
     justify-content: center; /* מרכז אנכית */
     z-index: 3;
     margin-top: 3rem;
+    pointer-events: auto;
   }
   
   .open-text1 {
@@ -221,6 +222,7 @@
     font-family: "rubik";
     font-weight: 700; 
     color: #003F88;
+    pointer-events: auto;
 
 }
 .next-btn-opening:disabled {

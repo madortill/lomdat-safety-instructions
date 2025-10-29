@@ -1,7 +1,11 @@
 import React from "react";
 import "../style/details.css";
+import myData from "../data/myData.json";
 
 function Details({ name, setName, personalNumber, setPersonalNumber }) {
+  const detailsTitle = myData.details[0].text; 
+  const nameText = myData.details[1].text; 
+  const numText = myData.details[2].text; 
   // בדיקות תקינות
   const isValidName = (value) => value.trim().includes(" ") && !/\d/.test(value);
   const isValidPersonalNumber = (value) => /^\d{7}$/.test(value);
@@ -18,10 +22,10 @@ function Details({ name, setName, personalNumber, setPersonalNumber }) {
 
   return (
     <div className={`details-container ${isFormValid ? "valid" : "invalid"}`}>
-      <p className="details-title">יאללה תכניסו שם מלא ומספר אישי!</p>
+      <p className="details-title">{detailsTitle}</p>
 
       <div className="input1-details">
-        שם מלא:
+        {nameText}
         <input
           type="text"
           value={name}
@@ -31,7 +35,7 @@ function Details({ name, setName, personalNumber, setPersonalNumber }) {
       </div>
 
       <div className="input2-details">
-        מספר אישי:
+        {numText}
         <input
           type="text"
           value={personalNumber}

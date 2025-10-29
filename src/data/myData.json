@@ -8,6 +8,18 @@
 "details": [
     {"text": "יאללה תכניסו שם מלא ומספר אישי", "id": "details-text"},
     {"text": "שם מלא:", "id": "details-name"},
-    {"text": "מספר אישי", "id": "details-nam"}
+    {"text": "מספר אישי:", "id": "details-nam"}
+],
+"subjMap": [
+    {"text": "מפת נושאים", "id": "map-title"},
+    {"text": "לחצו על הנושא הרצוי!", "id": "microcopy-map"},
+    {"text": "מבוא", "id":"introduction", "img": "intro" , "nextId": "roadside"},
+    {"text": "ירידה ועלייה מהשול", "id": "roadside", "img": "roadside", "nextId": "distance" },
+    {"text":"שמירת מרחק", "id": "distance", "img": "distance", "nextId": "animals"},
+    {"text": "תאונות עם בעלי חיים","id": "animals", "img": "animals", "nextId": "wheel"},
+    {"text": "החלפת גלגל","id": "wheel", "img": "wheel", "nextId": "fire"},
+    {"text": "שריפה ברכב","id": "fire", "img": "fire", "nextId": "turning-over"},
+    {"text": "התהפכות","id": "turning-over", "img": "turning-over", "nextId": "practice"},
+    {"text": "תרגול סיכום","id": "practice", "img": "practice"}
 ]
 }
