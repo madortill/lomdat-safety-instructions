@@ -19,13 +19,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  max-height: 91vh;
   /* background-color: #FEECD8; */
-}
-.container, .opening-page, .home-container {
-  min-height: 100dvh; /* במקום 100vh */
-  width: 100%;
-  overflow-y: auto; /* כדי לא להיחתך */
-  box-sizing: border-box;
 }
 
 .app {
