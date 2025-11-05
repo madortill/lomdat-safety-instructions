@@ -19,7 +19,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  max-height: 91vh;
   /* background-color: #FEECD8; */
 }
 
@@ -30,7 +29,7 @@ body {
   direction: rtl;
   width: 100%;
   max-width: 430px;
-  height: 47rem;
+  max-height: 100dvh;
   background-color: #003F88;
   font-family: 'askim';
   overflow: hidden;
