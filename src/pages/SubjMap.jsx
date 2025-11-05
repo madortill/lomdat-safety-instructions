@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import progressCar from "../assets/images/subjMap/progressCar.png";
-import "../style/SubjMap.css";
+import "../style/subjMap.css";
 import myData from "../data/myData.json";
 
 // טוען את כל תמונות הנושאים בצורה דינמית
@@ -17,7 +17,7 @@ function SubjMap({ onSelectSubject }) {
   const [unlocked] = useState(["introduction"]);
 
   // מדלגים על 2 השורות הראשונות שהן טקסט בלבד
-  const subjects = myData.subjMap.slice(2);
+  const subjects = myData.subjMap.slice(3);
 
   return (
     <>

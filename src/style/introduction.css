@@ -1,0 +1,59 @@
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    /* margin-top: 2.3rem; */
+}
+
+.title-introduction {
+    position: relative;
+    top: 5rem;
+    font-size: 2.4rem;
+    font-family: "abraham";
+    color: #FFEE97;
+}
+
+.intro-page2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.sec-title-intro {
+    position: relative;
+    width: 25rem;
+    top: 6rem;
+    font-size: 1.4rem;
+    font-family: "rubik";
+    color: #FFEE97;
+}
+
+.sign-crash {
+    position: relative;
+    top: 8rem;
+    right: -1.3rem;
+    width: 28rem;
+    height: 25rem;
+    background-image: url('../assets/images/introduction/signCrash.png');
+    background-size: contain;
+    /* ✅ משאיר את התמונה שלמה */
+    background-position: center;
+    background-repeat: no-repeat;
+    /* ✅ לא חוזרת על עצמה */
+    font-family: "rubik";
+    font-weight: 700;
+    color: #003F88;
+    pointer-events: auto;
+}
+.my-list {
+    list-style-type: disc; /* נקודות מלאות */
+    padding-left: 2rem;   /* רווח מצד שמאל */
+    margin: 0;             /* אם רוצים להסיר מרווח מיותר */
+  }
+  
+  .my-list li {
+    margin-bottom: 0.5rem; /* רווח בין הפריטים */
+  }
+  

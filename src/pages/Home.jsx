@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SubjMap from "./SubjMap";
 import Introduction from "../components/subjects/Introduction";
+import "../style/home.css";
 
 function Home() {
   const [showMap, setShowMap] = useState(true); // עכשיו המפה תוצג אוטומטית
@@ -19,7 +20,7 @@ function Home() {
     <div className="home-container">
       {/* כפתור פתיחת / סגירת מפה */}
       <button className="toggle-map-btn" onClick={toggleMap}>
-        {showMap ? "סגור מפה" : "פתח מפה"}
+      {showMap ? "לסגירת המפה" : "למפת הנושאים"}
       </button>
 
       {/* אם המפה פתוחה – מציגים אותה */}
