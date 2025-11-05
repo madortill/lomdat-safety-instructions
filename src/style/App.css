@@ -56,11 +56,11 @@ body {
 }
 @font-face {
   font-family: "rubik";
-  src: url('@/assets/fonts/Rubik-Regular.ttf');
+  src: url("../assets/fonts/Rubik-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "abraham";
-  src: url('@/assets/fonts/Abraham-Regular.ttf');
+  src: url("../assets/fonts/Abraham-Regular.ttf") format("truetype");
 }
 @media (max-width: 380px) {
   .bg-container {
