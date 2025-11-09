@@ -220,7 +220,7 @@
     cursor: pointer;               /* עכבר מראה שהוא לחיץ */
     outline: none;                 /* מסגרת ברירת מחדל של פוקוס נעלמת */
     padding: 0; 
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
     font-family: "rubik";
     font-weight: 700; 
     color: #003F88;
