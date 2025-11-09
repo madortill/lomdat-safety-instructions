@@ -206,21 +206,21 @@
     top: -13rem;
   }
   .next-btn-opening {
-    width: 7rem;
+    width: 6rem;
     height: 5rem;
     background-image: url('../assets/images/openingPage/driveNextBtn.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    top: 6rem;
-    right: 6rem;
+    top: 4.5rem;
+    /* right: 6rem; */
     background-color: transparent; /* אין צבע רקע */
     border: none;                  /* אין מסגרת */
     cursor: pointer;               /* עכבר מראה שהוא לחיץ */
     outline: none;                 /* מסגרת ברירת מחדל של פוקוס נעלמת */
     padding: 0; 
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-family: "rubik";
     font-weight: 700; 
     color: #003F88;
@@ -230,7 +230,7 @@
 .next-btn-opening:disabled {
   cursor: not-allowed;
   filter: grayscale(100%);
-  opacity: 0.6;
+  opacity: 0.9;
   color: #666;
 }
 
