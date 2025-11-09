@@ -6,6 +6,7 @@ body {
   padding: 0;
   height: 100%;
   background-color: #c2deff;
+  overscroll-behavior: none;
 }
 
 * {
