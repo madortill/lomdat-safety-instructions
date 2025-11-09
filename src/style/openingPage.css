@@ -80,6 +80,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .title {
     font-family: "abraham";
@@ -181,9 +182,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* מרכז אנכית */
+    justify-content: center;
     z-index: 3;
-    margin-top: 3rem;
+    margin-top: 6rem;
     pointer-events: auto;
   }
   
@@ -198,27 +199,28 @@
   .open-text2 {
     font-family: "rubik";
     width: 21rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-align: center;
     color: #FFEE97;
     position: relative;
     top: -13rem;
   }
   .next-btn-opening {
-    width: 6rem;
+    width: 7rem;
     height: 5rem;
     background-image: url('../assets/images/openingPage/driveNextBtn.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    top: 10rem;
+    top: 6rem;
     right: 6rem;
     background-color: transparent; /* אין צבע רקע */
     border: none;                  /* אין מסגרת */
     cursor: pointer;               /* עכבר מראה שהוא לחיץ */
     outline: none;                 /* מסגרת ברירת מחדל של פוקוס נעלמת */
     padding: 0; 
+    font-size: 1rem;
     font-family: "rubik";
     font-weight: 700; 
     color: #003F88;
