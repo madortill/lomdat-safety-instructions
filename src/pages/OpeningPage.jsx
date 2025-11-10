@@ -50,9 +50,12 @@ function OpeningPage() {
             }
           }}
         >
+          <div>
           <button className="about-btn" onClick={toggleAbout}>
             i
           </button>
+          <p className="about-text-btn">אודות</p>
+          </div>
 
           {showAbout && (
             <div className="div-about fade-in">

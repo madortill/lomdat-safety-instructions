@@ -19,8 +19,24 @@
   font-family: "rubik";
   font-weight: 700; 
   color: #FFEE97;
+  z-index: 2; 
   pointer-events: auto;
 }
+.map-overlay {
+  position: fixed;          /* כדי שתהיה מעל כל התוכן */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 5, 5, 0.644); /* חצי שקופה */
+  z-index: 1;             /* מעל כל שאר התוכן */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 
 .toggle-map-btn:hover {
 

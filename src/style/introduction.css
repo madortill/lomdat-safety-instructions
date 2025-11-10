@@ -127,6 +127,49 @@
     color: #003F88;
     pointer-events: auto;
   }
+  .next-btn {
+    position: relative;          /* מיקום יחסית לקונטיינר */
+    z-index: 10;                   /* מעל כל התוכן */
+    background-color: #FFEE97;
+    color: #003F88;
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: bounce 1s infinite; /* אנימציית קליטה */
+  }
+  
+  .next-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  }
+  
+  .next-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .next-btn:disabled {
+    background-color: #dbdbdb;
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    animation: none;  /* מבטל אנימציה כשהכפתור מושבת */
+  }
+  
+  /* אנימציית קליטה קלה */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  
   
   
   

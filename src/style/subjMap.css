@@ -82,6 +82,23 @@
     top: -22.3rem;
     left: -3rem;
   }
+  /* אנימציית Pop */
+@keyframes popAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* מחלקה שמפעילה את האנימציה */
+.pop-animation {
+  animation: popAnimation 1s ease-in-out infinite;
+}
   /* .subjects.introduction {
     position: relative;
     top: 3rem;

@@ -1,22 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import progressCar from "../assets/images/subjMap/progressCar.png";
 import "../style/subjMap.css";
 import myData from "../data/myData.json";
 
-// טוען את כל תמונות הנושאים בצורה דינמית
 const images = import.meta.glob("../assets/images/subjMap/subjects/*.png", {
   eager: true,
   import: "default",
 });
 
-function SubjMap({ onSelectSubject }) {
+function SubjMap({ onSelectSubject, unlockedSubjects, highlightedSubject }) {
   const mapTitle = myData.subjMap[0].text;
   const microcopyMap = myData.subjMap[1].text;
-
-  // נושאים שניתן ללחוץ עליהם (פתוחים)
-  const [unlocked] = useState(["introduction"]);
-
-  // מדלגים על 2 השורות הראשונות שהן טקסט בלבד
   const subjects = myData.subjMap.slice(3);
 
   return (
@@ -31,18 +25,19 @@ function SubjMap({ onSelectSubject }) {
 
         <div className="subjects-wrapper">
           {subjects.map((item) => {
-            const isUnlocked = unlocked.includes(item.id);
-            const imgSrc = images[`../assets/images/subjMap/subjects/${item.img}.png`];
+            const isUnlocked = unlockedSubjects.includes(item.id);
+            const isHighlighted = item.id === highlightedSubject;
+            const imgSrc =
+              images[`../assets/images/subjMap/subjects/${item.img}.png`];
 
             return (
               <div
                 key={item.id}
-                className={`subjects ${isUnlocked ? "active" : "disabled"}`}
-                // 💡 אם הנושא פתוח — לחיצה תפעיל את onSelectSubject
+                className={`subjects ${
+                  isUnlocked ? "active" : "disabled"
+                } ${isHighlighted ? "pop-animation" : ""}`}
                 onClick={() => {
-                  if (isUnlocked && onSelectSubject) {
-                    onSelectSubject(item.id);
-                  }
+                  if (isUnlocked) onSelectSubject(item.id);
                 }}
                 style={{ cursor: isUnlocked ? "pointer" : "not-allowed" }}
               >
