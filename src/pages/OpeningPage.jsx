@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../style/openingPage.css";
 import Details from "../components/Details";
@@ -36,7 +36,29 @@ function OpeningPage() {
 
   // בדיקה האם הטופס תקין
   const isDetailsValid =
-    name.trim().includes(" ") && !/\d/.test(name) && /^\d{7}$/.test(personalNumber);
+    name.trim().includes(" ") &&
+    !/\d/.test(name) &&
+    /^\d{7}$/.test(personalNumber);
+
+  // כפתור הבא עם זום אמיתי
+  const handleNext = () => {
+    // זום אמיתי של הדף
+    document.body.style.zoom = "80%"; // אפשר לשנות אחוז
+    // או לחלופין scale:
+    // document.body.style.transform = "scale(0.8)";
+    // document.body.style.transformOrigin = "top center";
+
+    // ממשיכים לנווט ל־Home
+    navigate("/Home");
+  };
+
+  // נקה את הזום כשעוזבים את הדף
+  useEffect(() => {
+    return () => {
+      document.body.style.zoom = "100%";
+      document.body.style.transform = "none";
+    };
+  }, []);
 
   return (
     <>
@@ -51,10 +73,10 @@ function OpeningPage() {
           }}
         >
           <div>
-          <button className="about-btn" onClick={toggleAbout}>
-            i
-          </button>
-          <p className="about-text-btn">אודות</p>
+            <button className="about-btn" onClick={toggleAbout}>
+              i
+            </button>
+            <p className="about-text-btn">אודות</p>
           </div>
 
           {showAbout && (
@@ -115,13 +137,13 @@ function OpeningPage() {
             setPersonalNumber={setPersonalNumber}
           />
 
-          {/* הכפתור מחוץ ל-Details */}
+          {/* כפתור הבא שמקטין את הדף */}
           <button
             className="next-btn-opening"
             disabled={!isDetailsValid}
-            onClick={() => navigate("/Home")}
+            onClick={handleNext}
           >
-           {nextBtnText}
+            {nextBtnText}
           </button>
         </div>
       )}
