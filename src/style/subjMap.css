@@ -69,7 +69,7 @@
   }
   .fire {
     position: relative;
-    top: -13rem;
+    top: -14rem;
     left: 2.5rem;
   }
   .turning-over {
@@ -88,7 +88,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.15);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
@@ -97,12 +97,21 @@
 
 /* מחלקה שמפעילה את האנימציה */
 .pop-animation {
-  animation: popAnimation 1s ease-in-out infinite;
+  animation: popAnimation 1.5s ease-in-out infinite;
 }
   /* .subjects.introduction {
     position: relative;
     top: 3rem;
   } */
+
+  /* אנימציה של הנושא הגדול */
+@keyframes pop {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+
+/* סטייל המכונית */
 
   @media (max-width: 380px) {
     .container-map {
@@ -118,7 +127,7 @@
   @media (max-width: 350px) {
     .container-map {
         width: 22rem;  
-        top: 50%;
+        top: 52%;
     }
     .progressCar {
         width: 5.5rem;

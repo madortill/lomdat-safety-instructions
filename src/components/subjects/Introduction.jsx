@@ -2,12 +2,18 @@ import React, { useState } from "react";
 import "../../style/introduction.css";
 import myData from "../../data/myData.json";
 
+import { useData } from "../../context/DataContext.jsx"; // import של הקונטקסט
+
 function Introduction({ onNext }) {
-  const titleIntro = myData.subjMap[3].text;
-  const secTitleIntro = myData.introduction[0].text;
-  const sentenceIntro1 = myData.introduction[1].text;
-  const sentenceIntro2 = myData.introduction[2].text;
-  const sentenceIntro3 = myData.introduction[3].text;
+  const { data } = useData(); // כאן מקבלים את ה-JSON הנוכחי לפי השפה שנבחרה
+
+  const titleIntro = data.subjMap[3].text; // כותרת
+  const secTitleIntro = data.introduction[0].text; // כותרת שניה
+  const sentenceIntro1 = data.introduction[1].text; // משפט 1
+  const sentenceIntro2 = data.introduction[2].text; // משפט 2
+  const sentenceIntro3 = data.introduction[3].text; // משפט 3
+  const nextBtn = data.buttons[0].text;
+  const backBtn = data.buttons[1].text;
 
   const [pageIndex, setPageIndex] = useState(0);
 
@@ -23,7 +29,7 @@ function Introduction({ onNext }) {
 
   return (
     <div className="intro-container">
-      <p className="title-introduction">{titleIntro}</p>
+      <p className="title-subjects">{titleIntro}</p>
 
       {pageIndex === 0 && (
         <div className="intro-page1">
@@ -50,14 +56,14 @@ function Introduction({ onNext }) {
           onClick={prevPage}
           disabled={pageIndex === 0}
         >
-          הקודם
+         {backBtn}
         </button>
 
         <button
           className="nav-button2"
           onClick={pageIndex === 1 ? onNext : nextPage}
         >
-          הבא
+          {nextBtn}
         </button>
       </div>
     </div>

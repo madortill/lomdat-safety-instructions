@@ -2,19 +2,20 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../style/openingPage.css";
 import Details from "../components/Details";
-import myData from "../data/myData.json";
+import { useData } from "../context/DataContext";
 import carGraphic from "../assets/images/openingPage/carGraphic.png";
 import cloud from "../assets/images/openingPage/cloud.png";
 import cloud2 from "../assets/images/openingPage/cloud2.png";
 import startBtn from "../assets/images/openingPage/startBtn.svg";
 
 function OpeningPage() {
+  const { data, switchJSON } = useData();
   const navigate = useNavigate();
 
-  const headTitleText = myData.openingPage[0].text;
-  const openText1 = myData.openingPage[1].text;
-  const openText2 = myData.openingPage[2].text;
-  const nextBtnText = myData.openingPage[3].text;
+  const headTitleText = data.openingPage[0].text;
+  const openText1 = data.openingPage[1].text;
+  const openText2 = data.openingPage[2].text;
+  const nextBtnText = data.openingPage[3].text;
 
   const [showAbout, setShowAbout] = useState(false);
   const [carMoving, setCarMoving] = useState(false);

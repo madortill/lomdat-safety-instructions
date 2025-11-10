@@ -1,22 +1,29 @@
 import React from "react";
 import "../style/details.css";
-import myData from "../data/myData.json";
+import { useData } from "../context/DataContext.jsx"; // ה-hok מהקונטקסט
 
 function Details({ name, setName, personalNumber, setPersonalNumber }) {
-  const detailsTitle = myData.details[0].text; 
-  const nameText = myData.details[1].text; 
-  const numText = myData.details[2].text; 
+  // שימוש בקונטקסט
+  const { data } = useData();
+
+  // בדיקה שהdata מוגדר כדי למנוע שגיאות
+  if (!data || !data.details) return null;
+
+  const detailsTitle = data.details[0].text; 
+  const nameText = data.details[1].text; 
+  const numText = data.details[2].text; 
+
   // בדיקות תקינות
   const isValidName = (value) => value.trim().includes(" ") && !/\d/.test(value);
   const isValidPersonalNumber = (value) => /^\d{7}$/.test(value);
 
-  const nameError = !isValidName(name) && name.length > 0
-    ? "יש להזין שם מלא    "
-    : "";
+  const nameError =
+    !isValidName(name) && name.length > 0 ? "יש להזין שם מלא" : "";
 
-  const personalNumberError = !isValidPersonalNumber(personalNumber) && personalNumber.length > 0
-    ? "מספר אישי מכיל 7 ספרות"
-    : "";
+  const personalNumberError =
+    !isValidPersonalNumber(personalNumber) && personalNumber.length > 0
+      ? "מספר אישי מכיל 7 ספרות"
+      : "";
 
   const isFormValid = isValidName(name) && isValidPersonalNumber(personalNumber);
 
