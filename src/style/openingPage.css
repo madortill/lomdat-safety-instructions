@@ -39,16 +39,17 @@
 }
 .about-text-btn {
   position: absolute;
-  font-size: 1.2rem;
-  font-weight: 550;
+  font-size: 1.1rem;
+  font-weight: 600;
   width: 2rem;
   height: 2rem;
-  left: 1.3rem;
-  top: 6.5rem;
+  left: 1.5rem;
+  top: 7rem;
   text-align: center;
   cursor: pointer;
   z-index: 2;
   font-family: "rubik";
+  color: #FFEE97;
 }
 
 .div-about {

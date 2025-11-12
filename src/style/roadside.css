@@ -1,6 +1,90 @@
-.bla {
-    position: absolute;
-    top: 20rem;
-    z-index: 5;
-    color: white;
+.roadside-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
 }
+.sec-title-subjects {
+    position: relative;
+    top: 6rem;
+    left: 30%;
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: "rubik";
+    color: #FFEE97;
+}
+.roadside-text {
+    position: relative;
+    top: 6.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.3rem;
+    color: #FFEE97;
+    font-family: "rubik";
+    text-align: right;
+    margin: 0rem 1rem;
+    padding-top: 0.5rem;
+    /* width: 15rem; */
+
+  }
+  .roadSideHighlight {
+    z-index: 1;
+    width: 30rem;
+    position: absolute;
+    top: 17rem;
+    left: -1.3rem;
+    animation: biggerHighlight 1.8s ease-in-out infinite;
+  }
+
+  @keyframes biggerHighlight {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  .page2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+  }
+  .boxPlanned {
+    z-index: 1;
+    width: 11rem;
+    position: relative;
+    top: 21rem;
+    left: 7rem;
+  }
+  .boxUnplanned {
+    z-index: 1;
+    width: 11rem;
+    position: relative;
+    top: 11.3rem;
+    left: -6rem;
+  }
+  .mirror {
+    position: relative;
+    top: -13rem;
+    right: -1rem;
+    width: 19rem;
+    height: 15rem;
+    background-image: url('../assets/images/roadside/mirror.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent; /* אין צבע רקע */
+    border: none;                  /* אין מסגרת */
+    outline: none;                 /* מסגרת ברירת מחדל של פוקוס נעלמת */
+    padding-top: 4rem; 
+    padding-right:2rem; 
+    font-size: 1.2rem;
+    font-family: "rubik";
+    font-weight: 800; 
+    color: #000000;
+    z-index: 2; 
+  }
+  
