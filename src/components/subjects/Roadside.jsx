@@ -17,6 +17,7 @@ function Roadside({ onNext }) {
   const titleRoadside = data.subjMap[4].text;
   const secTitleRoadside = pages[pageIndex].secTitle;
   const textRoadside = pages[pageIndex].text;
+  const textFactors = data.roadside[2].text;
 
   // כפתורים
   const nextBtn = data.buttons[0].text;
@@ -49,9 +50,9 @@ function Roadside({ onNext }) {
         return (
           <div key={index} className="page2">
             <img src={boxPlanned} alt="boxPlanned" className="boxPlanned" />
-            {/* <p>יהיה פה כמה גורמים נשאר</p>  */}
+            <p className="counter-planned">{textFactors} 2/{numOfPlanned}</p> 
             <img src={boxUnplanned} alt="boxUnplanned" className="boxUnplanned" />
-            {/* <p>יהיה פה כמה גורמים נשאר</p>   */}
+            <p className="counter-unplanned">{textFactors} 2/{numOfPlanned}</p>  
             <div className="mirror">
                 גכעחיל
             </div>

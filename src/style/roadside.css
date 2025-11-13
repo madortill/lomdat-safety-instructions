@@ -54,21 +54,21 @@
   }
   .boxPlanned {
     z-index: 1;
-    width: 11rem;
+    width: 12rem;
     position: relative;
-    top: 21rem;
+    top: 20rem;
     left: 7rem;
   }
   .boxUnplanned {
     z-index: 1;
-    width: 11rem;
+    width: 12rem;
     position: relative;
-    top: 11.3rem;
+    top: 7rem;
     left: -6rem;
   }
   .mirror {
     position: relative;
-    top: -13rem;
+    top: -20rem;
     right: -1rem;
     width: 19rem;
     height: 15rem;
@@ -86,5 +86,25 @@
     font-weight: 800; 
     color: #000000;
     z-index: 2; 
+  }
+  .counter-planned {
+    z-index: 2;
+    width: 9rem;
+    position: relative;
+    top: 13.3rem;
+    left: -6rem;
+    font-family: "rubik";
+    color: #003F88;
+    font-weight: 700;
+  }
+  .counter-unplanned {
+    z-index: 2;
+    width: 9rem;
+    position: relative;
+    top: 0.2rem;
+    left: 7rem;
+    font-family: "rubik";
+    color: #003F88;
+    font-weight: 700;
   }
   
