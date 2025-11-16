@@ -63,23 +63,23 @@
 
 .boxPlanned {
   z-index: 1;
-  width: 12rem;
+  width: 11rem;
   position: relative;
-  top: 19.3rem;
+  top: 20.4rem;
   left: 7rem;
 }
 
 .boxUnplanned {
   z-index: 1;
-  width: 12rem;
+  width: 11rem;
   position: relative;
-  top: 5rem;
-  left: -6rem;
+  top: 7rem;
+  left: -6.3rem;
 }
 
 .mirror {
   position: relative;
-  top: -22.5rem;
+  top: -20.5rem;
   right: -1rem;
   width: 19rem;
   height: 15rem;
@@ -101,6 +101,7 @@
   color: #000000;
   z-index: 2;
 }
+
 .mirror-broken {
   position: relative;
   top: -22.4rem;
@@ -125,21 +126,24 @@
   color: #000000;
   z-index: 2;
 }
+
 .mirror-text {
   width: 9rem;
   position: relative;
   right: 4rem;
 }
+
 .counter-unplanned {
   z-index: 2;
   width: 9rem;
   position: relative;
-  top: 12.5rem;
-  left: -6rem;
+  top: 14rem;
+  left: -6.2rem;
   font-family: "rubik";
   color: #003F88;
   font-weight: 700;
   pointer-events: none;
+  font-size: 0.96rem;
 }
 
 .counter-planned {
@@ -153,6 +157,7 @@
   font-weight: 700;
   pointer-events: none;
 }
+
 .planned {
   z-index: 2;
   width: 9rem;
@@ -164,14 +169,21 @@
   font-weight: 800;
   pointer-events: none;
 }
+
 .unplanned {
   z-index: 3;
   width: 9rem;
   position: relative;
   /* top: rem; */
-  left: -6rem;
+  left: -6.2rem;
   font-family: "rubik-bold";
   color: #003F88;
   font-weight: 700;
   pointer-events: none;
+}
+
+@media (max-width: 380px) {
+  .roadSideHighlight {
+    top: 58%;
+  }
 }

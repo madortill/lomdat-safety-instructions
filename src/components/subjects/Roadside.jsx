@@ -12,8 +12,11 @@ function Roadside({ onNext }) {
   const [numOfPlanned, setNumOfPlanned] = useState(2);
   const [numOfUnplanned, setNumOfUnplanned] = useState(2);
   const [mirrorBroken, setMirrorBroken] = useState(false);
-  const [plannedIndex, setPlannedIndex] = useState(1); // איזה גורם מתוכנן מוצג כרגע (factor1 או factor2)
-  const [unplannedIndex, setUnplannedIndex] = useState(1); // איזה גורם לא מתוכנן מוצג כרגע
+  const [plannedIndex, setPlannedIndex] = useState(0); // איזה גורם מתוכנן מוצג כרגע (factor1 או factor2)
+  const [unplannedIndex, setUnplannedIndex] = useState(0); // איזה גורם לא מתוכנן מוצג כרגע
+  const [showMirror, setShowMirror] = useState(false);
+  const [plannedVisited, setPlannedVisited] = useState(false);
+  const [plannedClicks, setPlannedClicks] = useState(0);
 
   // מסנן את העמודים - דילוג על index 2 ו-3
   const pages = data.roadside.filter((_, index) => index !== 2 && index !== 3);
@@ -43,22 +46,31 @@ function Roadside({ onNext }) {
     }
   };
   const openFactors = (event) => {
-    if (event.target.id === "planned") {
-      setNumOfPlanned((prev) => {
-        if (prev === 0) return 0;
-        return prev - 1;
-      });
-      setMirrorBroken(false); // מראה שלמה
-      setPlannedIndex(prev => (prev === 1 ? 2 : 1));
+    const id = event.target.id;
+
+    setShowMirror(true);
+
+    if (id === "planned") {
+      // מראה שלמה
+      setMirrorBroken(false);
+
+      // עדכון אינדקס גורם מתוכנן
+      setPlannedIndex((prev) => (prev === 1 ? 2 : 1));
+
+      // ספירת לחיצות על המתוכננים
+      setPlannedClicks((prev) => prev + 1);
+
+      // עדכון מספר גורמים שנותרו
+      setNumOfPlanned((prev) => (prev === 0 ? 0 : prev - 1));
     }
 
-    if (event.target.id === "unplanned") {
-      setNumOfUnplanned((prev) => {
-        if (prev === 0) return 0;
-        return prev - 1;
-      });
+    if (id === "unplanned") {
+      // בודקים אם כבר לחץ על שני הגורמים המתוכננים
+      if (plannedClicks < 2) return;
+
       setMirrorBroken(true); // מראה שבורה
-    setUnplannedIndex(prev => (prev === 1 ? 2 : 1))
+      setUnplannedIndex((prev) => (prev === 1 ? 2 : 1));
+      setNumOfUnplanned((prev) => (prev === 0 ? 0 : prev - 1));
     }
   };
 
@@ -84,7 +96,6 @@ function Roadside({ onNext }) {
               onClick={openFactors}
               alt="boxPlanned"
               className="boxPlanned"
-              style={{ opacity: numOfPlanned === 0 ? 0.5 : 1 }}
             />
             <p className="counter-unplanned">
               {textFactors} 2/{numOfUnplanned}
@@ -96,17 +107,27 @@ function Roadside({ onNext }) {
               onClick={openFactors}
               alt="boxUnplanned"
               className="boxUnplanned"
-              style={{ opacity: numOfUnplanned === 0 ? 0.5 : 1 }}
+              style={{ opacity: plannedClicks >= 2 ? 1 : 0.5 }}
+              disabled={plannedClicks < 2}
             />
             <p className="counter-planned">
               {textFactors} 2/{numOfPlanned}
             </p>
             <p className="unplanned">{unplanned}</p>
-            {mirrorBroken ? (
-              <div className="mirror-broken"><p className="mirror-text">{data.roadside[3][`factor${unplannedIndex}`]}</p></div>
-            ) : (
-              <div className="mirror"><p className="mirror-text">{data.roadside[2][`factor${plannedIndex}`]}</p></div>
-            )}
+            {showMirror &&
+              (mirrorBroken ? (
+                <div className="mirror-broken">
+                  <p className="mirror-text">
+                    {data.roadside[3][`factor${unplannedIndex}`]}
+                  </p>
+                </div>
+              ) : (
+                <div className="mirror">
+                  <p className="mirror-text">
+                    {data.roadside[2][`factor${plannedIndex}`]}
+                  </p>
+                </div>
+              ))}
           </div>
         );
       // אם יש עוד עמודים אפשר להוסיף כאן case נוספים

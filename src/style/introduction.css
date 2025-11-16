@@ -41,7 +41,7 @@
     background-position: center;
     background-repeat: no-repeat;
     font-family: "rubik";
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: #003F88;
     pointer-events: auto;
     display: flex;                /* נשתמש בפלקס */
@@ -56,7 +56,7 @@
     list-style-type: disc ; /* מוודא שהנקודות חוזרות */
     list-style-position: outside;     /* שהנקודות יהיו קרובות לטקסט */
     margin-right: 3rem;
-    margin-top: -12rem;
+    margin-top: -15rem;
     padding: 0;
   }
   
@@ -175,7 +175,11 @@
   @media (max-width: 380px) {
     .sign-crash {
       width: 23rem;
-      right: -1.1rem;
+      right: -1.2rem;
+      font-size: 0.95rem;
+    }
+    .my-list {
+      margin-top: -12.5rem;
     }
   }
   @media (max-width: 335px) {
@@ -185,6 +189,10 @@
     }
     .sign-crash {
       width: 21rem;
+      font-size: 0.87rem;
+    }
+    .my-list {
+      margin-top: -11.3rem;
     }
   }
 
