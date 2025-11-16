@@ -40,13 +40,13 @@ body {
 .bahad6 {
   position: absolute;
   left: 0.3rem;
-  z-index: 2;
+  z-index: 3;
 }
 .til-logo {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  z-index: 2;
+  z-index: 3;
   width: 3.2rem;
 }
 .bg-container {
@@ -62,9 +62,14 @@ body {
   src: url("../assets/fonts/Rubik-Regular.ttf") format("truetype");
 }
 @font-face {
+  font-family: "rubik-bold";
+  src: url("../assets/fonts/Rubik-Bold.ttf") format("truetype");
+}
+@font-face {
   font-family: "abraham";
   src: url("../assets/fonts/Abraham-Regular.ttf") format("truetype");
 }
+
 @media (max-width: 380px) {
   .bg-container {
     top: 57%;

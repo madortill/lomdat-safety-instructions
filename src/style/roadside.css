@@ -1,110 +1,177 @@
 .roadside-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
 }
+
 .sec-title-subjects {
-    position: relative;
-    top: 6rem;
-    left: 30%;
-    font-size: 1.4rem;
-    font-weight: 700;
-    font-family: "rubik";
-    color: #FFEE97;
+  position: relative;
+  top: 6rem;
+  left: 30%;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: "rubik";
+  color: #FFEE97;
 }
+
 .roadside-text {
-    position: relative;
-    top: 6.5rem;
-    font-size: 1.2rem;
-    margin-bottom: 1.3rem;
-    color: #FFEE97;
-    font-family: "rubik";
-    text-align: right;
-    margin: 0rem 1rem;
-    padding-top: 0.5rem;
-    /* width: 15rem; */
+  position: relative;
+  top: 6.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.3rem;
+  color: #FFEE97;
+  font-family: "rubik";
+  text-align: right;
+  margin: 0rem 1rem;
+  padding-top: 0.5rem;
+  /* width: 15rem; */
 
-  }
-  .roadSideHighlight {
-    z-index: 1;
-    width: 30rem;
-    position: absolute;
-    top: 17rem;
-    left: -1.3rem;
-    animation: biggerHighlight 1.8s ease-in-out infinite;
+}
+
+.roadSideHighlight {
+  z-index: 1;
+  width: 30rem;
+  position: absolute;
+  top: 55%;
+  right: 49%;
+  transform: translate(+50%, -50%);
+  animation: biggerHighlight 1.8s ease-in-out infinite;
+}
+
+@keyframes biggerHighlight {
+  0% {
+    opacity: 1;
   }
 
-  @keyframes biggerHighlight {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
+  50% {
+    opacity: 0.5;
   }
-  .page2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1;
+
+  100% {
+    opacity: 1;
   }
-  .boxPlanned {
-    z-index: 1;
-    width: 12rem;
-    position: relative;
-    top: 20rem;
-    left: 7rem;
-  }
-  .boxUnplanned {
-    z-index: 1;
-    width: 12rem;
-    position: relative;
-    top: 7rem;
-    left: -6rem;
-  }
-  .mirror {
-    position: relative;
-    top: -20rem;
-    right: -1rem;
-    width: 19rem;
-    height: 15rem;
-    background-image: url('../assets/images/roadside/mirror.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: transparent; /* אין צבע רקע */
-    border: none;                  /* אין מסגרת */
-    outline: none;                 /* מסגרת ברירת מחדל של פוקוס נעלמת */
-    padding-top: 4rem; 
-    padding-right:2rem; 
-    font-size: 1.2rem;
-    font-family: "rubik";
-    font-weight: 800; 
-    color: #000000;
-    z-index: 2; 
-  }
-  .counter-planned {
-    z-index: 2;
-    width: 9rem;
-    position: relative;
-    top: 13.3rem;
-    left: -6rem;
-    font-family: "rubik";
-    color: #003F88;
-    font-weight: 700;
-  }
-  .counter-unplanned {
-    z-index: 2;
-    width: 9rem;
-    position: relative;
-    top: 0.2rem;
-    left: 7rem;
-    font-family: "rubik";
-    color: #003F88;
-    font-weight: 700;
-  }
-  
+}
+
+.page2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+
+}
+
+.boxPlanned {
+  z-index: 1;
+  width: 12rem;
+  position: relative;
+  top: 19.3rem;
+  left: 7rem;
+}
+
+.boxUnplanned {
+  z-index: 1;
+  width: 12rem;
+  position: relative;
+  top: 5rem;
+  left: -6rem;
+}
+
+.mirror {
+  position: relative;
+  top: -22.5rem;
+  right: -1rem;
+  width: 19rem;
+  height: 15rem;
+  background-image: url('../assets/images/roadside/mirror.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  /* אין צבע רקע */
+  border: none;
+  /* אין מסגרת */
+  outline: none;
+  /* מסגרת ברירת מחדל של פוקוס נעלמת */
+  padding-top: 5rem;
+  padding-right: 2rem;
+  font-size: 1.2rem;
+  font-family: "rubik";
+  font-weight: 800;
+  color: #000000;
+  z-index: 2;
+}
+.mirror-broken {
+  position: relative;
+  top: -22.4rem;
+  right: -1.15rem;
+  width: 19rem;
+  height: 15rem;
+  background-image: url('../assets/images/roadside/brokenMirror.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  /* אין צבע רקע */
+  border: none;
+  /* אין מסגרת */
+  outline: none;
+  /* מסגרת ברירת מחדל של פוקוס נעלמת */
+  padding-top: 5rem;
+  padding-right: 2rem;
+  font-size: 1.2rem;
+  font-family: "rubik";
+  font-weight: 800;
+  color: #000000;
+  z-index: 2;
+}
+.mirror-text {
+  width: 9rem;
+  position: relative;
+  right: 4rem;
+}
+.counter-unplanned {
+  z-index: 2;
+  width: 9rem;
+  position: relative;
+  top: 12.5rem;
+  left: -6rem;
+  font-family: "rubik";
+  color: #003F88;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.counter-planned {
+  z-index: 2;
+  width: 9rem;
+  position: relative;
+  top: -1.7rem;
+  left: 7rem;
+  font-family: "rubik";
+  color: #003F88;
+  font-weight: 700;
+  pointer-events: none;
+}
+.planned {
+  z-index: 2;
+  width: 9rem;
+  position: relative;
+  top: 14.2rem;
+  left: 7rem;
+  font-family: "rubik-bold";
+  color: #003F88;
+  font-weight: 800;
+  pointer-events: none;
+}
+.unplanned {
+  z-index: 3;
+  width: 9rem;
+  position: relative;
+  /* top: rem; */
+  left: -6rem;
+  font-family: "rubik-bold";
+  color: #003F88;
+  font-weight: 700;
+  pointer-events: none;
+}

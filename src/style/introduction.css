@@ -34,17 +34,16 @@
     position: relative;
     top: 7rem;
     right: -1.3rem;
-    width: 28rem;
+    width: 26rem;
     height: 25rem;
     background-image: url('../assets/images/introduction/signCrash.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     font-family: "rubik";
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: #003F88;
     pointer-events: auto;
-  
     display: flex;                /* נשתמש בפלקס */
     align-items: center;          /* מרכז אנכית */
     justify-content: flex-start;      /* מרכז אופקית */
@@ -57,7 +56,7 @@
     list-style-type: disc ; /* מוודא שהנקודות חוזרות */
     list-style-position: outside;     /* שהנקודות יהיו קרובות לטקסט */
     margin-right: 3rem;
-    margin-top: -15rem;
+    margin-top: -12rem;
     padding: 0;
   }
   
@@ -89,8 +88,9 @@
   }
   .nav-button1{
     position: absolute;
-    top: 38rem;
-    right: 3rem;
+    top: 85%;
+    right: 18%;
+    transform: translate(+50%,-50%);
     width: 4rem;
     height: 4rem;
     background-image: url('../assets/images/backBtn.png');
@@ -106,11 +106,13 @@
     font-weight: 700; 
     color: #003F88;
     pointer-events: auto;
+    z-index: 1;
   }
   .nav-button2{
     position: absolute;
-    top: 38rem;
-    right: 19rem;
+    top: 85%;
+    right: 78%;
+    transform: translate(+50%,-50%);
     width: 4rem;
     height: 4rem;
     background-image: url('../assets/images/nextBtn.png');
@@ -126,6 +128,7 @@
     font-weight: 700; 
     color: #003F88;
     pointer-events: auto;
+    z-index: 1;
   }
   .next-btn {
     position: relative;          /* מיקום יחסית לקונטיינר */
@@ -168,6 +171,23 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
   }
+  
+  @media (max-width: 380px) {
+    .sign-crash {
+      width: 23rem;
+      right: -1.1rem;
+    }
+  }
+  @media (max-width: 335px) {
+    .sec-title-intro{
+      width: 22rem;
+      font-size: 1.2rem;
+    }
+    .sign-crash {
+      width: 21rem;
+    }
+  }
+
   
   
   

@@ -123,6 +123,22 @@
         top: 3.5rem;
         right: 16rem;
     }
+    .subjects-wrapper {
+      margin-top: 4.8rem;
+    }
+    .subject {
+      width: 4.4rem;
+    }
+    .wheel {
+      left: 7.5rem;
+    }
+    .turning-over {
+      top: -19.5rem;
+      left: -7rem;
+    }
+    .practice {
+      top: -21rem;
+    }
   }
   @media (max-width: 350px) {
     .container-map {
