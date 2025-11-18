@@ -4,7 +4,9 @@ import { useData } from "../../context/DataContext.jsx";
 import roadSideHighlight from "../../assets/images/roadside/roadSideHighlight.png";
 import boxPlanned from "../../assets/images/roadside/boxPlanned.png";
 import boxUnplanned from "../../assets/images/roadside/boxUnplanned.png";
-import brokenMirror from "../../assets/images/roadside/brokenMirror.png";
+import TitledGraphics from "../../components/TitledGraphics";
+import Rocks from "../../components/Rocks";
+
 
 function Roadside({ onNext }) {
   const { data } = useData();
@@ -15,11 +17,13 @@ function Roadside({ onNext }) {
   const [plannedIndex, setPlannedIndex] = useState(0); // איזה גורם מתוכנן מוצג כרגע (factor1 או factor2)
   const [unplannedIndex, setUnplannedIndex] = useState(0); // איזה גורם לא מתוכנן מוצג כרגע
   const [showMirror, setShowMirror] = useState(false);
-  const [plannedVisited, setPlannedVisited] = useState(false);
+
   const [plannedClicks, setPlannedClicks] = useState(0);
 
   // מסנן את העמודים - דילוג על index 2 ו-3
   const pages = data.roadside.filter((_, index) => index !== 2 && index !== 3);
+  const canGoNext =
+  pageIndex !== 1 || (numOfPlanned === 0 && numOfUnplanned === 0);
 
   const titleRoadside = data.subjMap[4].text;
   const secTitleRoadside = pages[pageIndex].secTitle;
@@ -31,14 +35,20 @@ function Roadside({ onNext }) {
   // כפתורים
   const nextBtn = data.buttons[0].text;
   const backBtn = data.buttons[1].text;
+  
 
   const nextPage = () => {
+    if (pageIndex === 1 && !(numOfPlanned === 0 && numOfUnplanned === 0)) {
+      return; // נעול
+    }
+  
     if (pageIndex < pages.length - 1) {
       setPageIndex((prev) => prev + 1);
     } else {
-      onNext && onNext(); // אם הגענו לסוף, נשלח לפונקציה של Home
+      onNext && onNext();
     }
   };
+  
 
   const prevPage = () => {
     if (pageIndex > 0) {
@@ -98,8 +108,13 @@ function Roadside({ onNext }) {
               className="boxPlanned"
             />
             <p className="counter-unplanned">
-              {textFactors} 2/{numOfUnplanned}
+              {textFactors} 
+              <br />
+              <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+              2/{numOfUnplanned}
+              </span>
             </p>
+
             <p className="planned">{planned}</p>
             <img
               src={boxUnplanned}
@@ -107,11 +122,18 @@ function Roadside({ onNext }) {
               onClick={openFactors}
               alt="boxUnplanned"
               className="boxUnplanned"
-              style={{ opacity: plannedClicks >= 2 ? 1 : 0.5 }}
-              disabled={plannedClicks < 2}
+              style={{
+                opacity: plannedClicks >= 2 ? 1 : 0.5,
+                pointerEvents: plannedClicks >= 2 ? "auto" : "none",
+                cursor: plannedClicks >= 2 ? "pointer" : "default",
+              }}
             />
             <p className="counter-planned">
-              {textFactors} 2/{numOfPlanned}
+            {textFactors} 
+              <br />
+              <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+              2/{numOfPlanned}
+              </span>
             </p>
             <p className="unplanned">{unplanned}</p>
             {showMirror &&
@@ -130,6 +152,24 @@ function Roadside({ onNext }) {
               ))}
           </div>
         );
+        case 2:
+        return (
+          <div key={index} className="page3">
+            <TitledGraphics />
+          </div>
+        );
+        case 3:
+          return (
+            <div key={index} className="page4">
+            <TitledGraphics />
+          </div>
+          );
+          case 4:
+            return (
+              <div key={index} className="page5">
+              <Rocks />
+            </div>
+            );
       // אם יש עוד עמודים אפשר להוסיף כאן case נוספים
       default:
         return (
@@ -158,7 +198,7 @@ function Roadside({ onNext }) {
           {backBtn}
         </button>
 
-        <button className="nav-button2" onClick={nextPage}>
+        <button className="nav-button2" onClick={nextPage}  disabled={pageIndex === 1 && !(numOfPlanned === 0 && numOfUnplanned === 0)}>
           {nextBtn}
         </button>
       </div>

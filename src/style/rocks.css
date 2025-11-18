@@ -1,0 +1,63 @@
+.all-rocks {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    /* margin-top: 15rem; */
+}
+.container-rock1 {
+    position: relative;
+    top: 13rem;
+    left: 8rem;
+}
+.container-rock2 {
+    position: relative;
+    top: 14rem;
+    left: 9.5rem;
+}
+.container-rock3 {
+    position: relative;
+    top: 4.5rem;
+    right: 7rem;
+}
+.container-rock4 {
+    position: relative;
+    top: 3rem;
+    right: 10.5rem;
+}
+.container-rock5 {
+    position: relative;
+    top: 3.4rem;
+    right: 11rem;
+}
+.rock1 {
+    width: 4rem;
+}
+.vi1 {
+    position: relative;
+    top: -1rem;
+    left: 1rem;
+}
+.vi2 {
+    position: relative;
+    top: -1.5rem;
+    left: 1rem;
+}
+.vi3 {
+    position: relative;
+    top: -2.3rem;
+    left: 1.3rem;
+}
+.vi4 {
+    position: relative;
+    top: -2.3rem;
+    left: 1.3rem;
+}
+.vi5 {
+    position: relative;
+    top: -2.3rem;
+    left: 1.3rem;
+}
+.rock:focus {
+    filter: drop-shadow(0 0 15px #002983);
+}

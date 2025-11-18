@@ -65,7 +65,7 @@
   z-index: 1;
   width: 11rem;
   position: relative;
-  top: 20.4rem;
+  top: 20.6rem;
   left: 7rem;
 }
 
@@ -73,13 +73,13 @@
   z-index: 1;
   width: 11rem;
   position: relative;
-  top: 7rem;
+  top: 6.5rem;
   left: -6.3rem;
 }
 
 .mirror {
   position: relative;
-  top: -20.5rem;
+  top: -21.5rem;
   right: -1rem;
   width: 19rem;
   height: 15rem;
@@ -104,7 +104,7 @@
 
 .mirror-broken {
   position: relative;
-  top: -22.4rem;
+  top: -21.45rem;
   right: -1.15rem;
   width: 19rem;
   height: 15rem;
@@ -137,8 +137,8 @@
   z-index: 2;
   width: 9rem;
   position: relative;
-  top: 14rem;
-  left: -6.2rem;
+  top: 15.4rem;
+  left: -6.3rem;
   font-family: "rubik";
   color: #003F88;
   font-weight: 700;
@@ -150,23 +150,25 @@
   z-index: 2;
   width: 9rem;
   position: relative;
-  top: -1.7rem;
+  top: 1.3rem;
   left: 7rem;
   font-family: "rubik";
   color: #003F88;
   font-weight: 700;
   pointer-events: none;
+  font-size: 0.96rem;
 }
 
 .planned {
   z-index: 2;
   width: 9rem;
   position: relative;
-  top: 14.2rem;
+  top: 16rem;
   left: 7rem;
   font-family: "rubik-bold";
   color: #003F88;
   font-weight: 800;
+  font-size: 1.2rem;
   pointer-events: none;
 }
 
@@ -174,9 +176,10 @@
   z-index: 3;
   width: 9rem;
   position: relative;
-  /* top: rem; */
-  left: -6.2rem;
+  top: 2rem;
+  left: -6.3rem;
   font-family: "rubik-bold";
+  font-size: 1.2rem;
   color: #003F88;
   font-weight: 700;
   pointer-events: none;

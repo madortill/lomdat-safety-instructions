@@ -15,6 +15,7 @@ function App() {
   const [unlocked, setUnlocked] = useState(["introduction"]);
 
   return (
+    
     <div className="app">
       <div className="bahad-symbols">
         <img src={bahad6icon} alt="bahad6icon" className="bahad6" />

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "../../style/introduction.css";
-import myData from "../../data/myData.json";
-
 import { useData } from "../../context/DataContext.jsx"; // import של הקונטקסט
 
 function Introduction({ onNext }) {
