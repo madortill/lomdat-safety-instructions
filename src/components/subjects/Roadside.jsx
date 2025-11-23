@@ -7,7 +7,6 @@ import boxUnplanned from "../../assets/images/roadside/boxUnplanned.png";
 import TitledGraphics from "../../components/TitledGraphics";
 import Rocks from "../../components/Rocks";
 
-
 function Roadside({ onNext }) {
   const { data } = useData();
   const [pageIndex, setPageIndex] = useState(0);
@@ -23,7 +22,7 @@ function Roadside({ onNext }) {
   // מסנן את העמודים - דילוג על index 2 ו-3
   const pages = data.roadside.filter((_, index) => index !== 2 && index !== 3);
   const canGoNext =
-  pageIndex !== 1 || (numOfPlanned === 0 && numOfUnplanned === 0);
+    pageIndex !== 1 || (numOfPlanned === 0 && numOfUnplanned === 0);
 
   const titleRoadside = data.subjMap[4].text;
   const secTitleRoadside = pages[pageIndex].secTitle;
@@ -35,20 +34,25 @@ function Roadside({ onNext }) {
   // כפתורים
   const nextBtn = data.buttons[0].text;
   const backBtn = data.buttons[1].text;
-  
+
+  //אבנים
+  const [rocksDone, setRocksDone] = useState(false);
+
+  const handleRocksComplete = () => {
+    setRocksDone(true); // עכשיו הכפתור "המשך" בעמוד 5 יהיה פעיל
+  };
 
   const nextPage = () => {
     if (pageIndex === 1 && !(numOfPlanned === 0 && numOfUnplanned === 0)) {
       return; // נעול
     }
-  
+
     if (pageIndex < pages.length - 1) {
       setPageIndex((prev) => prev + 1);
     } else {
       onNext && onNext();
     }
   };
-  
 
   const prevPage = () => {
     if (pageIndex > 0) {
@@ -108,10 +112,10 @@ function Roadside({ onNext }) {
               className="boxPlanned"
             />
             <p className="counter-unplanned">
-              {textFactors} 
+              {textFactors}
               <br />
               <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
-              2/{numOfUnplanned}
+                2/{numOfUnplanned}
               </span>
             </p>
 
@@ -129,10 +133,10 @@ function Roadside({ onNext }) {
               }}
             />
             <p className="counter-planned">
-            {textFactors} 
+              {textFactors}
               <br />
               <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
-              2/{numOfPlanned}
+                2/{numOfPlanned}
               </span>
             </p>
             <p className="unplanned">{unplanned}</p>
@@ -152,24 +156,24 @@ function Roadside({ onNext }) {
               ))}
           </div>
         );
-        case 2:
+      case 2:
         return (
           <div key={index} className="page3">
             <TitledGraphics />
           </div>
         );
-        case 3:
-          return (
-            <div key={index} className="page4">
+      case 3:
+        return (
+          <div key={index} className="page4">
             <TitledGraphics />
           </div>
-          );
-          case 4:
-            return (
-              <div key={index} className="page5">
-              <Rocks />
-            </div>
-            );
+        );
+      case 4:
+        return (
+          <div key={index} className="page5">
+            <Rocks onAllRocksClicked={handleRocksComplete} />
+          </div>
+        );
       // אם יש עוד עמודים אפשר להוסיף כאן case נוספים
       default:
         return (
@@ -198,7 +202,15 @@ function Roadside({ onNext }) {
           {backBtn}
         </button>
 
-        <button className="nav-button2" onClick={nextPage}  disabled={pageIndex === 1 && !(numOfPlanned === 0 && numOfUnplanned === 0)}>
+        <button
+          className="nav-button2"
+          onClick={nextPage}
+          disabled={
+            (pageIndex === 1 &&
+              !(numOfPlanned === 0 && numOfUnplanned === 0)) ||
+            (pageIndex === 4 && !rocksDone)
+          }
+        >
           {nextBtn}
         </button>
       </div>

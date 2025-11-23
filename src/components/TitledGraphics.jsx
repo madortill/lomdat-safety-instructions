@@ -23,9 +23,9 @@ function TitledGraphics() {
         </div>
       </div>
       <div className="graphic3">
-        <p className="div-text-graphic3">
+        <div className="div-text-graphic3">
           <p className="text-graphics">{graphicText3}</p>
-        </p>
+        </div>
       </div>
     </div>
   );

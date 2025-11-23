@@ -58,6 +58,132 @@
     top: -2.3rem;
     left: 1.3rem;
 }
-.rock:focus {
+.active-rock {
     filter: drop-shadow(0 0 15px #002983);
+    transition: filter 0.3s ease;
+  }
+  
+.big-rock1 {
+    position: relative;
+    top: -3rem;
+    width: 17rem;
+    height: 12rem;
+    background-image: url('../assets/images/rocks/big-rock1.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    /* אין צבע רקע */
+    border: none;
+    /* אין מסגרת */
+    outline: none;
 }
+.big-rock2 {
+    position: relative;
+    top: -3rem;
+    width: 15rem;
+    height: 15.4rem;
+    background-image: url('../assets/images/rocks/big-rock2.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    /* אין צבע רקע */
+    border: none;
+    /* אין מסגרת */
+    outline: none;
+}
+.big-rock3 {
+    position: relative;
+    top: -4rem;
+    left: 1rem;
+    width: 21rem;
+    height: 16rem;
+    background-image: url('../assets/images/rocks/big-rock3.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    /* אין צבע רקע */
+    border: none;
+    /* אין מסגרת */
+    outline: none;
+}
+.big-rock4 {
+    position: relative;
+    top: -4rem;
+    /* left: 1rem; */
+    width: 17rem;
+    height: 16rem;
+    background-image: url('../assets/images/rocks/big-rock4.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    /* אין צבע רקע */
+    border: none;
+    /* אין מסגרת */
+    outline: none;
+}
+.big-rock5 {
+    position: relative;
+    top: -4rem;
+    /* left: 1rem; */
+    width: 14rem;
+    height: 17rem;
+    background-image: url('../assets/images/rocks/big-rock5.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    /* אין צבע רקע */
+    border: none;
+    /* אין מסגרת */
+    outline: none;
+}
+.rock.selected {
+    filter: drop-shadow(0 0 20px #002983);
+    transition: filter 0.3s ease;
+  }
+
+  .text-rocks {
+    color: white;
+    font-family: "rubik";
+    font-weight: 700;
+    font-size: 1.2rem;
+    width: 13rem;
+    position: relative;
+    top: 4rem;
+    right: 2.5rem;
+  }
+  .text-rock1 {
+    width: 13rem;
+    position: relative;
+    top: 4rem;
+    right: 2.5rem;
+  }
+  .text-rock2 {
+    width: 10rem;
+    position: relative;
+    top: 5rem;
+    right: 2.5rem;
+  }
+  .text-rock3 {
+    width: 10rem;
+    position: relative;
+    top: 5rem;
+    right: 6rem;
+  }
+  .text-rock4 {
+    width: 13rem;
+    position: relative;
+    top: 5rem;
+    right: 1.5rem;
+  }
+  .text-rock5 {
+    width: 9rem;
+    position: relative;
+    top: 5rem;
+    right: 3rem;
+  }
+  
