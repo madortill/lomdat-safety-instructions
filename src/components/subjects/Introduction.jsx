@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../style/introduction.css";
 import { useData } from "../../context/DataContext.jsx"; // import של הקונטקסט
+import PayAttention from "../PayAttention.jsx";
 
 function Introduction({ onNext }) {
   const { data } = useData(); // כאן מקבלים את ה-JSON הנוכחי לפי השפה שנבחרה
@@ -12,6 +13,7 @@ function Introduction({ onNext }) {
   const sentenceIntro3 = data.introduction[3].text; // משפט 3
   const nextBtn = data.buttons[0].text;
   const backBtn = data.buttons[1].text;
+  const important = data.payAttention[0].intro;
 
   const [pageIndex, setPageIndex] = useState(0);
 
@@ -32,6 +34,7 @@ function Introduction({ onNext }) {
       {pageIndex === 0 && (
         <div className="intro-page1">
           <p>תוכן של עמוד ראשון — לדוגמה הסבר ראשוני</p>
+          <PayAttention text={important} />
         </div>
       )}
 

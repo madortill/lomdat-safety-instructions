@@ -52,27 +52,27 @@
     top: -1.5rem;
     left: 4.5rem;
   }
-  .distance {
+  .keepingDistance {
     position: relative;
     top: -6.5rem;
     left: -4.5rem;
   }
-  .animals {
+  .animalAccidents {
     position: relative;
     top: -7.5rem;
     left: -3.3rem;
   }
-  .wheel {
+  .changingWheel {
     position: relative;
     top: -11rem;
     left: 8.3rem;
   }
-  .fire {
+  .fireDrill {
     position: relative;
     top: -14rem;
     left: 2.5rem;
   }
-  .turning-over {
+  .flippingDrill {
     position: relative;
     top: -21rem;
     left: -7.5rem;
@@ -107,7 +107,7 @@
   /* אנימציה של הנושא הגדול */
 @keyframes pop {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.3); }
+  50% { transform: scale(2); }
 }
 
 

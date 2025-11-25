@@ -35,6 +35,30 @@
   justify-content: center;
   align-items: center;
 }
+.pay-attention {
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  width: 20rem;
+  height: 9rem;
+  background-image: url('../assets/images/PayAttention.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 2rem; 
+  font-family: "rubik";
+  font-weight: 700; 
+  color: #003F88;
+  z-index: 2; 
+  pointer-events: auto;
+}
+.text-payAttetion {
+  width: 15rem;
+  position: relative;
+  top: 1.5rem;
+  right: 3rem;
+}
 
 
   

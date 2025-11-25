@@ -56,35 +56,35 @@
                 "text": "ירידה ועלייה מהשול",
                 "id": "roadside",
                 "img": "roadside",
-                "nextId": "distance"
+                "nextId": "keepingDistance"
             },
             {
                 "text": "שמירת מרחק",
-                "id": "distance",
+                "id": "keepingDistance",
                 "img": "distance",
-                "nextId": "animals"
+                "nextId": "animalAccidents"
             },
             {
                 "text": "תאונות עם בעלי חיים",
-                "id": "animals",
+                "id": "animalAccidents",
                 "img": "animals",
-                "nextId": "wheel"
+                "nextId": "changingWheel"
             },
             {
                 "text": "החלפת גלגל",
-                "id": "wheel",
+                "id": "changingWheel",
                 "img": "wheel",
-                "nextId": "fire"
+                "nextId": "fireDrill"
             },
             {
                 "text": "שריפה ברכב",
-                "id": "fire",
+                "id": "fireDrill",
                 "img": "fire",
-                "nextId": "turning-over"
+                "nextId": "flippingDrill"
             },
             {
                 "text": "התהפכות",
-                "id": "turning-over",
+                "id": "flippingDrill",
                 "img": "turning-over",
                 "nextId": "practice"
             },
@@ -100,7 +100,7 @@
                 "id": "next-btn"
             },
             {
-                "text": "הקודם",
+                "text": "חזור",
                 "id": "back-btn"
             }
         ],
@@ -137,7 +137,7 @@
                 "planned": "מתוכננים",
                 "text": "גורמים שנשאר לפתוח",
                 "factor1": "1. עצירה לתיקון תקלה",
-                "factor2": "2. עצירה לתיקוןאי תקלה",
+                "factor2": "2. עצירה לצורך העלאת והורדת נוסעים",
                 "id": "planned"
             },
             {
@@ -200,6 +200,40 @@
                         "text3": "עצמים מסוכנים בשול"
                     }
                 ]
+            }
+        ],
+        "payAttention": [
+            {
+                "intro": "כל אלו מקרים אמיתיים שקרו בגלל אי ציות להוראות בטיחות",
+                "roadside": "זכרו! גם על שול הדרך קיימות סכנות כגון: בורות, תמרורים והולכי רגל.",
+                "twoSec": "זכרו!בחורף מומלץ לשמור על מרווח של 3 שניות.",
+                "whyDistance": "זכרו! החוק קובע כי נהג חייב לשמור על מרווח, המאפשר עצירה של הרכב בכל עת, למניעת תאונה.",
+                "FlippingDrill": "זכרו!בחורף מומלץ לשמור על מרווח של 3 שניות."
+            }
+        ],
+        "keepingDistance": [
+            {
+                "secTitle": "שמירת מרחק",
+                "text1": "שמירת מרחק מהמכונית שלפנים חיונית ועשויה למנוע כ-4000 תאונות בכל שנה בישראל.",
+                "text2": "הזמן המומלץ לשמירת מרווח מהרכב שלפנים הוא 2 שניות, בחורף 3 שניות.",
+                "id": "keepingDistanceSubj1"
+            },
+            {
+                "secTitle":"כלל שתי השניות",
+                "text": "2 שניות",
+                "id":"animaition"
+            },
+            {
+                "secTitle":"מדוע יש לשמור מרחק?",
+                "text":"-לחצו על לוחיות הרישוי-",
+                "reason1":"למנוע תאונה “חזית-אחור” בעת עצירה או האטה.",
+                "reason2":"לשפר את שדה הראייה.",
+                "reason3":"לאפשר לרכב עוקף להיכנס למרווח שנוצר לפנים.",
+                "reason4":"לאפשר יציאה בטוחה לעקיפה",
+                "reason5":"למנוע שחיקת בלמים וצריכת דלק מופרזת.",
+                "reason6":"למנוע מתח ועייפות מהנהג - בשמירת מרחק הנהיגה רגועה ומשוחררת.",
+                "reason7":"למנוע החלקה בזמן בלימת חירום על כביש רטוב",
+                "reason8":"למנוע פגיעה של חפצים, הנופלים מהרכבים שלפנינו."
             }
         ]
     }

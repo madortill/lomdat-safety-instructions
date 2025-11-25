@@ -39,22 +39,25 @@ function SubjMap({ onSelectSubject, unlockedSubjects, highlightedSubject }) {
             return (
               <div
                 key={item.id}
-                className={`subjects ${isUnlocked ? "active" : "disabled"} ${
-                  isHighlighted ? "pop-animation" : ""
-                }`}
-                onClick={() => {
-                  if (isUnlocked && onSelectSubject) onSelectSubject(item.id);
-                }}
+                className={`subjects ${isUnlocked ? "active" : "disabled"}`}
                 style={{
-                  cursor: isUnlocked ? "pointer" : "not-allowed",
-                  opacity: isUnlocked ? 1 : 0.5, // חצי שקוף לנושאים סגורים
-                  transition: "opacity 0.3s, transform 0.3s",
+                  opacity: isUnlocked ? 1 : 0.5,
+                  transition: "opacity 0.3s",
+                  cursor: "default",
                 }}
               >
                 <img
                   src={imgSrc}
-                  className={`subject ${item.id}`}
+                  className={`subject ${item.id} ${isHighlighted ? "pop-animation" : ""}`}
                   alt={item.text}
+                  onClick={() => {
+                    if (isUnlocked && onSelectSubject) {
+                      onSelectSubject(item.id);
+                    }
+                  }}
+                  style={{
+                    cursor: isUnlocked ? "pointer" : "not-allowed",
+                  }}
                 />
               </div>
             );

@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from "react";
+import "../style/home.css";
 
-function PayAttention() {
+function PayAttention({text}) {
   return (
-    <div>
-      
+    <div className="pay-attention">
+      <p className="text-payAttetion">{text}</p>
     </div>
   )
 }
