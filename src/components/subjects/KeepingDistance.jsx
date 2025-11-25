@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useData } from "../../context/DataContext.jsx";
+import "../../style/keepingDistance.css";
+import distanceImg from "../../assets/images/keepingDistance/distance.png";
 
 function KeepDistance({ onNext }) {
   const { data } = useData();
@@ -19,31 +21,47 @@ function KeepDistance({ onNext }) {
     setPageIndex((prev) => Math.max(prev - 1, 0));
   };
 
-  const currentPage = pages[pageIndex];
-
   return (
     <div className="subject-container">
       <p className="title-subjects">{titleKeepingDistance}</p>
 
-      <div className={`page page${pageIndex + 1}`}>
-        <p className="sec-title">{currentPage.secTitle}</p>
-        {/* טקסטים כלליים */}
-        {currentPage.text1 && <p>{currentPage.text1}</p>}
-        {currentPage.text2 && <p>{currentPage.text2}</p>}
-        {currentPage.text && <p>{currentPage.text}</p>}
+      {/* עמוד 1 */}
+      <div
+        className="page page1"
+        style={{ display: pageIndex === 0 ? "block" : "none" }}
+      >
+        <p className="sec-title-subjects">{pages[0].secTitle}</p>
+        <ul className="distance-text">
+          {[pages[0].text1, pages[0].text2].map((text, index) =>
+            text ? <li key={index}>{text}</li> : null
+          )}
+        </ul>
+        <img src={distanceImg} className="distanceImg" alt="distanceImg" />
+      </div>
 
-        {/* רשימת סיבות אם קיימות */}
-        {Object.keys(currentPage)
-          .filter((key) => key.startsWith("reason"))
-          .length > 0 && (
-          <ul className="reason-list">
-            {Object.keys(currentPage)
-              .filter((key) => key.startsWith("reason"))
-              .map((key) => (
-                <li key={key}>{currentPage[key]}</li>
-              ))}
-          </ul>
-        )}
+      {/* עמוד 2 */}
+      <div
+        className="page page2"
+        style={{ display: pageIndex === 1 ? "block" : "none" }}
+      >
+        <p className="sec-title-subjects">{pages[1].secTitle}</p>
+        {pages[1].text && <p>{pages[1].text}</p>}
+      </div>
+
+      {/* עמוד 3 */}
+      <div
+        className="page page3"
+        style={{ display: pageIndex === 2 ? "block" : "none" }}
+      >
+        <p className="sec-title-subjects">{pages[2].secTitle}</p>
+        {/* רשימת סיבות */}
+        <ul className="reason-list">
+          {Object.keys(pages[2])
+            .filter((key) => key.startsWith("reason"))
+            .map((key) => (
+              <li key={key}>{pages[2][key]}</li>
+            ))}
+        </ul>
       </div>
 
       <div className="nav-buttons">
