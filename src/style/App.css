@@ -36,6 +36,7 @@ body {
   font-family: 'askim';
   overflow: hidden;
   position: relative;
+  /* direction: rtl; */
 }
 .bahad6 {
   position: absolute;

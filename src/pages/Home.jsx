@@ -35,8 +35,8 @@ function Home() {
   const closeMapText = data.subjMap[2]["text-close"];
 
   const [showMap, setShowMap] = useState(true);
-  const [currentSubject, setCurrentSubject] = useState(null);
-  const [unlockedSubjects, setUnlockedSubjects] = useState(["introduction"]);
+  const [currentSubject, setCurrentSubject] = useState("");
+  const [unlockedSubjects, setUnlockedSubjects] = useState(["keepingDistance"]);
   const [highlightedSubject, setHighlightedSubject] = useState("introduction");
   const [hasEnteredFirstSubject, setHasEnteredFirstSubject] = useState(false);
   const [isOverlayMap, setIsOverlayMap] = useState(false);

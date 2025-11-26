@@ -9,11 +9,70 @@
     margin: 0rem 2rem;
     padding-top: 0.5rem;
     /* width: 15rem; */
-  }
-  .distanceImg {
+}
+
+.distanceImg {
     position: relative;
     top: 9rem;
     left: 6rem;
     width: 10rem;
 
+}
+
+.animaition-container {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 27rem;
+    height: 39rem;
+    background-image: url('../assets/images/keepingDistance/backroundAnimation.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 2rem;
+    font-family: "rubik";
+    font-weight: 700;
+    color: #003F88;
+    z-index: 1;
+    pointer-events: auto;
+}
+.carsAnimaitions {
+    position: relative;
+    top: 6.5rem;
+    width: 23rem;
+    z-index: 1;
+}
+.lightPole {
+    position: relative;
+    top: 3.7rem;
+    left: 2rem;
+    /* width: 22rem; */
+}
+.text-sec{
+    position: relative;
+    top: -0.3rem;
+    left: 3rem;
+    font-size: 1.2rem;
+}
+/* אנימציה שמזיזה את התמונה אופקית */
+@keyframes slideBackAndForth {
+    0% {
+      left: 2rem;
+    } 
+    5% {
+        left: 2rem;
+      }
+    66.666% {
+      left: 27rem; /* התנועה מסתיימת כאן */
+    }
+    100% {
+      left: 27rem; /* הפסקה של 2 שניות עד הלולאה הבאה */
+    }
   }
+  
+  .page2 img.lightPole {
+    position: relative; /* תשאירי כפי שהוא */
+    animation: slideBackAndForth 4s linear infinite; 
+  }
+  
