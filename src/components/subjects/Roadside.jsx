@@ -137,13 +137,13 @@ function Roadside({ onNext }) {
         );
       case 2:
         return (
-          <div key={index} className="page3">
+          <div key={index} className="page3 margin">
             <TitledGraphics />
           </div>
         );
       case 3:
         return (
-          <div key={index} className="page4">
+          <div key={index} className="page4 margin">
             <TitledGraphics />
           </div>
         );
@@ -155,7 +155,7 @@ function Roadside({ onNext }) {
         );
       case 6:
         return (
-          <div key={index} className="page7">
+          <div key={index} className="page6 margin">
             <div className="graphics-right-wrong-container">
               <div className="graphic-right">
                 <div className="div-text-graphic-right">

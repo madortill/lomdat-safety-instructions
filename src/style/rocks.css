@@ -9,26 +9,31 @@
     position: relative;
     top: 13rem;
     left: 8rem;
+    z-index: 1;
 }
 .container-rock2 {
     position: relative;
     top: 14rem;
     left: 9.5rem;
+    z-index: 1;
 }
 .container-rock3 {
     position: relative;
     top: 4.5rem;
     right: 7rem;
+    z-index: 1;
 }
 .container-rock4 {
     position: relative;
     top: 3rem;
     right: 10.5rem;
+    z-index: 1;
 }
 .container-rock5 {
     position: relative;
     top: 3.4rem;
     right: 11rem;
+    z-index: 1;
 }
 .rock1 {
     width: 4rem;

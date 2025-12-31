@@ -5,18 +5,35 @@ import distanceImg from "../../assets/images/keepingDistance/distance.png";
 import carsAnimaitions from "../../assets/images/keepingDistance/carsAnimaitions.png";
 import lightPole from "../../assets/images/keepingDistance/lightPole.png";
 import PayAttention from "../../components/PayAttention";
+import FlipCard from "../../components/FlipCard";
 
 function KeepDistance({ onNext }) {
   const { data } = useData();
   const [pageIndex, setPageIndex] = useState(0);
   const [sec, setSec] = useState("");
   const [showAttention, setShowAttention] = useState(false); // <-- חדש
+  const [flippedCount, setFlippedCount] = useState(0);
+const [showAttentionPage4, setShowAttentionPage4] = useState(false);
+const [page2Unlocked, setPage2Unlocked] = useState(false);
+const [page4Unlocked, setPage4Unlocked] = useState(false);
 
   const titleKeepingDistance = data.subjMap[5].text;
   const nextBtn = data.buttons[0].text;
   const backBtn = data.buttons[1].text;
   const pages = data.keepingDistance;
   const importantText = data.payAttention[0].twoSec;
+  const importantText2 = data.payAttention[0].whyDistance;
+  const flipTheCards = data.keepingDistance[2].text
+  const reasons = [
+    data.keepingDistance[2].reason1,
+    data.keepingDistance[2].reason2,
+    data.keepingDistance[2].reason3,
+    data.keepingDistance[2].reason4,
+    data.keepingDistance[2].reason5,
+    data.keepingDistance[2].reason6,
+    data.keepingDistance[2].reason7,
+    data.keepingDistance[2].reason8,
+  ];
 
   const nextPage = () =>
     setPageIndex((prev) => Math.min(prev + 1, pages.length - 1));
@@ -39,17 +56,35 @@ function KeepDistance({ onNext }) {
 
   // הצגת PayAttention אחרי סיבוב אחד של האנימציה (נניח 4 שניות)
   useEffect(() => {
-    if (pageIndex !== 1) return;
-
+    if (pageIndex !== 1 || page2Unlocked) return;
+  
     const timer = setTimeout(() => {
       setShowAttention(true);
-    }, 4000); // מחכה 4 שניות לפני הופעה
+      setPage2Unlocked(true); // 🔓 נפתח לתמיד
+    }, 4000);
+  
+    return () => clearTimeout(timer);
+  }, [pageIndex, page2Unlocked]);
 
-    return () => {
-      clearTimeout(timer);
-      setShowAttention(false); // אפס כשעוזבים את העמוד
-    };
-  }, [pageIndex]);
+  // פונקציה שמקבלת דיווח מכרטיס
+  const handleCardFlip = () => {
+    setFlippedCount((prev) => prev + 1);
+  };
+
+  useEffect(() => {
+    if (pageIndex !== 2 || page4Unlocked) return;
+  
+    if (flippedCount === reasons.length && reasons.length > 0) {
+      setShowAttentionPage4(true);
+      setPage4Unlocked(true); // 🔓 נפתח לתמיד
+  
+      setTimeout(() => {
+        setShowAttentionPage4(false);
+      }, 10000);
+    }
+  }, [flippedCount, pageIndex, reasons.length, page4Unlocked]);
+  
+  
 
   return (
     <div className="subject-container">
@@ -90,19 +125,30 @@ function KeepDistance({ onNext }) {
       </div>
 
       {/* עמוד 3 */}
+       <div
+  className="page page4"
+  style={{ display: pageIndex === 2 ? "block" : "none" }}
+>
+<p className="sec-title-subjects">{pages[2].secTitle}</p>
+  <p className="why-distance-text">{flipTheCards}</p>
+
+  <div className="container-license-plate">
+    {reasons.map((reason, index) => (
       <div
-        className="page page3"
-        style={{ display: pageIndex === 2 ? "block" : "none" }}
+        key={index}
+        className={`card ${index % 2 === 0 ? "left" : "right"}`}
       >
-        <p className="sec-title-subjects">{pages[2].secTitle}</p>
-        <ul className="reason-list">
-          {Object.keys(pages[2])
-            .filter((key) => key.startsWith("reason"))
-            .map((key) => (
-              <li key={key}>{pages[2][key]}</li>
-            ))}
-        </ul>
+        <FlipCard
+          back={reason}
+          onFlip={handleCardFlip}
+        />
       </div>
+    ))}
+  </div>
+
+  {showAttentionPage4 && <PayAttention text={importantText2} />}
+</div>
+
 
       <div className="nav-buttons">
         <button
@@ -120,7 +166,10 @@ function KeepDistance({ onNext }) {
               ? () => onNext("AnimalAccidents")
               : nextPage
           }
-          disabled={pageIndex === 1 && !showAttention} // הכפתור לא פעיל עד שהאנימציה הסתיימה
+          disabled={
+            (pageIndex === 1 && !page2Unlocked) ||
+            (pageIndex === 2 && !page4Unlocked)
+          } // הכפתור לא פעיל עד שהאנימציה הסתיימה
         >
           {nextBtn}
         </button>

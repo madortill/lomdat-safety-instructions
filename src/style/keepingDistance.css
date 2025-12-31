@@ -1,78 +1,156 @@
 .distance-text {
-    position: relative;
-    top: 6.5rem;
-    font-size: 1.1rem;
-    margin-bottom: 1.3rem;
-    color: #FFEE97;
-    font-family: "rubik";
-    text-align: right;
-    margin: 0rem 2rem;
-    padding-top: 0.5rem;
-    /* width: 15rem; */
+  position: relative;
+  top: 6.5rem;
+  font-size: 1.1rem;
+  margin-bottom: 1.3rem;
+  color: #FFEE97;
+  font-family: "rubik";
+  text-align: right;
+  margin: 0rem 2rem;
+  padding-top: 0.5rem;
+  /* width: 15rem; */
 }
 
 .distanceImg {
-    position: relative;
-    top: 9rem;
-    left: 6rem;
-    width: 10rem;
+  position: relative;
+  top: 9rem;
+  left: 6rem;
+  width: 10rem;
 
 }
 
 .animaition-container {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 27rem;
-    height: 39rem;
-    background-image: url('../assets/images/keepingDistance/backroundAnimation.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-top: 2rem;
-    font-family: "rubik";
-    font-weight: 700;
-    color: #003F88;
-    z-index: 1;
-    pointer-events: auto;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 27rem;
+  height: 39rem;
+  background-image: url('../assets/images/keepingDistance/backroundAnimation.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 2rem;
+  font-family: "rubik";
+  font-weight: 700;
+  color: #003F88;
+  z-index: 1;
+  pointer-events: auto;
 }
+
 .carsAnimaitions {
-    position: relative;
-    top: 6.5rem;
-    width: 23rem;
-    z-index: 1;
+  position: relative;
+  top: 6.5rem;
+  width: 23rem;
+  z-index: 1;
 }
+
 .lightPole {
-    position: relative;
-    top: 3.7rem;
-    left: 2rem;
-    /* width: 22rem; */
+  position: relative;
+  top: 3.7rem;
+  left: 2rem;
+  /* width: 22rem; */
 }
-.text-sec{
-    position: relative;
-    top: -0.3rem;
-    left: 3rem;
-    font-size: 1.2rem;
+
+.text-sec {
+  position: relative;
+  top: -0.3rem;
+  left: 3rem;
+  font-size: 1.2rem;
 }
+
 /* אנימציה שמזיזה את התמונה אופקית */
 @keyframes slideBackAndForth {
-    0% {
-      left: 2rem;
-    } 
-    5% {
-        left: 2rem;
-      }
-    66.666% {
-      left: 27rem; /* התנועה מסתיימת כאן */
-    }
-    100% {
-      left: 27rem; /* הפסקה של 2 שניות עד הלולאה הבאה */
-    }
+  0% {
+    left: 2rem;
   }
-  
-  .page2 img.lightPole {
-    position: relative; /* תשאירי כפי שהוא */
-    animation: slideBackAndForth 4s linear infinite; 
+
+  5% {
+    left: 2rem;
   }
+
+  66.666% {
+    left: 27rem;
+    /* התנועה מסתיימת כאן */
+  }
+
+  100% {
+    left: 27rem;
+    /* הפסקה של 2 שניות עד הלולאה הבאה */
+  }
+}
+
+.page2 img.lightPole {
+  position: relative;
+  /* תשאירי כפי שהוא */
+  animation: slideBackAndForth 4s linear infinite;
+}
+
+.container-license-plate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* חשוב לגלילה */
+  width: 25rem;
+  height: 25rem;
+  margin-top: 7rem;
+  gap: 3rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
   
+}
+
+.container-license-plate::before {
+  content: "גלול למטה";
+  position: sticky;
+  top: 0;
+  /* ✅ שים למעלה */
+  text-align: right;
+  /* או left לפי רצונך */
+  width: 100%;
+  height: 2.5rem;
+  pointer-events: none;
+  color: #FFEE97;
+  font-family: "Rubik";
+  font-weight: 700;
+  margin-bottom: -4rem;
+  /* חשוב */
+  padding-top: 0;
+
+  background: linear-gradient(to top,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.25));
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+}
+
+.card.left {
+  transform: translateX(2rem);
+}
+
+.card.right {
+  transform: translateX(-2rem);
+}
+
+.card.center {
+  transform: translateX(0);
+}
+
+.why-distance-text {
+  position: relative;
+  top: 6rem;
+  font-size: 1.3rem;
+  /* margin-bottom: 1.3rem; */
+  color: #FFEE97;
+  font-family: "rubik";
+  text-align: center;
+  /* margin: 0rem 2rem; */
+  padding-top: 0.5rem;
+}
+.page {
+  margin-top: 1.5rem;
+}

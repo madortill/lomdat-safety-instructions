@@ -1,38 +1,91 @@
 import React, { useState } from "react";
+import { useData } from "../../context/DataContext.jsx";
+import "../../style/animalAccidents.css";
 
 function AnimalAccidents({ onNext }) {
+  const { data } = useData();
   const [pageIndex, setPageIndex] = useState(0);
 
-  const nextPage = () => {
-    setPageIndex((prev) => Math.min(prev + 1, 1));
-  };
+  const pages = data.animalAccidents;
+  const titleAnimalAccidents = data.subjMap[6].text; // עדכני לפי המיפוי שלך
+  const nextBtn = data.buttons[0].text;
+  const backBtn = data.buttons[1].text;
 
-  const prevPage = () => {
+  const nextPage = () =>
+    setPageIndex((prev) => Math.min(prev + 1, pages.length - 1));
+
+  const prevPage = () =>
     setPageIndex((prev) => Math.max(prev - 1, 0));
-  };
 
   return (
     <div className="subject-container">
-      {pageIndex === 0 && (
-        <div className="page1">
-          <p>תוכן עמוד ראשון - תאונות עם בעלי חיים</p>
-        </div>
-      )}
-      {pageIndex === 1 && (
-        <div className="page2">
-          <p>תוכן עמוד שני - דוגמאות ואיורים</p>
-        </div>
-      )}
+      {/* כותרת ראשית */}
+      <p className="title-subjects">{titleAnimalAccidents}</p>
 
+      {/* עמוד 1 – רקע */}
+      <div
+        className="page page1"
+        style={{ display: pageIndex === 0 ? "block" : "none" }}
+      >
+        <p className="sec-title-subjects">{pages[0].secTitle}</p>
+
+        <ul className="animal-text">
+          <li>{pages[0]["text1-background"]}</li>
+          <li>{pages[0]["text2-background"]}</li>
+        </ul>
+        <img src={distanceImg} className="distanceImg" alt="distanceImg" />
+      </div>
+
+      {/* עמוד 2 – תאונה */}
+      <div
+        className="page page2"
+        style={{ display: pageIndex === 1 ? "block" : "none" }}
+      >
+        <p className="sec-title-subjects">{pages[1].secTitle}</p>
+
+        <ul className="animal-text">
+          <li>{pages[1]["text1-accident"]}</li>
+          <li>{pages[1]["text2-accident"]}</li>
+          <li>{pages[1]["text3-accident"]}</li>
+        </ul>
+      </div>
+
+      {/* עמוד 3 – דגשים */}
+      <div
+        className="page page3"
+        style={{ display: pageIndex === 2 ? "block" : "none" }}
+      >
+        <p className="sec-title-subjects">{pages[2].secTitle}</p>
+
+        {/* כאן אפשר להוסיף:
+            - כרטיסיות
+            - אייקונים
+            - PayAttention
+            - רשימת דגשים */}
+        <p className="animal-highlights-placeholder">
+          (כאן ייכנסו הדגשים להימנעות מהתנגשות)
+        </p>
+      </div>
+
+      {/* ניווט */}
       <div className="nav-buttons">
-        <button className="nav-button1" onClick={prevPage} disabled={pageIndex === 0}>
-          חזור
+        <button
+          className="nav-button1"
+          onClick={prevPage}
+          disabled={pageIndex === 0}
+        >
+          {backBtn}
         </button>
+
         <button
           className="nav-button2"
-          onClick={pageIndex === 1 ? () => onNext("ChangingWheel") : nextPage}
+          onClick={
+            pageIndex === pages.length - 1
+              ? () => onNext("ChangingWheel")
+              : nextPage
+          }
         >
-          המשך
+          {nextBtn}
         </button>
       </div>
     </div>

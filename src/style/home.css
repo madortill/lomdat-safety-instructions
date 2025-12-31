@@ -50,7 +50,7 @@
   font-family: "rubik";
   font-weight: 700; 
   color: #003F88;
-  z-index: 2; 
+  z-index: 1; 
   pointer-events: auto;
 }
 .text-payAttetion {
