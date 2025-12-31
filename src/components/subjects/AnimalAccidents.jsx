@@ -33,7 +33,7 @@ function AnimalAccidents({ onNext }) {
           <li>{pages[0]["text1-background"]}</li>
           <li>{pages[0]["text2-background"]}</li>
         </ul>
-        <img src={distanceImg} className="distanceImg" alt="distanceImg" />
+        {/* <img src={distanceImg} className="distanceImg" alt="distanceImg" /> */}
       </div>
 
       {/* עמוד 2 – תאונה */}
