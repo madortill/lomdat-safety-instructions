@@ -6,7 +6,60 @@
     color: #FFEE97;
     font-family: "rubik";
     text-align: right;
-    margin: 0rem 2rem;
-    padding-top: 0.5rem;
+    border-radius: 1rem;
+    margin: 2rem;
+
     /* width: 15rem; */
+  }
+  .container-accident-text {
+    position: relative;
+    top: 5.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.3rem;
+    color: #003F88;
+    font-family: "rubik";
+    text-align: right;
+    border-radius: 1rem;
+    margin: 4rem 2rem;
+    padding: 2rem;
+    padding-bottom: 3.5rem;
+    background-color: #FFEE97; 
+    /* width: 15rem; */
+  }
+  .accident-text {
+    margin-top: 1rem;
+  }
+  .animalAccidentsImg {
+    position: relative;
+    top: 8rem;
+    left: 7rem;
+  }
+  .carCrashed {
+    position: relative;
+    top: -1rem;
+    right: 6rem;
+  }
+  @media (max-width: 400px) {
+    .carCrashed {
+      top: -3rem;
+      right: 5rem;
+      width: 9rem;
+    }
+    .animalAccidentsImg {
+      top: 8rem;
+      left: 6.5rem;
+      width: 9rem;
+    }
+  }
+  @media (max-width: 355px) {
+    .carCrashed {
+      top: -2rem;
+      right: 0rem;
+      width: 8rem;
+    }
+    .animalAccidentsImg {
+      top: 8rem;
+      left: 5.8rem;
+      width: 8.2rem;
+    }
   }

@@ -1,0 +1,24 @@
+/* .wheel-text {
+    position: relative;
+    top: 7rem;
+    font-size: 1.3rem;
+    color: #FFEE97;
+    font-family: "rubik";
+    text-align: right;
+    margin: 0rem 1rem;
+    padding-top: 0.5rem;
+    font-weight: 700;
+} */
+.wheel-text {
+    position: relative;
+    top: 7rem;
+    font-size: 1.2rem;
+    /* margin-bottom: 1rem; */
+    color: #FFEE97;
+    font-family: "rubik";
+    text-align: right;
+    margin: 0rem 1rem;
+    padding-top: 0.5rem;
+    /* font-weight: 700; */
+    /* width: 15rem; */
+}

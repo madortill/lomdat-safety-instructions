@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { useData } from "../context/DataContext.jsx";
 import "../style/TitledGraphics.css";
 
-function TitledGraphics() {
+function TitledGraphics({ subject = "roadside" }) {
   const { data } = useData();
-  const [currGraphicSubj, setcurrGraphicSubj] = useState("roadside")
 
-  const graphicText1 = data.titledGraphics[0][currGraphicSubj][0].text1;
-  const graphicText2 = data.titledGraphics[0][currGraphicSubj][0].text2;
-  const graphicText3 = data.titledGraphics[0][currGraphicSubj][0].text3;
+  const graphicText1 = data.titledGraphics[0][subject][0].text1;
+  const graphicText2 = data.titledGraphics[0][subject][0].text2;
+  const graphicText3 = data.titledGraphics[0][subject][0].text3;
 
   return (
     <div className="container-graphics">

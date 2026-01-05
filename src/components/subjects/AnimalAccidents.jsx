@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useData } from "../../context/DataContext.jsx";
 import "../../style/animalAccidents.css";
+import carCrashed from "../../assets/images/animalAccidents/carCrashed.png";
+import animalAccidentsImg from "../../assets/images/animalAccidents/animalAccidentsImg.png";
+import TitledGraphics  from "../../components/TitledGraphics";
 
 function AnimalAccidents({ onNext }) {
   const { data } = useData();
@@ -33,7 +36,7 @@ function AnimalAccidents({ onNext }) {
           <li>{pages[0]["text1-background"]}</li>
           <li>{pages[0]["text2-background"]}</li>
         </ul>
-        {/* <img src={distanceImg} className="distanceImg" alt="distanceImg" /> */}
+        <img className="animalAccidentsImg" src={animalAccidentsImg} alt="animalAccidentsImg" />
       </div>
 
       {/* עמוד 2 – תאונה */}
@@ -43,11 +46,12 @@ function AnimalAccidents({ onNext }) {
       >
         <p className="sec-title-subjects">{pages[1].secTitle}</p>
 
-        <ul className="animal-text">
-          <li>{pages[1]["text1-accident"]}</li>
-          <li>{pages[1]["text2-accident"]}</li>
-          <li>{pages[1]["text3-accident"]}</li>
-        </ul>
+        <div className="container-accident-text">
+          <p>{pages[1]["text1-accident"]}</p>
+          <p className="accident-text">{pages[1]["text2-accident"]}</p>
+          <p className="accident-text">{pages[1]["text3-accident"]}</p>
+        </div>
+        <img className="carCrashed" src={carCrashed} alt="carCrashed" />
       </div>
 
       {/* עמוד 3 – דגשים */}
@@ -56,15 +60,7 @@ function AnimalAccidents({ onNext }) {
         style={{ display: pageIndex === 2 ? "block" : "none" }}
       >
         <p className="sec-title-subjects">{pages[2].secTitle}</p>
-
-        {/* כאן אפשר להוסיף:
-            - כרטיסיות
-            - אייקונים
-            - PayAttention
-            - רשימת דגשים */}
-        <p className="animal-highlights-placeholder">
-          (כאן ייכנסו הדגשים להימנעות מהתנגשות)
-        </p>
+        <TitledGraphics subject="animalAccidents" />
       </div>
 
       {/* ניווט */}
