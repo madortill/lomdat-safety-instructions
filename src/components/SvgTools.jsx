@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FlipCardTools from "./FlipCardTools";
 import { useData } from "../context/DataContext.jsx";
 
-function svgTools() {
+function SvgTools({ onToolFlip }) {
   const { data } = useData();
   if (!data || !data.changingWheel) return null;
 
@@ -15,7 +15,7 @@ function svgTools() {
   const highlight6 = data.changingWheel[1].highlight6;
   return (
     <div>
-      <svg width="320" height="462" viewBox="0 0 356 462" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="310" height="462" viewBox="0 0 356 462" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="10" y="288" width="19" height="174" fill="#626262"/>
 <rect x="42" y="249" width="19" height="169" fill="#626262"/>
 <rect x="312" y="291" width="19" height="171" fill="#626262"/>
@@ -29,7 +29,7 @@ function svgTools() {
   width={101}
   height={161}
   flipText={highlight1}
-  onFlip={() => console.log("כלי 1 נפתח")}
+  onFlip={() => onToolFlip(1)}
 >
   {/* כלי 1 */}
 <g filter="url(#filter0_d_361_19)">
@@ -51,7 +51,7 @@ function svgTools() {
   width={101}
   height={161}
   flipText={highlight2} // כאן שמים את הטקסט המתאים
-  onFlip={() => console.log("כלי 2 נפתח")}
+  onFlip={() => onToolFlip(2)}
 >
 <g filter="url(#filter5_d_361_19)">
 <rect x="126" y="12" width="101" height="161" rx="9" fill="#889BA6"/>
@@ -72,7 +72,7 @@ function svgTools() {
   width={101}
   height={161}
   flipText={highlight3} 
-  onFlip={() => console.log("כלי 3 נפתח")}
+  onFlip={() => onToolFlip(3)}
 >
 <g filter="url(#filter2_d_361_19)">
 <rect x="15" y="12" width="101" height="161" rx="9" fill="#889BA6"/>
@@ -92,7 +92,7 @@ function svgTools() {
   width={101}
   height={161}
   flipText={highlight4} 
-  onFlip={() => console.log("כלי 4 נפתח")}
+  onFlip={() => onToolFlip(4)}
 >
 <g filter="url(#filter3_d_361_19)">
 <rect x="237" y="191" width="101" height="161" rx="9" fill="#889BA6"/>
@@ -110,7 +110,7 @@ function svgTools() {
   width={101}
   height={161}
   flipText={highlight5} // הטקסט המתאים לדגש החמישי
-  onFlip={() => console.log("כלי 5 נפתח")}
+  onFlip={() => onToolFlip(5)}
 >
 <g filter="url(#filter4_d_361_19)">
 <rect x="126" y="190" width="101" height="161" rx="9" fill="#889BA6"/>
@@ -135,7 +135,7 @@ function svgTools() {
   width={101}
   height={161}
   flipText={highlight6} // הטקסט המתאים לדגש השלישי
-  onFlip={() => console.log("כלי 6 נפתח")}
+  onFlip={() => onToolFlip(6)}
 >
 <g filter="url(#filter1_d_361_19)">
 <rect x="15" y="191" width="101" height="161" rx="9" fill="#889BA6"/>
@@ -219,4 +219,4 @@ function svgTools() {
   )
 }
 
-export default svgTools
+export default SvgTools

@@ -1,0 +1,40 @@
+.container-fire-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    width: 25rem;
+    height: 15rem;
+    margin-top: 8rem;
+    margin-right: 2.8rem;
+}
+.fire-card {
+    width: 11rem;
+    height: 11rem;
+    margin-top: 1rem;
+    background-image: url('../assets/images/fireDrill/fireCard.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    position: relative; /* חשוב! */
+  }
+  
+  .text-fire-card {
+    position: absolute;
+    top: 1rem;              /* מרחק מהחלק העליון של הכרטיס */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;             /* מונע גלישה החוצה */
+    text-align: center;
+    font-size: 0.9rem;      /* התאימי לפי הצורך */
+    line-height: 1.2;
+    word-wrap: break-word;
+    padding: 0rem 1rem;
+    font-family: "rubik";
+    color: #003F88;
+    font-weight: bold;
+  }

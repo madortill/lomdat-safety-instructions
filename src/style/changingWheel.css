@@ -1,14 +1,13 @@
-/* .wheel-text {
+.wheel-text-microfopy {
     position: relative;
-    top: 7rem;
-    font-size: 1.3rem;
+    top: -1.5rem;
+    font-size: 1.2rem;
     color: #FFEE97;
     font-family: "rubik";
     text-align: right;
     margin: 0rem 1rem;
     padding-top: 0.5rem;
-    font-weight: 700;
-} */
+}
 .wheel-text {
     position: relative;
     top: 7rem;
@@ -21,4 +20,9 @@
     padding-top: 0.5rem;
     /* font-weight: 700; */
     /* width: 15rem; */
+}
+.tools {
+    position: absolute;
+    top: -0.5rem;
+    left: -4.55rem;
 }

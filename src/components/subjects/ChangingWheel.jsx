@@ -7,8 +7,12 @@ function ChangingWheel({ onNext }) {
   const { data } = useData();
   const [pageIndex, setPageIndex] = useState(0);
 
-  const pages = data.changingWheel; 
-  const titleChangingWheel = data.subjMap[7].text; // עדכן לפי המיפוי שלך
+  // ⬇️ חדש: ספירת קלפים
+  const TOTAL_CARDS = 6;
+  const [flippedCount, setFlippedCount] = useState(0);
+
+  const pages = data.changingWheel;
+  const titleChangingWheel = data.subjMap[7].text;
   const nextBtn = data.buttons[0].text;
   const backBtn = data.buttons[1].text;
 
@@ -17,6 +21,14 @@ function ChangingWheel({ onNext }) {
 
   const prevPage = () =>
     setPageIndex((prev) => Math.max(prev - 1, 0));
+
+  // ⬇️ חדש: פונקציה שקלף קורא לה
+  const handleToolFlip = () => {
+    setFlippedCount((prev) => Math.min(prev + 1, TOTAL_CARDS));
+  };
+
+  // ⬇️ חדש: האם אפשר לעבור הלאה
+  const isNextEnabled = flippedCount === TOTAL_CARDS;
 
   return (
     <div className="subject-container">
@@ -35,12 +47,13 @@ function ChangingWheel({ onNext }) {
           {/* תוכן עמוד ראשון – טקסט + SVG */}
           {index === 0 && (
             <div className="wheel-text">
-              <p>{page.text}</p>
-              <SvgTools />
+              <p className="wheel-text-microfopy">{page.text}</p>
+              <div className="tools">
+                {/* ⬇️ חדש: העברת callback */}
+                <SvgTools onToolFlip={handleToolFlip} />
+              </div>
             </div>
           )}
-
-          {/* ניתן להוסיף עמודים נוספים אם יהיו */}
         </div>
       ))}
 
@@ -55,15 +68,17 @@ function ChangingWheel({ onNext }) {
         </button>
 
         <button
-          className="nav-button2"
-          onClick={
-            pageIndex === pages.length - 1
-              ? () => onNext("NextSection") // שנה בהתאם לשלב הבא
-              : nextPage
-          }
-        >
-          {nextBtn}
-        </button>
+  className="nav-button2"
+  disabled={!isNextEnabled}
+  onClick={() => onNext("Map")}
+  style={{
+    opacity: isNextEnabled ? 1 : 0.4,
+    cursor: isNextEnabled ? "pointer" : "not-allowed",
+  }}
+>
+  {nextBtn}
+</button>
+
       </div>
     </div>
   );

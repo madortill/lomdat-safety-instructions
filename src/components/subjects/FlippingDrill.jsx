@@ -1,20 +1,88 @@
 import React, { useState } from "react";
+import { useData } from "../../context/DataContext.jsx";
+import "../../style/flippingDrill.css";
+import carFlipped from "../../assets/images/flippingDrill/carFlipped.png";
+import gripPointsCar from "../../assets/images/flippingDrill/gripPointsCar.png";
+import TitledGraphics  from "../../components/TitledGraphics";
 
 function FlippingDrill({ onNext }) {
+  const { data } = useData();
   const [pageIndex, setPageIndex] = useState(0);
 
-  const nextPage = () => setPageIndex((prev) => Math.min(prev + 1, 1));
-  const prevPage = () => setPageIndex((prev) => Math.max(prev - 1, 0));
+  const pages = data.FlippingDrill;
+  const titleFlippingDrill = data.subjMap[9].text; // עדכני לפי המיפוי שלך
+  const nextBtn = data.buttons[0].text;
+  const backBtn = data.buttons[1].text;
+
+  const nextPage = () =>
+    setPageIndex((prev) => Math.min(prev + 1, pages.length - 1));
+
+  const prevPage = () =>
+    setPageIndex((prev) => Math.max(prev - 1, 0));
 
   return (
     <div className="subject-container">
-      {pageIndex === 0 && <div className="page1"><p>תוכן עמוד ראשון - ההתהפכות</p></div>}
-      {pageIndex === 1 && <div className="page2"><p>תוכן עמוד שני - דוגמאות ואיורים</p></div>}
+      {/* כותרת ראשית */}
+      <p className="title-subjects">{titleFlippingDrill}</p>
 
+      {/* עמוד 1 – רקע */}
+      <div
+        className="page page1"
+        style={{ display: pageIndex === 0 ? "block" : "none" }}
+      >
+        <p className="sec-title-subjects">{pages[0].secTitle}</p>
+
+        <ul className="flipping-text">
+          <li>{pages[0].text1}</li>
+          <li>{pages[0].text2}</li>
+          <li>{pages[0].text3}</li>
+        </ul>
+        <img className="carFlippedImg" src={carFlipped} alt="carFlipped" />
+      </div>
+
+      {/* עמוד 2 – התנהלות לפני נסיעה */}
+      <div
+        className="page page2"
+        style={{ display: pageIndex === 1 ? "block" : "none" }}
+      >
+        <p className="sec-title-subjects">{pages[1].secTitle}</p>
+        <TitledGraphics subject="flippingDrill" />
+      </div>
+
+      {/* עמוד 3 – נקודות אחיזה */}
+      <div
+        className="page page3"
+        style={{ display: pageIndex === 2 ? "block" : "none" }}
+      >
+        <p className="sec-title-subjects">{pages[2].secTitle}</p>
+
+        <div className="gripPointsContainer">
+        <img className="gripPointsCar" src={gripPointsCar} alt="gripPointsCar" />
+          <p className="gripPointsCarText steeringWheel">{pages[2].gripPointSteeringWheel}</p>
+          <p className="gripPointsCarText chairs">{pages[2].gripPointChairs}</p>
+          <p className="gripPointsCarText handles">{pages[2].gripPointHandles}</p>
+        </div>
+      </div>
+
+      {/* ניווט */}
       <div className="nav-buttons">
-        <button className="nav-button1" onClick={prevPage} disabled={pageIndex === 0}>חזור</button>
-        <button className="nav-button2" onClick={pageIndex === 1 ? () => onNext("Practice") : nextPage}>
-          המשך
+        <button
+          className="nav-button1"
+          onClick={prevPage}
+          disabled={pageIndex === 0}
+        >
+          {backBtn}
+        </button>
+
+        <button
+          className="nav-button2"
+          onClick={
+            pageIndex === pages.length - 1
+              ? () => onNext("Practice")
+              : nextPage
+          }
+        >
+          {nextBtn}
         </button>
       </div>
     </div>

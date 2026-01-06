@@ -1,0 +1,68 @@
+.flipping-text {
+    position: relative;
+    top: 6.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.3rem;
+    color: #FFEE97;
+    font-family: "rubik";
+    text-align: right;
+    border-radius: 1rem;
+    margin: 2rem;
+
+    /* width: 15rem; */
+  }
+  .carFlippedImg {
+    width: 9rem;
+    position: absolute;
+    top: 20rem;
+    left: 15rem;
+  }
+  .gripPointsContainer{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+  }
+  .gripPointsCar {
+    width: 22rem;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .gripPointsCarText {
+    position: relative;
+    color: #FFEE97;
+    font-family: "rubik";
+    width: 10rem;
+  }
+  .steeringWheel {
+    top: 7rem;
+    right: 15rem;
+  }
+  .chairs {
+    top: 7rem;
+    left: 6rem;
+  }
+  .handles {
+    top: 30.7rem;
+    left: 17rem;
+  }
+  @media (max-width: 375px) {
+    .gripPointsCar {
+        width: 19rem;
+        top: 53.5%;
+      }
+      .steeringWheel {
+        top: 9rem;
+        right: 14rem;
+      }
+      .chairs {
+        top: 8.4rem;
+        left: 5rem;
+      }
+      .handles {
+        top: 29.5rem;
+        left: 15rem;
+      }
+  }
