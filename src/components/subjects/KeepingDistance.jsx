@@ -11,11 +11,11 @@ function KeepDistance({ onNext }) {
   const { data } = useData();
   const [pageIndex, setPageIndex] = useState(0);
   const [sec, setSec] = useState("");
-  const [showAttention, setShowAttention] = useState(false); // <-- חדש
+  const [showAttentionPage2, setShowAttentionPage2] = useState(false);
+  const [showAttentionPage3, setShowAttentionPage3] = useState(false);
   const [flippedCount, setFlippedCount] = useState(0);
-const [showAttentionPage4, setShowAttentionPage4] = useState(false);
-const [page2Unlocked, setPage2Unlocked] = useState(false);
-const [page4Unlocked, setPage4Unlocked] = useState(false);
+  const [page2Unlocked, setPage2Unlocked] = useState(false);
+  const [page3Unlocked, setPage3Unlocked] = useState(false);
 
   const titleKeepingDistance = data.subjMap[5].text;
   const nextBtn = data.buttons[0].text;
@@ -23,23 +23,19 @@ const [page4Unlocked, setPage4Unlocked] = useState(false);
   const pages = data.keepingDistance;
   const importantText = data.payAttention[0].twoSec;
   const importantText2 = data.payAttention[0].whyDistance;
-  const flipTheCards = data.keepingDistance[2].text
+
   const reasons = [
-    data.keepingDistance[2].reason1,
-    data.keepingDistance[2].reason2,
-    data.keepingDistance[2].reason3,
-    data.keepingDistance[2].reason4,
-    data.keepingDistance[2].reason5,
-    data.keepingDistance[2].reason6,
-    data.keepingDistance[2].reason7,
-    data.keepingDistance[2].reason8,
+    pages[2].reason1,
+    pages[2].reason2,
+    pages[2].reason3,
+    pages[2].reason4,
+    pages[2].reason5,
+    pages[2].reason6,
+    pages[2].reason7,
+    pages[2].reason8,
   ];
 
-  const nextPage = () =>
-    setPageIndex((prev) => Math.min(prev + 1, pages.length - 1));
-  const prevPage = () => setPageIndex((prev) => Math.max(prev - 1, 0));
-
-  // ספירה בין 1 ל-2 בעמוד 2
+  /* אנימציית ספירה */
   useEffect(() => {
     if (pageIndex !== 1) return;
 
@@ -51,125 +47,124 @@ const [page4Unlocked, setPage4Unlocked] = useState(false);
       setSec(currentSecond.toString());
     }, 2000);
 
+    setTimeout(() => setPage2Unlocked(true), 4000);
+
     return () => clearInterval(interval);
   }, [pageIndex]);
 
-  // הצגת PayAttention אחרי סיבוב אחד של האנימציה (נניח 4 שניות)
-  useEffect(() => {
-    if (pageIndex !== 1 || page2Unlocked) return;
-  
-    const timer = setTimeout(() => {
-      setShowAttention(true);
-      setPage2Unlocked(true); // 🔓 נפתח לתמיד
-    }, 4000);
-  
-    return () => clearTimeout(timer);
-  }, [pageIndex, page2Unlocked]);
-
-  // פונקציה שמקבלת דיווח מכרטיס
+  /* ספירת קלפים */
   const handleCardFlip = () => {
     setFlippedCount((prev) => prev + 1);
   };
 
   useEffect(() => {
-    if (pageIndex !== 2 || page4Unlocked) return;
-  
     if (flippedCount === reasons.length && reasons.length > 0) {
-      setShowAttentionPage4(true);
-      setPage4Unlocked(true); // 🔓 נפתח לתמיד
-  
-      setTimeout(() => {
-        setShowAttentionPage4(false);
-      }, 10000);
+      setPage3Unlocked(true);
     }
-  }, [flippedCount, pageIndex, reasons.length, page4Unlocked]);
-  
-  
+  }, [flippedCount, reasons.length]);
+
+  /* ניווט */
+  const nextPage = () => {
+    // עמוד 2 – קודם PayAttention
+    if (pageIndex === 1 && page2Unlocked && !showAttentionPage2) {
+      setShowAttentionPage2(true);
+      return;
+    }
+
+    if (pageIndex === 1 && showAttentionPage2) {
+      setShowAttentionPage2(false);
+      setPageIndex(2);
+      return;
+    }
+
+    // עמוד 3 – קודם PayAttention
+    if (pageIndex === 2 && page3Unlocked && !showAttentionPage3) {
+      setShowAttentionPage3(true);
+      return;
+    }
+
+    if (pageIndex === 2 && showAttentionPage3) {
+      onNext("AnimalAccidents");
+      return;
+    }
+
+    setPageIndex((prev) => prev + 1);
+  };
+
+  const prevPage = () => {
+    if (showAttentionPage2) {
+      setShowAttentionPage2(false);
+      return;
+    }
+
+    if (showAttentionPage3) {
+      setShowAttentionPage3(false);
+      return;
+    }
+
+    setPageIndex((prev) => Math.max(prev - 1, 0));
+  };
 
   return (
     <div className="subject-container">
       <p className="title-subjects">{titleKeepingDistance}</p>
 
       {/* עמוד 1 */}
-      <div
-        className="page page1"
-        style={{ display: pageIndex === 0 ? "block" : "none" }}
-      >
-        <p className="sec-title-subjects">{pages[0].secTitle}</p>
-        <ul className="distance-text">
-          {[pages[0].text1, pages[0].text2].map((text, index) =>
-            text ? <li key={index}>{text}</li> : null
-          )}
-        </ul>
-        <img src={distanceImg} className="distanceImg" alt="distanceImg" />
-      </div>
+      {pageIndex === 0 && (
+        <div className="page page1">
+          <p className="sec-title-subjects">{pages[0].secTitle}</p>
+          <ul className="distance-text">
+            <li>{pages[0].text1}</li>
+            <li>{pages[0].text2}</li>
+          </ul>
+          <img src={distanceImg} className="distanceImg" alt="" />
+        </div>
+      )}
 
       {/* עמוד 2 */}
-      <div
-        className="page page2"
-        style={{ display: pageIndex === 1 ? "block" : "none" }}
-      >
-        <p className="sec-title-subjects">{pages[1].secTitle}</p>
-        <div className="animaition-container">
-          <img
-            src={carsAnimaitions}
-            className="carsAnimaitions"
-            alt="carsAnimaitions"
-          />
-          <img src={lightPole} className="lightPole" alt="lightPole" />
-          <p className="text-sec">
-            {sec} {pages[1].text}
-          </p>
+      {pageIndex === 1 && (
+        <div className="page page2">
+          <p className="sec-title-subjects">{pages[1].secTitle}</p>
+
+          <div className="animaition-container">
+            <img src={carsAnimaitions} className="carsAnimaitions" alt="" />
+            <img src={lightPole} className="lightPole" alt="" />
+            <p className="text-sec">{sec} {pages[1].text}</p>
+          </div>
+
+          {showAttentionPage2 && <PayAttention text={importantText} />}
         </div>
-        {showAttention && <PayAttention text={importantText} />}
-      </div>
+      )}
 
       {/* עמוד 3 */}
-       <div
-  className="page page4"
-  style={{ display: pageIndex === 2 ? "block" : "none" }}
->
-<p className="sec-title-subjects">{pages[2].secTitle}</p>
-  <p className="why-distance-text">{flipTheCards}</p>
+      {pageIndex === 2 && (
+        <div className="page page3">
+          <p className="sec-title-subjects">{pages[2].secTitle}</p>
+          <p className="why-distance-text">{pages[2].text}</p>
 
-  <div className="container-license-plate">
-    {reasons.map((reason, index) => (
-      <div
-        key={index}
-        className={`card ${index % 2 === 0 ? "left" : "right"}`}
-      >
-        <FlipCard
-          back={reason}
-          onFlip={handleCardFlip}
-        />
-      </div>
-    ))}
-  </div>
+          <div className="container-license-plate">
+            {reasons.map((reason, index) => (
+              <FlipCard key={index} back={reason} onFlip={handleCardFlip} />
+            ))}
+          </div>
 
-  {showAttentionPage4 && <PayAttention text={importantText2} />}
-</div>
+          {showAttentionPage3 && <PayAttention text={importantText2} />}
+        </div>
+      )}
 
-
+      {/* ניווט */}
       <div className="nav-buttons">
-        <button
-          className="nav-button1"
-          onClick={prevPage}
-          disabled={pageIndex === 0}
-        >
+        <button className="nav-button1" onClick={prevPage}>
           {backBtn}
         </button>
 
         <button
           className="nav-button2"
-          onClick={
-            pageIndex === pages.length - 1
-              ? () => onNext("AnimalAccidents")
-              : nextPage
-          }
+          onClick={nextPage}
           disabled={
             (pageIndex === 1 && !page2Unlocked) ||
-            (pageIndex === 2 && !page4Unlocked)
-          } // הכפתור לא פעיל עד שהאנימציה הסתיימה
+            (pageIndex === 2 && !page3Unlocked)
+          }
         >
           {nextBtn}
         </button>

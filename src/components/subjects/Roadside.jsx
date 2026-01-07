@@ -1,4 +1,3 @@
-// src/components/subjects/Roadside.jsx
 import React, { useState } from "react";
 import "../../style/roadside.css";
 import { useData } from "../../context/DataContext.jsx";
@@ -7,6 +6,7 @@ import boxPlanned from "../../assets/images/roadside/boxPlanned.png";
 import boxUnplanned from "../../assets/images/roadside/boxUnplanned.png";
 import TitledGraphics from "../../components/TitledGraphics";
 import Rocks from "../../components/Rocks";
+import PayAttention from "../../components/PayAttention";
 import bigVi from "../../assets/images/roadside/big-vi.svg";
 import bigX from "../../assets/images/roadside/big-X.svg";
 
@@ -21,6 +21,7 @@ function Roadside({ onNext }) {
   const [unplannedIndex, setUnplannedIndex] = useState(0);
   const [showMirror, setShowMirror] = useState(false);
   const [rocksDone, setRocksDone] = useState(false);
+  const [showAttentionRocks, setShowAttentionRocks] = useState(false);
 
   const pages = data.roadside.filter((_, index) => index !== 2 && index !== 3);
 
@@ -37,7 +38,6 @@ function Roadside({ onNext }) {
   const backBtn = data.buttons[1].text;
 
   const handleRocksComplete = () => {
-    console.log("Rocks: all clicked -> setting rocksDone true");
     setRocksDone(true);
   };
 
@@ -64,25 +64,33 @@ function Roadside({ onNext }) {
     const lastPage = pages.length - 1;
 
     // נעילה בעמודים ספציפיים
-    if (pageIndex === 1 && !(numOfPlanned === 0 && numOfUnplanned === 0)) {
-      console.log("nextPage blocked: factors not finished", { numOfPlanned, numOfUnplanned });
+    if (pageIndex === 1 && !(numOfPlanned === 0 && numOfUnplanned === 0)) return;
+
+    // עמוד Rocks – קודם מציג PayAttention, לחיצה שנייה עוברת הלאה
+    if (pageIndex === 4 && rocksDone && !showAttentionRocks) {
+      setShowAttentionRocks(true);
       return;
     }
-    if (pageIndex === 4 && !rocksDone) {
-      console.log("nextPage blocked: rocks not done");
+
+    if (pageIndex === 4 && showAttentionRocks) {
+      setShowAttentionRocks(false);
+      setPageIndex((prev) => prev + 1);
       return;
     }
 
     if (pageIndex < lastPage) {
       setPageIndex((prev) => prev + 1);
     } else {
-      console.log("Roadside finished, calling onNext('roadside')");
-      // קריאה עם הפרמטר שמזהה את הנושא שזהו
       onNext && onNext("keepingDistance");
     }
   };
 
   const prevPage = () => {
+    if (showAttentionRocks) {
+      setShowAttentionRocks(false);
+      return;
+    }
+
     if (pageIndex > 0) setPageIndex((prev) => prev - 1);
   };
 
@@ -91,17 +99,29 @@ function Roadside({ onNext }) {
       case 0:
         return (
           <div key={index} className="page1">
-            <img src={roadSideHighlight} alt="roadSideHighlight" className="roadSideHighlight" />
+            <img
+              src={roadSideHighlight}
+              alt="roadSideHighlight"
+              className="roadSideHighlight"
+            />
           </div>
         );
       case 1:
         return (
           <div key={index} className="page2">
-            <img src={boxPlanned} id="planned" onClick={openFactors} alt="boxPlanned" className="boxPlanned" />
+            <img
+              src={boxPlanned}
+              id="planned"
+              onClick={openFactors}
+              alt="boxPlanned"
+              className="boxPlanned"
+            />
             <p className="counter-unplanned">
               {textFactors}
               <br />
-              <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>2/{numOfUnplanned}</span>
+              <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+                2/{numOfUnplanned}
+              </span>
             </p>
 
             <p className="planned">{planned}</p>
@@ -120,17 +140,24 @@ function Roadside({ onNext }) {
             <p className="counter-planned">
               {textFactors}
               <br />
-              <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>2/{numOfPlanned}</span>
+              <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+                2/{numOfPlanned}
+              </span>
             </p>
             <p className="unplanned">{unplanned}</p>
+
             {showMirror &&
               (mirrorBroken ? (
                 <div className="mirror-broken">
-                  <p className="mirror-text">{data.roadside[3][`factor${unplannedIndex}`]}</p>
+                  <p className="mirror-text">
+                    {data.roadside[3][`factor${unplannedIndex}`]}
+                  </p>
                 </div>
               ) : (
                 <div className="mirror">
-                  <p className="mirror-text">{data.roadside[2][`factor${plannedIndex}`]}</p>
+                  <p className="mirror-text">
+                    {data.roadside[2][`factor${plannedIndex}`]}
+                  </p>
                 </div>
               ))}
           </div>
@@ -151,6 +178,9 @@ function Roadside({ onNext }) {
         return (
           <div key={index} className="page5">
             <Rocks onAllRocksClicked={handleRocksComplete} />
+            {showAttentionRocks && (
+              <PayAttention text={data.payAttention[0].roadside} />
+            )}
           </div>
         );
       case 6:
@@ -190,7 +220,11 @@ function Roadside({ onNext }) {
       {pageDivs[pageIndex]}
 
       <div className="nav-buttons">
-        <button className="nav-button1" onClick={prevPage} disabled={pageIndex === 0}>
+        <button
+          className="nav-button1"
+          onClick={prevPage}
+          disabled={pageIndex === 0}
+        >
           {backBtn}
         </button>
 
