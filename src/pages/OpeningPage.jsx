@@ -9,7 +9,7 @@ import cloud2 from "../assets/images/openingPage/cloud2.png";
 import startBtn from "../assets/images/openingPage/startBtn.svg";
 
 function OpeningPage() {
-  const { data, switchJSON } = useData();
+  const { data } = useData();
   const navigate = useNavigate();
 
   const headTitleText = data.openingPage[0].text;
@@ -24,36 +24,42 @@ function OpeningPage() {
   const [hidden, setHidden] = useState(false);
   const [showText, setShowText] = useState(false);
 
-  // state של השדות
+  // פרטי משתמש
   const [name, setName] = useState("");
   const [personalNumber, setPersonalNumber] = useState("");
 
   const toggleAbout = () => setShowAbout((prev) => !prev);
 
+  /* ---------- מסך מלא ---------- */
+  const enterFullScreen = () => {
+    const elem = document.documentElement;
+
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen(); // Safari
+    } else if (elem.msRequestFullscreen) {
+      elem.msRequestFullscreen();
+    }
+  };
+
   const handleStart = () => {
+    enterFullScreen(); // 📱 מסך מלא בלחיצה
     setCarMoving(true);
     setBtnClicked(true);
   };
 
-  // בדיקה האם הטופס תקין
+  /* ---------- ולידציה ---------- */
   const isDetailsValid =
     name.trim().includes(" ") &&
     !/\d/.test(name) &&
     /^\d{7}$/.test(personalNumber);
 
-  // כפתור הבא עם זום אמיתי
   const handleNext = () => {
-    // זום אמיתי של הדף
-    document.body.style.zoom = "80%"; // אפשר לשנות אחוז
-    // או לחלופין scale:
-    // document.body.style.transform = "scale(0.8)";
-    // document.body.style.transformOrigin = "top center";
-
-    // ממשיכים לנווט ל־Home
+    document.body.style.zoom = "80%";
     navigate("/Home");
   };
 
-  // נקה את הזום כשעוזבים את הדף
   useEffect(() => {
     return () => {
       document.body.style.zoom = "100%";
@@ -73,11 +79,12 @@ function OpeningPage() {
             }
           }}
         >
-          <div>
-            <button className="about-btn" onClick={toggleAbout}>
-              i
+          {/* כפתורים עליונים */}
+          <div className="top-buttons">
+            <button className="about-btn" onClick={toggleAbout}>i</button>
+            <button className="fullscreen-btn" onClick={enterFullScreen}>
+              מסך מלא
             </button>
-            <p className="about-text-btn">אודות</p>
           </div>
 
           {showAbout && (
@@ -130,7 +137,6 @@ function OpeningPage() {
           <p className="open-text1">{openText1}</p>
           <p className="open-text2">{openText2}</p>
 
-          {/* כאן Details */}
           <Details
             name={name}
             setName={setName}
@@ -138,7 +144,6 @@ function OpeningPage() {
             setPersonalNumber={setPersonalNumber}
           />
 
-          {/* כפתור הבא שמקטין את הדף */}
           <button
             className="next-btn-opening"
             disabled={!isDetailsValid}
