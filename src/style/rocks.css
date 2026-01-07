@@ -35,6 +35,7 @@
     right: 11rem;
     z-index: 1;
 }
+
 .rock1 {
     width: 4rem;
 }
@@ -45,8 +46,8 @@
 }
 .vi2 {
     position: relative;
-    top: -1.5rem;
-    left: 1rem;
+    top: -2rem;
+    left: 1.5rem;
 }
 .vi3 {
     position: relative;
@@ -191,6 +192,68 @@
     top: 5rem;
     right: 3rem;
   }
+  @media (max-width: 380px) {
+    .container-rock1 {
+        top: 14rem;
+        left: 7rem;
+    }
+    .container-rock2 {
+        top: 15rem;
+        left: 8rem;
+    }
+    .container-rock3 {
+        top: 6rem;
+        right: 6.5rem;
+    }
+    .container-rock4 {
+        top: 4rem;
+        right: 9.5rem;
+    }
+    .container-rock5 {
+        top: 4rem;
+        right: 10rem;
+    }
+  }
+  @media (max-width: 355px) {
+    .rock1 {
+        width: 3.6rem;
+    }
+    .rock2 {
+        width: 3.5rem;
+    }
+    .rock3 {
+        width: 4rem;
+    }
+    .rock4 {
+        width: 3.3rem;
+    }
+    .container-rock2 {
+        left: 7.3rem;
+    }
+    .container-rock3 {
+        top: 6.5rem;
+        right: 6rem;
+    }
+    .container-rock4 {
+        top: 4.5rem;
+        right: 8.7rem;
+    }
+    .container-rock5 {
+        top: 4rem;
+        right: 9rem;
+    }
+    .big-rock5 {
+        top: -3rem;
+        left: -0.5rem;
+        width: 13rem;
+        height: 16rem;
+
+    }
+    .text-rock5 {
+        right: 2.5rem;
+      }
+  }
+ 
 
   
   

@@ -304,6 +304,12 @@
                 "gripPointHandles": "הנוסע ליד הנהג - ידיות האחיזה בקדמת הרכב או בצד למעלה"
             }
 
-        ]
+        ],
+        "Questions": {
+            "que1": "", "rightAns": "", "option1": "", "option2": "", "option3": "", "option4": "",
+            "que2": "",
+            "que3": "",
+            "que4": ""
+        }
     }
 }
