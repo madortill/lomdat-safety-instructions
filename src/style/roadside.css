@@ -283,7 +283,47 @@
   left: 5rem;
 }
 
-
+@media (max-width: 400px) {
+  .boxPlanned {
+    width: 9rem;
+    top: 20.6rem;
+    left: 5.5rem;
+  }
+  
+  .boxUnplanned {
+    width: 9rem;
+    top: 7.7rem;
+    left: -4.9rem;
+  }
+  .counter-unplanned {
+    width: 6rem;
+    top: 15.5rem;
+    left: -5rem;
+    font-size: 0.8rem;
+  }
+  
+  .counter-planned {
+    width: 6rem;
+    top: 2.6rem;
+    left: 5.5rem;
+    pointer-events: none;
+    font-size: 0.8rem;
+  }
+  .planned {
+    width: 9rem;
+    top: 15.5rem;
+    left: 5.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .unplanned {
+    width: 9rem;
+    top: 2.5rem;
+    left: -5rem;
+    font-size: 1.1rem;
+  }
+  
+}
 
 @media (max-width: 380px) {
   .roadSideHighlight {

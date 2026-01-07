@@ -17,25 +17,63 @@ function KeepDistance({ onNext }) {
   const [page2Unlocked, setPage2Unlocked] = useState(false);
   const [page3Unlocked, setPage3Unlocked] = useState(false);
 
+  const pages = data.keepingDistance;
   const titleKeepingDistance = data.subjMap[5].text;
   const nextBtn = data.buttons[0].text;
   const backBtn = data.buttons[1].text;
-  const pages = data.keepingDistance;
-  const importantText = data.payAttention[0].twoSec;
-  const importantText2 = data.payAttention[0].whyDistance;
+  const importantTextPage2 = data.payAttention[0].twoSec;
+  const importantTextPage3 = data.payAttention[0].whyDistance;
 
+  // רשימת הסיבות בכרטיסים
   const reasons = [
-    pages[2].reason1,
-    pages[2].reason2,
-    pages[2].reason3,
-    pages[2].reason4,
-    pages[2].reason5,
-    pages[2].reason6,
-    pages[2].reason7,
-    pages[2].reason8,
+    data.keepingDistance[2].reason1,
+    data.keepingDistance[2].reason2,
+    data.keepingDistance[2].reason3,
+    data.keepingDistance[2].reason4,
+    data.keepingDistance[2].reason5,
+    data.keepingDistance[2].reason6,
+    data.keepingDistance[2].reason7,
+    data.keepingDistance[2].reason8,
   ];
 
-  /* אנימציית ספירה */
+  // ניווט עמודים
+  const nextPage = () => {
+    // עמוד 2 – הצגת PayAttention במקום מעבר
+    if (pageIndex === 1 && !showAttentionPage2) {
+      setShowAttentionPage2(true);
+      return;
+    }
+
+    // עמוד 3 – הצגת PayAttention במקום מעבר
+    if (pageIndex === 2 && !showAttentionPage3) {
+      setShowAttentionPage3(true);
+      return;
+    }
+
+    // מעבר רגיל
+    if (pageIndex === pages.length - 1) {
+      onNext("AnimalAccidents"); // או המפה שלך
+      return;
+    }
+
+    setPageIndex((prev) => Math.min(prev + 1, pages.length - 1));
+  };
+
+  const prevPage = () => {
+    // אם PayAttention מוצג, פשוט מסתירים אותו
+    if (showAttentionPage2) {
+      setShowAttentionPage2(false);
+      return;
+    }
+    if (showAttentionPage3) {
+      setShowAttentionPage3(false);
+      return;
+    }
+
+    setPageIndex((prev) => Math.max(prev - 1, 0));
+  };
+
+  // ספירה בין 1 ל-2 בעמוד 2
   useEffect(() => {
     if (pageIndex !== 1) return;
 
@@ -47,63 +85,22 @@ function KeepDistance({ onNext }) {
       setSec(currentSecond.toString());
     }, 2000);
 
-    setTimeout(() => setPage2Unlocked(true), 4000);
-
     return () => clearInterval(interval);
   }, [pageIndex]);
 
-  /* ספירת קלפים */
+  // טיפול ב-FlipCard – ספירת הפלפופים
   const handleCardFlip = () => {
     setFlippedCount((prev) => prev + 1);
   };
 
   useEffect(() => {
+    if (pageIndex !== 2 || page3Unlocked) return;
+
     if (flippedCount === reasons.length && reasons.length > 0) {
-      setPage3Unlocked(true);
-    }
-  }, [flippedCount, reasons.length]);
-
-  /* ניווט */
-  const nextPage = () => {
-    // עמוד 2 – קודם PayAttention
-    if (pageIndex === 1 && page2Unlocked && !showAttentionPage2) {
-      setShowAttentionPage2(true);
-      return;
-    }
-
-    if (pageIndex === 1 && showAttentionPage2) {
-      setShowAttentionPage2(false);
-      setPageIndex(2);
-      return;
-    }
-
-    // עמוד 3 – קודם PayAttention
-    if (pageIndex === 2 && page3Unlocked && !showAttentionPage3) {
       setShowAttentionPage3(true);
-      return;
+      setPage3Unlocked(true); // נפתח לתמיד
     }
-
-    if (pageIndex === 2 && showAttentionPage3) {
-      onNext("AnimalAccidents");
-      return;
-    }
-
-    setPageIndex((prev) => prev + 1);
-  };
-
-  const prevPage = () => {
-    if (showAttentionPage2) {
-      setShowAttentionPage2(false);
-      return;
-    }
-
-    if (showAttentionPage3) {
-      setShowAttentionPage3(false);
-      return;
-    }
-
-    setPageIndex((prev) => Math.max(prev - 1, 0));
-  };
+  }, [flippedCount, pageIndex, reasons.length, page3Unlocked]);
 
   return (
     <div className="subject-container">
@@ -114,10 +111,11 @@ function KeepDistance({ onNext }) {
         <div className="page page1">
           <p className="sec-title-subjects">{pages[0].secTitle}</p>
           <ul className="distance-text">
-            <li>{pages[0].text1}</li>
-            <li>{pages[0].text2}</li>
+            {[pages[0].text1, pages[0].text2].map((text, idx) =>
+              text ? <li key={idx}>{text}</li> : null
+            )}
           </ul>
-          <img src={distanceImg} className="distanceImg" alt="" />
+          <img src={distanceImg} className="distanceImg" alt="distanceImg" />
         </div>
       )}
 
@@ -125,14 +123,19 @@ function KeepDistance({ onNext }) {
       {pageIndex === 1 && (
         <div className="page page2">
           <p className="sec-title-subjects">{pages[1].secTitle}</p>
-
           <div className="animaition-container">
-            <img src={carsAnimaitions} className="carsAnimaitions" alt="" />
-            <img src={lightPole} className="lightPole" alt="" />
-            <p className="text-sec">{sec} {pages[1].text}</p>
+            <img
+              src={carsAnimaitions}
+              className="carsAnimaitions"
+              alt="carsAnimaitions"
+            />
+            <img src={lightPole} className="lightPole" alt="lightPole" />
+            <p className="text-sec">
+              {sec} {pages[1].text}
+            </p>
           </div>
-
-          {showAttentionPage2 && <PayAttention text={importantText} />}
+          {/* PayAttention */}
+          {showAttentionPage2 && <PayAttention text={importantTextPage2} />}
         </div>
       )}
 
@@ -144,28 +147,31 @@ function KeepDistance({ onNext }) {
 
           <div className="container-license-plate">
             {reasons.map((reason, index) => (
-              <FlipCard key={index} back={reason} onFlip={handleCardFlip} />
+              <div
+                key={index}
+                className={`card ${index % 2 === 0 ? "left" : "right"}`}
+              >
+                <FlipCard back={reason} onFlip={handleCardFlip} />
+              </div>
             ))}
           </div>
 
-          {showAttentionPage3 && <PayAttention text={importantText2} />}
+          {/* PayAttention */}
+          {showAttentionPage3 && <PayAttention text={importantTextPage3} />}
         </div>
       )}
 
       {/* ניווט */}
       <div className="nav-buttons">
-        <button className="nav-button1" onClick={prevPage}>
+        <button
+          className="nav-button1"
+          onClick={prevPage}
+          disabled={pageIndex === 0 && !showAttentionPage2 && !showAttentionPage3}
+        >
           {backBtn}
         </button>
 
-        <button
-          className="nav-button2"
-          onClick={nextPage}
-          disabled={
-            (pageIndex === 1 && !page2Unlocked) ||
-            (pageIndex === 2 && !page3Unlocked)
-          }
-        >
+        <button className="nav-button2" onClick={nextPage}>
           {nextBtn}
         </button>
       </div>

@@ -21,6 +21,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   height: 91vh;
+  /* overflow: hidden; */
   /* background-color: #FEECD8; */
 }
 

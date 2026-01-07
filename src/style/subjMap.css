@@ -129,10 +129,10 @@
     .subject {
       width: 4.4rem;
     }
-    .wheel {
+    .changingWheel {
       left: 7.5rem;
     }
-    .turning-over {
+    .flippingDrill {
       top: -19.5rem;
       left: -7rem;
     }
@@ -149,5 +149,8 @@
         width: 5.5rem;
         top: 4.6rem;
         right: 15rem;
+    }
+    .subject {
+      width: 4.3rem;
     }
   }
