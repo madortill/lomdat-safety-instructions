@@ -9,7 +9,7 @@ import cloud2 from "../assets/images/openingPage/cloud2.png";
 import startBtn from "../assets/images/openingPage/startBtn.svg";
 
 function OpeningPage() {
-  const { data, switchJSON } = useData();
+  const { data } = useData();
   const navigate = useNavigate();
 
   const headTitleText = data.openingPage[0].text;
@@ -24,7 +24,6 @@ function OpeningPage() {
   const [hidden, setHidden] = useState(false);
   const [showText, setShowText] = useState(false);
 
-  // state של השדות
   const [name, setName] = useState("");
   const [personalNumber, setPersonalNumber] = useState("");
 
@@ -35,25 +34,16 @@ function OpeningPage() {
     setBtnClicked(true);
   };
 
-  // בדיקה האם הטופס תקין
   const isDetailsValid =
     name.trim().includes(" ") &&
     !/\d/.test(name) &&
     /^\d{7}$/.test(personalNumber);
 
-  // כפתור הבא עם זום אמיתי
   const handleNext = () => {
-    // זום אמיתי של הדף
-    document.body.style.zoom = "80%"; // אפשר לשנות אחוז
-    // או לחלופין scale:
-    // document.body.style.transform = "scale(0.8)";
-    // document.body.style.transformOrigin = "top center";
-
-    // ממשיכים לנווט ל־Home
+    document.body.style.zoom = "80%";
     navigate("/Home");
   };
 
-  // נקה את הזום כשעוזבים את הדף
   useEffect(() => {
     return () => {
       document.body.style.zoom = "100%";
@@ -66,6 +56,7 @@ function OpeningPage() {
       {!hidden && (
         <div
           className={`opening-page ${fadeOut ? "fade-out1" : ""}`}
+          onClick={() => setShowAbout(false)}
           onTransitionEnd={() => {
             if (fadeOut) {
               setHidden(true);
@@ -73,28 +64,44 @@ function OpeningPage() {
             }
           }}
         >
+          {/* כפתור אודות */}
           <div>
-            <button className="about-btn" onClick={toggleAbout}>
+            <button
+              className="about-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleAbout();
+              }}
+            >
               i
             </button>
             <p className="about-text-btn">אודות</p>
           </div>
 
-          {showAbout && (
-            <div className="div-about fade-in">
-              <h3 className="list-text-about">מפתחת ראשית:</h3>
-              <p className="list-text-about">רב"ט מאיה מרום</p>
-              <h3 className="list-text-about">גרפיקה:</h3>
-              <p className="list-text-about">רב"ט מאיה מרום</p>
-              <h3 className="list-text-about">מומחה תוכן:</h3>
-              <p className="list-text-about">סמל יוסי</p>
-              <h3 className="list-text-about">רמ"ד טי"ל:</h3>
-              <p className="list-text-about">רס"מ עדן בן חמו</p>
-              <h3 className="list-text-about">גרסה:</h3>
-              <p className="list-text-about">יולי 2025</p>
-            </div>
-          )}
+          {/* אודות */}
+          <div
+            className={`div-about ${
+              showAbout ? "fade-in show" : "fade-out"
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3 className="list-text-about">מפתחת ראשית:</h3>
+            <p className="list-text-about">רב"ט מאיה מרום</p>
 
+            <h3 className="list-text-about">גרפיקה:</h3>
+            <p className="list-text-about">רב"ט מאיה מרום</p>
+
+            <h3 className="list-text-about">מומחה תוכן:</h3>
+            <p className="list-text-about">סמל יוסי</p>
+
+            <h3 className="list-text-about">רמ"ד טי"ל:</h3>
+            <p className="list-text-about">רס"מ עדן בן חמו</p>
+
+            <h3 className="list-text-about">גרסה:</h3>
+            <p className="list-text-about">יולי 2025</p>
+          </div>
+
+          {/* תוכן ראשי */}
           <div className="main-items">
             <div className="cloud-container">
               <img src={cloud} alt="cloud" className="cloud" />
@@ -118,7 +125,10 @@ function OpeningPage() {
                 src={startBtn}
                 alt="startBtn"
                 className="start-btn"
-                onClick={handleStart}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleStart();
+                }}
               />
             )}
           </div>
@@ -130,7 +140,6 @@ function OpeningPage() {
           <p className="open-text1">{openText1}</p>
           <p className="open-text2">{openText2}</p>
 
-          {/* כאן Details */}
           <Details
             name={name}
             setName={setName}
@@ -138,7 +147,6 @@ function OpeningPage() {
             setPersonalNumber={setPersonalNumber}
           />
 
-          {/* כפתור הבא שמקטין את הדף */}
           <button
             className="next-btn-opening"
             disabled={!isDetailsValid}
