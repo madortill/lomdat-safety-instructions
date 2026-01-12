@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../css/Question.css";
+import "../style/Question.css";
 
 function Question({ question, onCorrect }) {
   const [selected, setSelected] = useState(null);
@@ -23,7 +23,7 @@ function Question({ question, onCorrect }) {
 
   return (
     <div id="american-questions">
-      <h1 className="title-questionMultiple">מה לקוי בהתנהגות המפקד?</h1>
+      <p className="sec-title-subjects">{question.questionText}</p>
 
       <div className="div-mulQ">
         {[1, 2, 3, 4].map((id) => (
