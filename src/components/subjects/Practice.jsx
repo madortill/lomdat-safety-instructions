@@ -1,34 +1,36 @@
 import React, { useState } from "react";
-// import "../../style/practice.css";
 import { useData } from "../../context/DataContext.jsx";
+import "../../style/Question.css";
 import Question from "../../components/Question";
+import CarExercise from "../../components/CarExercise";
 
 function Practice({ onNext }) {
   const { data } = useData();
   const [pageIndex, setPageIndex] = useState(0);
 
   const questions = data.Questions;
-  const titlePractice = data.subjMap[9].text; // או האינדקס הרלוונטי
+  const titlePractice = data.subjMap[9].text;
   const nextBtn = data.buttons[0].text;
   const backBtn = data.buttons[1].text;
 
+  // כולל עמוד ריק נוסף
+  const totalPages = questions.length + 1;
+
   const nextPage = () =>
-    setPageIndex((prev) => Math.min(prev + 1, questions.length - 1));
+    setPageIndex((prev) => Math.min(prev + 1, totalPages - 1));
 
   const prevPage = () =>
     setPageIndex((prev) => Math.max(prev - 1, 0));
 
-  // הגנה – אם הדאטה עוד לא מוכן
   if (!questions || !questions.length) {
     return <div>טוען שאלות...</div>;
   }
 
   return (
     <div className="subject-container">
-      {/* כותרת ראשית */}
       <p className="title-subjects">{titlePractice}</p>
 
-      {/* עמודים – כל עמוד שאלה */}
+      {/* עמודי שאלות */}
       {questions.map((q, index) => (
         <div
           key={q.id}
@@ -37,10 +39,18 @@ function Practice({ onNext }) {
         >
           <Question
             question={q}
-            onCorrect={nextPage}
+            onCorrect={nextPage} // אם זו השאלה האחרונה → יעבור לעמוד הריק
           />
         </div>
       ))}
+
+      {/* עמוד ריק אחרי השאלה האחרונה */}
+      {pageIndex === questions.length && (
+        <div className="page page-end"
+        >
+         <CarExercise className="carSvg" />
+        </div>
+      )}
 
       {/* ניווט */}
       <div className="nav-buttons">
@@ -55,7 +65,7 @@ function Practice({ onNext }) {
         <button
           className="nav-button2"
           onClick={
-            pageIndex === questions.length - 1
+            pageIndex === totalPages - 1
               ? () => onNext("Map")
               : nextPage
           }

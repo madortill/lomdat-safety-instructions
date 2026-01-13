@@ -30,7 +30,7 @@
     cursor: pointer;
     border: none;
     width: 20rem;
-    height: 3rem;
+    height: 3.5rem;
     font-size: 1.2rem;
     color: #003F88;
     border-radius: 1rem;
@@ -38,6 +38,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1.5rem 3rem;
+    pointer-events: all;
 }
 
 .pulse-button-hover:hover {
@@ -100,13 +102,23 @@
     box-shadow: 0 15px 20px -20px rgba(0, 0, 0, 0.4);
     position: relative;
     min-height: 15rem;
-    top: 8rem;
+    top: 6rem;
     left: 1rem;
-
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    /* gap: 0.5rem; */
     padding: 1.5rem;
+}
+.Wheel {
+    width: 3rem;
+    /* height: 4rem; */
+    position: relative;
+    top: 3.5rem;
+    left: 8rem;
+}
+.buttons-container {
+    height: 4rem;
+    pointer-events: none;
 }
 
 
@@ -149,6 +161,11 @@
 .explain-text {
     margin: 0.3rem;
 }
+.carSvg {
+    position: absolute;
+    z-index: 2;
+    transform: translate();
+  }
 
 @media screen and (max-width: 600px) {
 
@@ -173,6 +190,7 @@
         height: 9.9rem;
     }
 }
+
 
 @media (max-width: 360px) {
     /* .div-mulQ {
