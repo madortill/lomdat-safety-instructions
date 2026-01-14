@@ -30,6 +30,9 @@ function OpeningPage() {
   const toggleAbout = () => setShowAbout((prev) => !prev);
 
   const handleStart = () => {
+    // ⭐ התחלת מדידת זמן
+    localStorage.setItem("startTime", Date.now());
+
     setCarMoving(true);
     setBtnClicked(true);
   };
@@ -39,15 +42,14 @@ function OpeningPage() {
     !/\d/.test(name) &&
     /^\d{7}$/.test(personalNumber);
 
-  const handleNext = () => {
-    // שמירת הנתונים ב-localStorage
-    localStorage.setItem("name", name);
-    localStorage.setItem("personalNumber", personalNumber);
-    localStorage.setItem("startTime", Date.now());
-
-    document.body.style.zoom = "80%";
-    navigate("/Home");
-  };
+    const handleNext = () => {
+      // שמירת הנתונים ב-localStorage
+      localStorage.setItem("name", name);
+      localStorage.setItem("personalNumber", personalNumber);
+  
+      document.body.style.zoom = "80%";
+      navigate("/Home");
+    };
 
   useEffect(() => {
     return () => {

@@ -79,14 +79,22 @@ function KeepDistance({ onNext }) {
 
     setSec("1");
     let currentSecond = 1;
+    let ticks = 0; // ⬅️ חדש – סופר החלפות
 
     const interval = setInterval(() => {
       currentSecond = currentSecond === 1 ? 2 : 1;
       setSec(currentSecond.toString());
+
+      ticks++; // ⬅️ חדש
+
+      // ⬅️ אחרי מחזור אחד (1 → 2) פותחים את הכפתור
+      if (ticks === 2 && !page2Unlocked) {
+        setPage2Unlocked(true);
+      }
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [pageIndex]);
+  }, [pageIndex, page2Unlocked]);
 
   // טיפול ב-FlipCard – ספירת הפלפופים
   const handleCardFlip = () => {
@@ -166,12 +174,18 @@ function KeepDistance({ onNext }) {
         <button
           className="nav-button1"
           onClick={prevPage}
-          disabled={pageIndex === 0 && !showAttentionPage2 && !showAttentionPage3}
+          disabled={
+            pageIndex === 0 && !showAttentionPage2 && !showAttentionPage3
+          }
         >
           {backBtn}
         </button>
 
-        <button className="nav-button2" onClick={nextPage}>
+        <button
+          className="nav-button2"
+          onClick={nextPage}
+          disabled={pageIndex === 1 && !page2Unlocked}
+        >
           {nextBtn}
         </button>
       </div>

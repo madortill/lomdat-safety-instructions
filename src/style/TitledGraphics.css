@@ -89,3 +89,14 @@
   /* אין מסגרת */
   outline: none;
 }
+@media (max-width: 350px) {
+  .graphic1 {
+    left: 5rem;
+  }
+  .graphic2 {
+    left: -5rem;
+  }
+  .graphic3 {
+    left: 5rem;
+  }
+}

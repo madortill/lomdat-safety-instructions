@@ -101,13 +101,10 @@
   
 }
 
-.container-license-plate::before {
+/* .container-license-plate::before {
   content: "גלול למטה";
   position: sticky;
-  top: 0;
-  /* ✅ שים למעלה */
   text-align: right;
-  /* או left לפי רצונך */
   width: 100%;
   height: 2.5rem;
   pointer-events: none;
@@ -115,13 +112,17 @@
   font-family: "Rubik";
   font-weight: 700;
   margin-bottom: -4rem;
-  /* חשוב */
   padding-top: 0;
 
   background: linear-gradient(to top,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.25));
-}
+} */
+ .microcopy-scroll {
+  color: #FFEE97;
+  font-family: "Rubik";
+  font-weight: 700;
+ }
 
 .card {
   display: flex;
@@ -129,11 +130,11 @@
 }
 
 .card.left {
-  transform: translateX(3rem);
+  transform: translateX(2rem);
 }
 
 .card.right {
-  transform: translateX(-3rem);
+  transform: translateX(-2rem);
 }
 
 .card.center {
@@ -153,4 +154,10 @@
 }
 .page {
   margin-top: 1.5rem;
+}
+@media (max-width: 350px) {
+  .distanceImg {
+    width: 9rem;
+  
+  }
 }

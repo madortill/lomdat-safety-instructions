@@ -24,16 +24,16 @@ function EndScreen() {
 
   // חישוב הזמן שהושקע מרגע ההתחלה ב-OpeningPage
   useEffect(() => {
-    const startTime = parseInt(localStorage.getItem("startTime"));
-    if (startTime) {
-      const elapsedMs = Date.now() - startTime;
-      const totalSeconds = Math.floor(elapsedMs / 1000);
-      const minutes = Math.floor(totalSeconds / 60)
-        .toString()
-        .padStart(2, "0");
-      const seconds = (totalSeconds % 60).toString().padStart(2, "0");
-      setTimeSpent(`${minutes}:${seconds}`);
-    }
+    const startTime = localStorage.getItem("startTime");
+    if (!startTime) return;
+  
+    const elapsedMs = Date.now() - Number(startTime);
+    const totalSeconds = Math.floor(elapsedMs / 1000);
+  
+    const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, "0");
+    const seconds = String(totalSeconds % 60).padStart(2, "0");
+  
+    setTimeSpent(`${minutes}:${seconds}`);
   }, []);
 
   return (
