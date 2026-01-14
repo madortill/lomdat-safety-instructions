@@ -40,6 +40,11 @@ function OpeningPage() {
     /^\d{7}$/.test(personalNumber);
 
   const handleNext = () => {
+    // שמירת הנתונים ב-localStorage
+    localStorage.setItem("name", name);
+    localStorage.setItem("personalNumber", personalNumber);
+    localStorage.setItem("startTime", Date.now());
+
     document.body.style.zoom = "80%";
     navigate("/Home");
   };
@@ -80,23 +85,17 @@ function OpeningPage() {
 
           {/* אודות */}
           <div
-            className={`div-about ${
-              showAbout ? "fade-in show" : "fade-out"
-            }`}
+            className={`div-about ${showAbout ? "fade-in show" : "fade-out"}`}
             onClick={(e) => e.stopPropagation()}
           >
             <h3 className="list-text-about">מפתחת ראשית:</h3>
             <p className="list-text-about">רב"ט מאיה מרום</p>
-
             <h3 className="list-text-about">גרפיקה:</h3>
             <p className="list-text-about">רב"ט מאיה מרום</p>
-
             <h3 className="list-text-about">מומחה תוכן:</h3>
             <p className="list-text-about">סמל יוסי</p>
-
             <h3 className="list-text-about">רמ"ד טי"ל:</h3>
             <p className="list-text-about">רס"מ עדן בן חמו</p>
-
             <h3 className="list-text-about">גרסה:</h3>
             <p className="list-text-about">יולי 2025</p>
           </div>

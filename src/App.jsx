@@ -7,12 +7,9 @@ import Home from "./pages/Home";
 import bahad6icon from "./assets/images/bahad6icon.png";
 import screen from "./assets/images/screen.svg";
 import til from "./assets/images/til.svg";
+import EndScreen from "./pages/EndScreen";
 
 function App() {
-  // const location = useLocation();
-  // const currentPath = location.pathname;
-  const [page, setPage] = useState(1);
-  const [unlocked, setUnlocked] = useState(["introduction"]);
 
   return (
     
@@ -27,6 +24,8 @@ function App() {
       <Routes>
         <Route path="/" element={<OpeningPage />} />
         <Route path="/Home" element={<Home />} />
+        <Route path="/End" element={<EndScreen />} />
+
       </Routes>
     </div>
   );

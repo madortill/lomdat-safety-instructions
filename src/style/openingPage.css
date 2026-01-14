@@ -113,7 +113,15 @@
     top: -10rem;
     left: 0.3rem;
 } */
-.carGraphic {
+.carEnd {
+    position: relative;
+    top: -3rem;       /* מיקום רגיל במסך */
+    left: 0.3rem;
+    width: 11rem;
+    height: 12rem;
+    cursor: pointer;
+  }
+  .carGraphic {
     position: relative;
     top: -10rem;       /* מיקום רגיל במסך */
     left: 0.3rem;
@@ -246,6 +254,24 @@
   filter: grayscale(100%);
   opacity: 0.9;
   color: #666;
+}
+
+.details {
+  font-family: "rubik-bold";
+  font-size: 1.3rem;
+  text-align: center;
+  color: #FFEE97;
+  position: relative;
+  top: -5.5rem;
+}
+.end-sec-title {
+  font-family: "rubik";
+  width: 15rem;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #FFEE97;
+  position: relative;
+  top: -5.5rem;
 }
 
 /* @media (max-width: 400px) {

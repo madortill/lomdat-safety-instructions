@@ -166,6 +166,53 @@
     z-index: 2;
     transform: translate();
   }
+  /* overlay שחור חצי שקוף */
+.overlay {
+    position: fixed; /* או absolute אם רצוי יחסית ל-container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* מעל כל התוכן */
+  }
+  
+  /* הדיב הפנימי */
+  .container-next {
+    background-color:#FFEE97;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 300px;
+    font-family: "rubik";
+  }
+  
+  /* כפתורים בתוך הדיב */
+  .container-next-buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .container-next-buttons button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .container-next-buttons button:first-child {
+    background-color: #eee;
+    border-radius: 0.5rem;
+  }
+  
+  .container-next-buttons button:last-child {
+    background-color: #003F88;
+    color: #FFEE97;
+    border-radius: 0.5rem;
+  }
 
 @media screen and (max-width: 600px) {
 
