@@ -115,10 +115,12 @@ margin-top: 1rem;
   top: -1.5rem;
 }
 .nav-buttons-img {
+  all: unset; 
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
   margin-top: -1rem;
+  
 }
 .back-button-img{
   width: 4rem;
@@ -170,6 +172,7 @@ margin-top: 1rem;
   z-index: 2;
   margin-top: -2rem;
 }
+
 .video-text {
   margin-top: -1rem;
 }

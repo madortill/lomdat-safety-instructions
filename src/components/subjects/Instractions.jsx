@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "../../style/home.css";
 import Ximg from "../../assets/images/subjMap/Ximg.png";
 import { useData } from "../../context/DataContext.jsx";
-function Instractions() {
+
+function Instractions({ setCloseInst }) {
   const { data } = useData();
   const allText = data.instractions;
   const nextBtn = data.buttons[0].text;
@@ -12,7 +13,7 @@ function Instractions() {
   return (
     <div>
       <div className="container-inst">
-    <img className="X-img" src={Ximg} alt="Ximg" />
+    <img className="X-img" src={Ximg} alt="Ximg"  onClick={() => setCloseInst(true)} />
         <div className="text-container">
           <p className="inst-title">{allText[0].title}</p>
           <p className="text-inst">{allText[0].moveOn}</p>

@@ -98,7 +98,7 @@ function Home() {
       { closeInst === false && (
         <div>
       <div className="map-overlay"></div>
-        <Instractions/>
+        <Instractions setCloseInst={setCloseInst} />
         </div>
       )}
       {hasEnteredFirstSubject && currentSubject && (
