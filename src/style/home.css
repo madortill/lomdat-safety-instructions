@@ -137,6 +137,7 @@ margin-top: 1rem;
   color: #003F88;
   pointer-events: auto;
   z-index: 2;
+  -webkit-tap-highlight-color: transparent
 }
 .next-button-img{
   width: 4rem;
@@ -153,6 +154,7 @@ margin-top: 1rem;
   color: #003F88;
   pointer-events: auto;
   z-index: 2;
+  -webkit-tap-highlight-color: transparent
 }
 .back-button-img:focus,
 .next-button-img:focus,
@@ -179,6 +181,7 @@ margin-top: 1rem;
   opacity: 0.5;
   z-index: 2;
   margin-top: -2rem;
+  -webkit-tap-highlight-color: transparent
 }
 
 .video-text {
