@@ -154,6 +154,14 @@ margin-top: 1rem;
   pointer-events: auto;
   z-index: 2;
 }
+.back-button-img:focus,
+.next-button-img:focus,
+.back-button-img:active,
+.next-button-img:active {
+  outline: none;      /* מסגרת ברירת מחדל */
+  box-shadow: none;   /* הצל ברירת מחדל */
+  background-color: transparent; /* אין שינוי רקע */
+}
 .back-button-img-anable{
   width: 4rem;
   height: 4rem;
