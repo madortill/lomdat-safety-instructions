@@ -1,6 +1,7 @@
 // src/pages/Home.jsx
 import React, { useState, useEffect } from "react";
 import SubjMap from "./SubjMap";
+import Instractions from "../components/subjects/Instractions";
 
 // ← הוספתי את כל ה‐imports החדשים
 import Introduction from "../components/subjects/Introduction";
@@ -34,6 +35,7 @@ function Home() {
   const openMapText = data.subjMap[2]["text-open"];
   const closeMapText = data.subjMap[2]["text-close"];
 
+  const [closeInst, setCloseInst] = useState(false);
   const [showMap, setShowMap] = useState(true);
   const [currentSubject, setCurrentSubject] = useState("");
   const [unlockedSubjects, setUnlockedSubjects] = useState(["roadside"]);
@@ -93,6 +95,12 @@ function Home() {
 
   return (
     <div className="home-container">
+      { closeInst === false && (
+        <div>
+      <div className="map-overlay"></div>
+        <Instractions/>
+        </div>
+      )}
       {hasEnteredFirstSubject && currentSubject && (
         <button className="toggle-map-btn" onClick={toggleOverlayMap}>
           {isOverlayMap ? closeMapText : openMapText}

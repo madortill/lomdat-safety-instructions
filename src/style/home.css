@@ -60,5 +60,125 @@
   right: 3rem;
 }
 
+/* instractions */
+.container-inst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 19.5rem;
+  height: 38rem;
+  border-radius: 16px;
+  background: #003F88;
+  z-index: 2;
+}
+.X-img {
+  position: relative;
+  top: 0.5rem;
+  left: 7.5rem;
+}
+.text-container {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  /* align-items: center; */
+  font-family: "rubik";
+  padding: 2rem 1rem;
+  margin-top: -2.5rem;
+
+}
+.inst-title {
+  color: #FFEE97;
+text-align: center;
+font-family: "rubik";
+font-size: 1.5rem;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+
+}
+.text-inst {
+color: #FFEE97;
+font-family: "rubik";
+font-size: 1rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-top: 1rem;
+}
+.text-unable-btn {
+  width: 7rem;
+  text-align: center;
+  font-size: 1rem;
+  position: relative;
+  left: 1rem;
+  top: -1.5rem;
+}
+.nav-buttons-img {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: -1rem;
+}
+.back-button-img{
+  width: 4rem;
+  height: 4rem;
+  background-image: url('../assets/images/backBtn.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent; /* אין צבע רקע */
+  border: none;                  /* אין מסגרת */            /* עכבר מראה שהוא לחיץ */
+  outline: none;                 /* מסגרת ברירת מחדל של פוקוס נעלמת */
+  font-family: "rubik";
+  font-weight: 700; 
+  color: #003F88;
+  pointer-events: auto;
+  z-index: 2;
+}
+.next-button-img{
+  width: 4rem;
+  height: 4rem;
+  background-image: url('../assets/images/nextBtn.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent; /* אין צבע רקע */
+  border: none;                  /* אין מסגרת */             /* עכבר מראה שהוא לחיץ */
+  outline: none;                 /* מסגרת ברירת מחדל של פוקוס נעלמת */
+  font-family: "rubik";
+  font-weight: 700; 
+  color: #003F88;
+  pointer-events: auto;
+  z-index: 2;
+}
+.back-button-img-anable{
+  width: 4rem;
+  height: 4rem;
+  background-image: url('../assets/images/backBtn.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent; /* אין צבע רקע */
+  border: none;                  /* אין מסגרת */            /* עכבר מראה שהוא לחיץ */
+  outline: none;                 /* מסגרת ברירת מחדל של פוקוס נעלמת */
+  font-family: "rubik";
+  font-weight: 700; 
+  color: #003F88;
+  pointer-events: auto;
+  opacity: 0.5;
+  z-index: 2;
+  margin-top: -2rem;
+}
+.video-text {
+  margin-top: -1rem;
+}
+.leng-text {
+  width: 15rem;
+}
+
+
+
+
 
   
