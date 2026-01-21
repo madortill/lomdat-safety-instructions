@@ -63,7 +63,7 @@
 /* instractions */
 .container-inst {
   position: absolute;
-  top: 50%;
+  top: 49%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 19.5rem;
@@ -76,6 +76,7 @@
   position: relative;
   top: 0.5rem;
   left: 7.5rem;
+  width: 2.8rem;
 }
 .text-container {
   display: flex;
@@ -84,7 +85,7 @@
   /* align-items: center; */
   font-family: "rubik";
   padding: 2rem 1rem;
-  margin-top: -2.5rem;
+  margin-top: -3.5rem;
 
 }
 .inst-title {
@@ -186,11 +187,102 @@ margin-top: 1rem;
 
 .video-text {
   margin-top: -1rem;
+  width: 12rem;
+}
+.img-video {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: -2.5rem;
+}
+.text-img-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+.text-icon-video {
+  position: relative;
+  top: -1rem;
 }
 .leng-text {
-  width: 15rem;
+  /* width: 15rem; */
+  margin-top: 0.2rem;
+}
+.change-leng-btn {
+  width: 2.5rem;
+  height: 2.55rem;
+  border-radius: 50%;
+  background-color: #FFEE97;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -1.5rem;
+  margin-right: 15.5rem;
 }
 
+.change-leng-text {
+  color: #003F88;
+  font-family: "rubik-bold";
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+}
+.map-text1 {
+  margin-top: 0.8rem;
+}
+.map-text2 {
+  margin-top: -0.3rem;
+}
+.map-btn {
+  width: 5rem;
+  height: 4rem;
+  background-image: url('../assets/images/subjMap/backToMap.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent; /* אין צבע רקע */
+  border: none;                  /* אין מסגרת */
+  cursor: pointer;               /* עכבר מראה שהוא לחיץ */
+  outline: none;                 /* מסגרת ברירת מחדל של פוקוס נעלמת */
+  padding-top: 1.5rem; 
+  font-family: "rubik";
+  font-weight: 700; 
+  color: #FFEE97;
+  z-index: 3; 
+  pointer-events: none;
+  margin-top: -2rem;
+  margin-right: 11rem;
+  font-size: 0.8rem;
+  -webkit-tap-highlight-color: transparent
+}
+
+.img-sound {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.3rem;
+}
+.text-img-sound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+.text-icon-sound {
+  position: relative;
+  top: -1rem;
+  right: 0.3rem;
+  font-weight: 700;
+}
+.sound-text {
+  margin-top: -0.5rem;
+}
 
 
 
