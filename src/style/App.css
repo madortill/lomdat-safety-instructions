@@ -37,7 +37,7 @@ body {
   font-family: 'askim';
   overflow: hidden;
   position: relative;
-  /* direction: rtl; */
+  /* direction: ltr; */
 }
 .bahad6 {
   position: absolute;

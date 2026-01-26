@@ -375,5 +375,209 @@
                 "secTitle": "עכשיו אתם יודעים את הוראות הבטיחות!"
             }
         ]
-    }
-}
+    },
+
+    
+        "en": {
+            "openingPage": [
+                { "text": "Driving Safety", "id": "main-title" },
+                { "text": "Welcome to the course!", "id": "open-text1" },
+                {
+                  "text": "Learn safe driving and how to handle complex situations",
+                  "id": "open-text2"
+                },
+                { "text": "Go to the next page!", "id": "next-btn-opening" }
+              ],
+              "details": [
+                {
+                  "text": "Please enter your full name and personal number",
+                  "id": "details-text"
+                },
+                { "text": "Full name:", "id": "details-name" },
+                { "text": "Personal number:", "id": "details-nam" }
+              ],
+              "instractions": [
+                {
+                  "title": "Instructions",
+                  "moveOn": "Use these buttons to move back and forward:",
+                  "unable": "This is a disabled button"
+                },
+                {
+                  "videos": "Videos will appear during the course:",
+                  "play": "Play",
+                  "pause": "Pause"
+                },
+                {
+                  "leng": " Change language using this button:",
+                  "boldLeng": "Choose"
+                },
+                {
+                  "toMap": "If you click this button:",
+                  "seeMap": "You can see completed topics and your current location."
+                },
+                {
+                  "narration": " Narration settings:",
+                  "boldNar": "Click",
+                  "with": "With narration",
+                  "without": "Without narration",
+                  "anytime": "Narration can be turned on or off anytime."
+                }
+              ],
+              "subjMap": [
+                { "text": "Topic Map", "id": "map-title" },
+                { "text": "Select a topic!", "id": "microcopy-map" },
+                {
+                  "text-open": "Open map",
+                  "text-close": "Close map",
+                  "id": "back-to-map-btn"
+                },
+                {
+                  "text": "Introduction",
+                  "id": "introduction",
+                  "img": "intro",
+                  "nextId": "roadside"
+                },
+                {
+                  "text": "Road Shoulder",
+                  "id": "roadside",
+                  "img": "roadside",
+                  "nextId": "keepingDistance"
+                },
+                {
+                  "text": "Keeping Distance",
+                  "id": "keepingDistance",
+                  "img": "distance",
+                  "nextId": "animalAccidents"
+                },
+                {
+                  "text": "Animal Accidents",
+                  "id": "animalAccidents",
+                  "img": "animals",
+                  "nextId": "changingWheel"
+                },
+                {
+                  "text": "Changing a Wheel",
+                  "id": "changingWheel",
+                  "img": "wheel",
+                  "nextId": "fireDrill"
+                },
+                {
+                  "text": "Vehicle Fire Drill",
+                  "id": "fireDrill",
+                  "img": "fire",
+                  "nextId": "flippingDrill"
+                },
+                {
+                  "text": "Rollover Drill",
+                  "id": "flippingDrill",
+                  "img": "turning-over",
+                  "nextId": "practice"
+                },
+                { "text": "Practice", "id": "practice", "img": "practice" }
+              ],
+              "buttons": [
+                { "text": "Next", "id": "next-btn" },
+                { "text": "Back", "id": "back-btn" }
+              ],
+              "introduction": [
+                {
+                  "text": "Why is driving safety important?",
+                  "id": "sec-title-intro"
+                },
+                {
+                  "text": "Every year many traffic accidents occur in the IDF.",
+                  "id": "text1-intro"
+                },
+                {
+                  "text": "Accidents happen during routine, operations, and training.",
+                  "id": "text2-intro"
+                },
+                {
+                  "text": "Today we will learn how to act in emergencies.",
+                  "id": "text3-intro"
+                }
+              ],
+              "roadside": [
+                {
+                  "secTitle": "Road Shoulder",
+                  "text": "Area next to the road, up to 3 meters wide or until the drainage ditch",
+                  "id": "subj1Roadside"
+                },
+                {
+                  "secTitle": "Reasons for Leaving the Road",
+                  "text": "Click the boxes to see the reasons!",
+                  "id": "factors"
+                },
+                {
+                  "planned": "Planned",
+                  "text": "Common reasons",
+                  "factor1": "1. Vehicle repair",
+                  "factor2": "2. Picking up or dropping off passengers",
+                  "id": "planned"
+                },
+                {
+                  "unplanned": "Unplanned",
+                  "factor1": "1. Sharp deviation",
+                  "factor2": "2. Driver distraction",
+                  "id": "unPlanned"
+                },
+                {
+                  "secTitle": "Dangers on the Shoulder",
+                  "text1": "Height differences",
+                  "text2": "Different friction",
+                  "text3": "Hazardous objects"
+                },
+                { "secTitle": "Proper Descent", "id": "down" },
+                {
+                  "secTitle": "Forced Descent Guidelines",
+                  "text": "Click the stones!",
+                  "highlight1": "Stay calm",
+                  "highlight2": "Hold the wheel with both hands",
+                  "highlight3": "Brake gently",
+                  "highlight4": "Never brake hard",
+                  "highlight5": "Avoid sharp steering",
+                  "id": "highlights-down"
+                },
+                { "secTitle": "Proper Return", "id": "up" },
+                {
+                  "secTitle": "Return Guidelines",
+                  "right": "Return using tire tread",
+                  "wrong": "Do not rub tire sidewall",
+                  "id": "highlights-up"
+                }
+              ],
+              "titledGraphics": [
+                {
+                  "roadside": [
+                    {
+                      "text1": "Height differences",
+                      "text2": "Different friction",
+                      "text3": "Hazardous objects"
+                    }
+                  ],
+                  "animalAccidents": [
+                    {
+                      "text1": "Know your terrain",
+                      "text2": "Watch for warning signs",
+                      "text3": "Adjust to road conditions"
+                    }
+                  ],
+                  "flippingDrill": [
+                    {
+                      "text1": "Seat belts on",
+                      "text2": "Wear helmet if required",
+                      "text3": "Secure all equipment"
+                    }
+                  ]
+                }
+              ],
+              "endScreen": [
+                {
+                  "title": "Well done!",
+                  "secTitle": "You know the safety rules!"
+                }
+              ]
+            }
+          
+        }
+      

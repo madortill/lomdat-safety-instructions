@@ -11,6 +11,10 @@ import startBtn from "../assets/images/openingPage/startBtn.svg";
 function OpeningPage() {
   const { data } = useData();
   const navigate = useNavigate();
+  const { switchJSON } = useData();
+  const handleChange = (e) => {
+    switchJSON(e.target.value);
+  };
 
   const headTitleText = data.openingPage[0].text;
   const openText1 = data.openingPage[1].text;
@@ -132,6 +136,10 @@ function OpeningPage() {
                 }}
               />
             )}
+                  <select onChange={handleChange} defaultValue="he">
+      <option value="he">עברית</option>
+      <option value="en">English</option>
+    </select>
           </div>
         </div>
       )}

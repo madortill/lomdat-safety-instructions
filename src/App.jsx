@@ -10,7 +10,7 @@ import til from "./assets/images/til.svg";
 import EndScreen from "./pages/EndScreen";
 
 function App() {
-
+  
   return (
     
     <div className="app">
@@ -20,7 +20,6 @@ function App() {
 
       <img src={screen} alt="screen" className="bg-container" />
       <img src={til} alt="til" className="til-logo" />
-
       <Routes>
         <Route path="/" element={<OpeningPage />} />
         <Route path="/Home" element={<Home />} />
