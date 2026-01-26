@@ -165,7 +165,7 @@ function Roadside({ onNext }) {
       case 2:
         return (
           <div key={index} className="page3 margin">
-            <TitledGraphics />
+            <TitledGraphics subject="roadside" />
           </div>
         );
       case 3:

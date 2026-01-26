@@ -11,17 +11,17 @@ function TitledGraphics({ subject = "roadside" }) {
 
   return (
     <div className="container-graphics">
-      <div className="graphic1">
+      <div className={`graphic1 ${subject}-1`}>
         <div className="div-text-graphic1">
           <p className="text-graphics">{graphicText1}</p>
         </div>
       </div>
-      <div className="graphic2">
+      <div className={`graphic2 ${subject}-2`}>
         <div className="div-text-graphic2">
           <p className="text-graphics">{graphicText2}</p>
         </div>
       </div>
-      <div className="graphic3">
+      <div className={`graphic3 ${subject}-3`}>
         <div className="div-text-graphic3">
           <p className="text-graphics">{graphicText3}</p>
         </div>

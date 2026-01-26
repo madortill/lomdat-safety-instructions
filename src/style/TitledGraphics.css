@@ -5,9 +5,18 @@
   z-index: 1;
 }
 .graphic1 {
-  width: 9rem;
-  height: 9rem;
-  background-color: #FFEE97;
+  width: 9.5rem;
+  height: 9.5rem;
+  /* background-color: #FFEE97; */
+  background-image: url('../assets/images/titledGraphic/distance.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  /* אין צבע רקע */
+  border: #FFEE97 solid 5px;
+  /* אין מסגרת */
+  outline: none;
   z-index: 1;
   position: relative;
   top: 8rem;
@@ -15,8 +24,8 @@
   border-radius: 1rem;
 }
 .div-text-graphic1 {
-  margin-top: 5rem;
-  margin-right: -1.5rem;
+  margin-top: 6.5rem;
+  margin-right: -1.3rem;
   width: 12rem;
   height: 6.5rem;
   background-image: url('../assets/images/blur-bubble.png');
@@ -40,9 +49,18 @@
 }
 
 .graphic2 {
-  width: 9rem;
-  height: 9rem;
-  background-color: #FFEE97;
+  width: 9.5rem;
+  height: 9.5rem;
+  /* background-color: #FFEE97; */
+  background-image: url('../assets/images/titledGraphic/texture.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  /* אין צבע רקע */
+  border: #FFEE97 solid 5px;
+  /* אין מסגרת */
+  outline: none;
   z-index: 1;
   position: relative;
   top: 6rem;
@@ -50,7 +68,7 @@
   border-radius: 1rem;
 }
 .div-text-graphic2 {
-  margin-top: 5rem;
+  margin-top: 6.5rem;
   margin-right: -1.2rem;
   width: 12rem;
   height: 6.5rem;
@@ -65,17 +83,26 @@
   outline: none;
 }
 .graphic3 {
-  width: 9rem;
-  height: 9rem;
-  background-color: #FFEE97;
+  width: 9.5rem;
+  height: 9.5rem;
+  /* background-color: #FFEE97; */
+  background-image: url('../assets/images/titledGraphic/obstacles.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  /* אין צבע רקע */
+  border: #FFEE97 solid 5px;
+  /* אין מסגרת */
+  outline: none;
   z-index: 1;
   position: relative;
-  top: 4rem;
-  left: 6rem;
+  top: 2rem;
+  left: 5.5rem;
   border-radius: 1rem;
 }
 .div-text-graphic3 {
-  margin-top: 5rem;
+  margin-top: 6.2rem;
   margin-right: -1.3rem;
   width: 12rem;
   height: 6.5rem;
@@ -88,6 +115,33 @@
   border: none;
   /* אין מסגרת */
   outline: none;
+}
+.roadside-1 {
+  background-image: url('../assets/images/titledGraphic/distance.png');
+}
+.roadside-2 {
+  background-image: url('../assets/images/titledGraphic/texture.png');
+}
+.roadside-3 {
+  background-image: url('../assets/images/titledGraphic/obstacles.png');
+}
+.animalAccidents-1 {
+  background-image: url('../assets/images/titledGraphic/road.png');
+}
+.animalAccidents-2 {
+  background-image: url('../assets/images/titledGraphic/signs.png');
+}
+.animalAccidents-3 {
+  background-image: url('../assets/images/titledGraphic/dark.png');
+}
+.flippingDrill-1 {
+  background-image: url('../assets/images/titledGraphic/helmet.png');
+}
+.flippingDrill-2 {
+  background-image: url('../assets/images/titledGraphic/seatBelt.png');
+}
+.flippingDrill-3 {
+  background-image: url('../assets/images/titledGraphic/box.png');
 }
 @media (max-width: 350px) {
   .graphic1 {
