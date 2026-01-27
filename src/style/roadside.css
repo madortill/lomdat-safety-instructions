@@ -154,7 +154,7 @@
   pointer-events: none;
   font-size: 0.9rem;
   white-space: nowrap;
-  /* line-height: 1; */
+  line-height: 1;
 }
 
 .counter-planned {
