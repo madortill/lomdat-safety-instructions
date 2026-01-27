@@ -204,16 +204,24 @@
 .graphic-right {
   width: 10.5rem;
   height: 10.5rem;
-  background-color: #FFEE97;
+  background-image: url('../assets/images/roadside/wheelYes.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  /* אין צבע רקע */
+  border: #FFEE97 solid 5px;
+  /* אין מסגרת */
+  outline: none;
   z-index: 2;
   position: relative;
-  top: 7rem;
+  top: 6.5rem;
   left: 0.4rem;
   border-radius: 1rem;
 }
 
 .div-text-graphic-right {
-  margin-top: 5rem;
+  margin-top: 5.8rem;
   margin-right: -2.8rem;
   width: 17rem;
   height: 9.5rem;
@@ -240,10 +248,17 @@
 .graphic-wrong {
   width: 10.5rem;
   height: 10.5rem;
-  background-color: #FFEE97;
-  z-index: 1;
+  background-image: url('../assets/images/roadside/wheelNo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  /* אין צבע רקע */
+  border: #FFEE97 solid 5px;
+  /* אין מסגרת */
+  outline: none;
   position: relative;
-  top: 11.5rem;
+  top: 11rem;
   left: 0.4rem;
   border-radius: 1rem;
 }
@@ -258,7 +273,7 @@
 }
 
 .div-text-graphic-wrong {
-  margin-top: 5rem;
+  margin-top: 6rem;
   margin-right: -2rem;
   width: 15rem;
   height: 7.5rem;
@@ -274,12 +289,12 @@
 }
 .big-vi {
   position: relative;
-  top: -15.5rem;
+  top: -16.5em;
   left: 5rem;
 }
 .big-x {
   position: relative;
-  top: -14rem;
+  top: -14.5rem;
   left: 5rem;
 }
 

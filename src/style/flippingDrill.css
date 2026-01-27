@@ -13,9 +13,9 @@
   }
   .carFlippedImg {
     width: 9rem;
-    position: absolute;
-    top: 20rem;
-    left: 15rem;
+    position: relative;
+    top: 10rem;
+    left: 7rem;
   }
   .gripPointsContainer{
     display: flex;
@@ -64,5 +64,11 @@
       .handles {
         top: 29.5rem;
         left: 15rem;
+      }
+      .carFlippedImg {
+        width: 7rem;
+        position: relative;
+        top: 10rem;
+        left: 6rem;
       }
   }
