@@ -1,6 +1,6 @@
 .container-map {
     position: absolute;
-    top: 55%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 26rem;
@@ -116,7 +116,7 @@
   @media (max-width: 380px) {
     .container-map {
         width: 23.5rem;
-        top: 52%;
+        top: 48%;
     }
     .progressCar {
         width: 6rem;
@@ -143,7 +143,7 @@
   @media (max-width: 350px) {
     .container-map {
         width: 22rem;  
-        top: 52%;
+        top: 48%;
     }
     .progressCar {
         width: 5.5rem;
