@@ -239,6 +239,8 @@ margin-top: 1rem;
 .map-btn {
   width: 5rem;
   height: 4rem;
+  white-space: nowrap;
+  line-height: 1;
   background-image: url('../assets/images/subjMap/backToMap.png');
   background-size: cover;
   background-position: center;
