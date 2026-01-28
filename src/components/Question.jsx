@@ -8,6 +8,7 @@ import wheel4 from "../assets/images/practice/wheel4.png";
 function Question({ question, onCorrect }) {
   const [selected, setSelected] = useState(null);
   const [locked, setLocked] = useState(false);
+  const wheels = [wheel1, wheel2, wheel3, wheel4];
   // const [wheel, setWheel] = useState(wheel1)
 
   const handleClick = (id) => {
@@ -33,11 +34,11 @@ function Question({ question, onCorrect }) {
       <div className="div-mulQ">
         {[1, 2, 3, 4].map((id) => (
           <div className="buttons-container" key={id}>
-            <img className="Wheel" src={`/src/assets/images/practice/wheel${id}.png`} alt="wheel1" />
-          <button
-            key={id}
-            onClick={() => handleClick(id)}
-            className={`pulse-button-hover
+            <img className="Wheel" src={wheels[id - 1]} alt={`wheel${id}`} />
+            <button
+              key={id}
+              onClick={() => handleClick(id)}
+              className={`pulse-button-hover
               ${
                 selected === id
                   ? id === question.correctAnswer
@@ -45,9 +46,9 @@ function Question({ question, onCorrect }) {
                     : "wrong"
                   : ""
               }`}
-          >
-            {question[`ans${id}`]}
-          </button>
+            >
+              {question[`ans${id}`]}
+            </button>
           </div>
         ))}
       </div>
