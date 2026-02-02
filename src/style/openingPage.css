@@ -273,6 +273,25 @@
   position: relative;
   top: -5.5rem;
 }
+.lang-btn {
+  position: absolute;
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: 2rem;
+  height: 2rem;
+  left: 4rem;
+  top: 1rem;
+  text-align: center;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 5rem;
+  font-family: "rubik";
+  color: #003F88;
+  background-color: #FFEE97;
+  border: none;
+
+}
+
 
 /* @media (max-width: 400px) {
     .carGraphic {

@@ -3,18 +3,15 @@ import { useNavigate } from "react-router-dom";
 import "../style/openingPage.css";
 import Details from "../components/Details";
 import { useData } from "../context/DataContext";
+
 import carGraphic from "../assets/images/openingPage/carGraphic.png";
 import cloud from "../assets/images/openingPage/cloud.png";
 import cloud2 from "../assets/images/openingPage/cloud2.png";
 import startBtn from "../assets/images/openingPage/startBtn.svg";
 
 function OpeningPage() {
-  const { data } = useData();
+  const { data, switchJSON, currentJSON } = useData();
   const navigate = useNavigate();
-  const { switchJSON } = useData();
-  const handleChange = (e) => {
-    switchJSON(e.target.value);
-  };
 
   const headTitleText = data.openingPage[0].text;
   const openText1 = data.openingPage[1].text;
@@ -33,10 +30,13 @@ function OpeningPage() {
 
   const toggleAbout = () => setShowAbout((prev) => !prev);
 
-  const handleStart = () => {
-    // ⭐ התחלת מדידת זמן
-    localStorage.setItem("startTime", Date.now());
+  const toggleLanguage = (e) => {
+    e.stopPropagation();
+    switchJSON(currentJSON === "he" ? "en" : "he");
+  };
 
+  const handleStart = () => {
+    localStorage.setItem("startTime", Date.now());
     setCarMoving(true);
     setBtnClicked(true);
   };
@@ -46,14 +46,13 @@ function OpeningPage() {
     !/\d/.test(name) &&
     /^\d{7}$/.test(personalNumber);
 
-    const handleNext = () => {
-      // שמירת הנתונים ב-localStorage
-      localStorage.setItem("name", name);
-      localStorage.setItem("personalNumber", personalNumber);
-  
-      document.body.style.zoom = "80%";
-      navigate("/Home");
-    };
+  const handleNext = () => {
+    localStorage.setItem("name", name);
+    localStorage.setItem("personalNumber", personalNumber);
+
+    document.body.style.zoom = "80%";
+    navigate("/Home");
+  };
 
   useEffect(() => {
     return () => {
@@ -88,6 +87,9 @@ function OpeningPage() {
             </button>
             <p className="about-text-btn">אודות</p>
           </div>
+
+          {/* כפתור שפה */}
+          
 
           {/* אודות */}
           <div
@@ -136,10 +138,9 @@ function OpeningPage() {
                 }}
               />
             )}
-                  <select onChange={handleChange} defaultValue="he">
-      <option value="he">עברית</option>
-      <option value="en">English</option>
-    </select>
+            <button className="lang-btn" onClick={toggleLanguage}>
+            {currentJSON === "he" ? "EN" : "עב"}
+          </button>
           </div>
         </div>
       )}

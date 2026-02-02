@@ -38,7 +38,7 @@ function Home() {
   const [closeInst, setCloseInst] = useState(false);
   const [showMap, setShowMap] = useState(true);
   const [currentSubject, setCurrentSubject] = useState("");
-  const [unlockedSubjects, setUnlockedSubjects] = useState(["practice"]);
+  const [unlockedSubjects, setUnlockedSubjects] = useState(["roadside"]);
   const [highlightedSubject, setHighlightedSubject] = useState("introduction");
   const [hasEnteredFirstSubject, setHasEnteredFirstSubject] = useState(false);
   const [isOverlayMap, setIsOverlayMap] = useState(false);

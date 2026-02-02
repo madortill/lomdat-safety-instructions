@@ -1,18 +1,26 @@
 import React, { createContext, useContext, useState } from "react";
-import myData from "../data/myData.json"; // כאן יהיו כל השפות
+import myData from "../data/myData.json";
 
 const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [currentJSON, setCurrentJSON] = useState("he"); // ברירת מחדל: עברית
 
-  const switchJSON = (key) => setCurrentJSON(key); // לדוגמה "en" או "he"
+  const switchJSON = (key) => {
+    setCurrentJSON(key);
+  };
 
   return (
-    <DataContext.Provider value={{ data: myData[currentJSON], switchJSON }}>
+    <DataContext.Provider
+      value={{
+        data: myData[currentJSON],
+        switchJSON,
+        currentJSON
+      }}
+    >
       {children}
     </DataContext.Provider>
   );
 };
 
-export const useData = () => useContext(DataContext); // hook נוח לשימוש
+export const useData = () => useContext(DataContext);

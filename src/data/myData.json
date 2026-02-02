@@ -1,583 +1,756 @@
 {
-    "he": {
-        "openingPage": [
-            {
-                "text": "הוראות בטיחות בנהיגה",
-                "id": "main-title"
-            },
-            {
-                "text": "ברוכים הבאים למסלול שלנו!",
-                "id": "open-text1"
-            },
-            {
-                "text": "היום אתם תלמדו איך לנהוג בצורה בטוחה ואיך להתמודד עם סיטואציות מורכבות בזמן נהיגה",
-                "id": "open-text2"
-            },
-            {
-                "text": "סעו לעמוד הבא!",
-                "id": "next-btn-opening"
-            }
-        ],
-        "details": [
-            {
-                "text": "יאללה תכניסו שם מלא ומספר אישי",
-                "id": "details-text"
-            },
-            {
-                "text": "שם מלא:",
-                "id": "details-name"
-            },
-            {
-                "text": "מספר אישי:",
-                "id": "details-nam"
-            }
-        ],
-        "instractions": [
-            {
-                "title": "הוראות ודגשים",
-                "moveOn": "שימו לב- לאורך הלומדה תוכלו תמיד לחזור אחורה ולהמשיך קדימה  בעזרת הכפתורים האלה:",
-                "unable": "כך נראה כפתור לא מאופשר"
-            },
-            {
-                "videos": "במהלך הלומדה יהיו גם סרטונים:",
-                "play": "להפעלה",
-                "pause": "לעצירה"
-            },
-            {
-                "leng": " שפה על ידי לחיצה על כפתור זה:",
-                "boldLeng": "בחרו"
-            },
-            {
-                "toMap": "אם תלחצו על הכפתור הזה:",
-                "seeMap": "תוכלו לראות אילו נושאים השלמתם, אילו נושאים עוד לא, ואיזה נושא אתם עכשיו."
-            },
-            {
-                "narration": " על ההעדפה שלכם:",
-                "boldNar": "לחצו",
-                "with": "עם קריינות",
-                "without": "ללא קריינות",
-                "anytime": "בכל שלב בלומדה תוכלו לבטל ולהחזיר את הקרייניות."
-            }
-        ],
-        "subjMap": [
-            {
-                "text": "מפת נושאים",
-                "id": "map-title"
-            },
-            {
-                "text": "לחצו על הנושא הרצוי!",
-                "id": "microcopy-map"
-            },
-            {
-                "text-open": "למפת הנושאים",
-                "text-close": "לסגירת המפה",
-                "id": "back-to-map-btn"
-            },
-            {
-                "text": "מבוא",
-                "id": "introduction",
-                "img": "intro",
-                "nextId": "roadside"
-            },
-            {
-                "text": "ירידה ועלייה מהשול",
-                "id": "roadside",
-                "img": "roadside",
-                "nextId": "keepingDistance"
-            },
-            {
-                "text": "שמירת מרחק",
-                "id": "keepingDistance",
-                "img": "distance",
-                "nextId": "animalAccidents"
-            },
-            {
-                "text": "תאונות עם בעלי חיים",
-                "id": "animalAccidents",
-                "img": "animals",
-                "nextId": "changingWheel"
-            },
-            {
-                "text": "החלפת גלגל",
-                "id": "changingWheel",
-                "img": "wheel",
-                "nextId": "fireDrill"
-            },
-            {
-                "text": "תרגולת שריפה ברכב",
-                "id": "fireDrill",
-                "img": "fire",
-                "nextId": "flippingDrill"
-            },
-            {
-                "text": "תרגולת התהפכות",
-                "id": "flippingDrill",
-                "img": "turning-over",
-                "nextId": "practice"
-            },
-            {
-                "text": "תרגול סיכום",
-                "id": "practice",
-                "img": "practice"
-            }
-        ],
-        "buttons": [
-            {
-                "text": "הבא",
-                "id": "next-btn"
-            },
-            {
-                "text": "חזור",
-                "id": "back-btn"
-            }
-        ],
-        "introduction": [
-            {
-                "text": "למה חשוב לדעת את הוראות הבטיחות בנהיגה?",
-                "id": "sec-title-intro"
-            },
-            {
-                "text": "מידיי שנה מתרחשים בצה”ל עשרות מקרים של תאונות דרכים.",
-                "id": "text1-intro"
-            },
-            {
-                "text": "תאונות דרכים מתרחשות בשגרה, בפעילות מבצעית ובמהלך אימונים.",
-                "id": "text2-intro"
-            },
-            {
-                "text": "היום נלמד כיצד להתמודד במצבי חירום שונים.",
-                "id": "text3-intro"
-            }
-        ],
+  "he": {
+    "openingPage": [
+      {
+        "text": "הוראות בטיחות בנהיגה",
+        "id": "main-title"
+      },
+      {
+        "text": "ברוכים הבאים למסלול שלנו!",
+        "id": "open-text1"
+      },
+      {
+        "text": "היום אתם תלמדו איך לנהוג בצורה בטוחה ואיך להתמודד עם סיטואציות מורכבות בזמן נהיגה",
+        "id": "open-text2"
+      },
+      {
+        "text": "סעו לעמוד הבא!",
+        "id": "next-btn-opening"
+      }
+    ],
+    "details": [
+      {
+        "text": "יאללה תכניסו שם מלא ומספר אישי",
+        "id": "details-text"
+      },
+      {
+        "text": "שם מלא:",
+        "id": "details-name"
+      },
+      {
+        "text": "מספר אישי:",
+        "id": "details-nam"
+      }
+    ],
+    "instractions": [
+      {
+        "title": "הוראות ודגשים",
+        "moveOn": "שימו לב- לאורך הלומדה תוכלו תמיד לחזור אחורה ולהמשיך קדימה  בעזרת הכפתורים האלה:",
+        "unable": "כך נראה כפתור לא מאופשר"
+      },
+      {
+        "videos": "במהלך הלומדה יהיו גם סרטונים:",
+        "play": "להפעלה",
+        "pause": "לעצירה"
+      },
+      {
+        "leng": " שפה על ידי לחיצה על כפתור זה:",
+        "boldLeng": "בחרו"
+      },
+      {
+        "toMap": "אם תלחצו על הכפתור הזה:",
+        "seeMap": "תוכלו לראות אילו נושאים השלמתם, אילו נושאים עוד לא, ואיזה נושא אתם עכשיו."
+      },
+      {
+        "narration": " על ההעדפה שלכם:",
+        "boldNar": "לחצו",
+        "with": "עם קריינות",
+        "without": "ללא קריינות",
+        "anytime": "בכל שלב בלומדה תוכלו לבטל ולהחזיר את הקרייניות."
+      }
+    ],
+    "subjMap": [
+      {
+        "text": "מפת נושאים",
+        "id": "map-title"
+      },
+      {
+        "text": "לחצו על הנושא הרצוי!",
+        "id": "microcopy-map"
+      },
+      {
+        "text-open": "למפת הנושאים",
+        "text-close": "לסגירת המפה",
+        "id": "back-to-map-btn"
+      },
+      {
+        "text": "מבוא",
+        "id": "introduction",
+        "img": "intro",
+        "nextId": "roadside"
+      },
+      {
+        "text": "ירידה ועלייה מהשול",
+        "id": "roadside",
+        "img": "roadside",
+        "nextId": "keepingDistance"
+      },
+      {
+        "text": "שמירת מרחק",
+        "id": "keepingDistance",
+        "img": "distance",
+        "nextId": "animalAccidents"
+      },
+      {
+        "text": "תאונות עם בעלי חיים",
+        "id": "animalAccidents",
+        "img": "animals",
+        "nextId": "changingWheel"
+      },
+      {
+        "text": "החלפת גלגל",
+        "id": "changingWheel",
+        "img": "wheel",
+        "nextId": "fireDrill"
+      },
+      {
+        "text": "תרגולת שריפה ברכב",
+        "id": "fireDrill",
+        "img": "fire",
+        "nextId": "flippingDrill"
+      },
+      {
+        "text": "תרגולת התהפכות",
+        "id": "flippingDrill",
+        "img": "turning-over",
+        "nextId": "practice"
+      },
+      {
+        "text": "תרגול סיכום",
+        "id": "practice",
+        "img": "practice"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "הבא",
+        "id": "next-btn"
+      },
+      {
+        "text": "חזור",
+        "id": "back-btn"
+      }
+    ],
+    "introduction": [
+      {
+        "text": "למה חשוב לדעת את הוראות הבטיחות בנהיגה?",
+        "id": "sec-title-intro"
+      },
+      {
+        "text": "מידיי שנה מתרחשים בצה”ל עשרות מקרים של תאונות דרכים.",
+        "id": "text1-intro"
+      },
+      {
+        "text": "תאונות דרכים מתרחשות בשגרה, בפעילות מבצעית ובמהלך אימונים.",
+        "id": "text2-intro"
+      },
+      {
+        "text": "היום נלמד כיצד להתמודד במצבי חירום שונים.",
+        "id": "text3-intro"
+      }
+    ],
+    "roadside": [
+      {
+        "secTitle": "שול הדרך",
+        "text": "השטח שאין לצידו מדרכה הסמוך לשפת הכביש, עד לרוחב של שלושה מטרים או עד קצה תעלת הניקוז, כאשר דופן התעלה מצוי פחות משישה מטרים משפת הכביש",
+        "id": "subj1Roadside"
+      },
+      {
+        "secTitle": "גורמים לירידה לשול",
+        "text": "לחצו על הארגזים כדי לראות את הגורמים!",
+        "id": "factors"
+      },
+      {
+        "planned": "מתוכננים",
+        "text": "גורמים שנשאר לפתוח",
+        "factor1": "1. עצירה לתיקון תקלה",
+        "factor2": "2. עצירה לצורך העלאת והורדת נוסעים",
+        "id": "planned"
+      },
+      {
+        "unplanned": "לא מתוכננים",
+        "factor1": "1. סטייה חדה בגלל רכב הבא מולנו",
+        "factor2": "2. סטייה בשל היסח דעת",
+        "id": "unPlanned"
+      },
+      {
+        "secTitle": "הסכנות בירידה לשול",
+        "text1": "הבדלי גובה בין הכביש לשול",
+        "text2": "מקדמי חיכוך שונים בין הכביש לכורכר",
+        "text3": "עצמים מסוכנים בשול"
+      },
+      {
+        "secTitle": "ירידה נכונה לשול",
+        "id": "down"
+      },
+      {
+        "secTitle": "דגשים לירידה מאולצת",
+        "text": "לחצו על האבנים!",
+        "highlight1": "הישארו רגועים- גם על השול אפשר לנסוע",
+        "highlight2": "החזיקו את ההגה בשתי ידיים",
+        "highlight3": "לחצו קלות על דבשת הבלם, כדי שהגלגלים לא יינעלו",
+        "highlight4": "בשום מקרה אין לבלום בלימת חירום",
+        "highlight5": "אין לבצע פנייה חדה של ההגה!",
+        "id": "highlights-down"
+      },
+      {
+        "secTitle": "עלייה נכונה מהשול",
+        "id": "up"
+      },
+      {
+        "secTitle": "דגשים לעלייה נכונה",
+        "right": "יש להעלות לכביש עם מדרס הצמיג, כדי למנוע הפעלת לחץ על הגלגלים הקדמיים ואובדן שליטה ברכב",
+        "wrong": "אין להתחכך עם דופן הצמיג במדרגת הכביש, למניעת פגיעה בדופן הצמיג",
+        "id": "highlights-up"
+      }
+    ],
+    "titledGraphics": [
+      {
         "roadside": [
-            {
-                "secTitle": "שול הדרך",
-                "text": "השטח שאין לצידו מדרכה הסמוך לשפת הכביש, עד לרוחב של שלושה מטרים או עד קצה תעלת הניקוז, כאשר דופן התעלה מצוי פחות משישה מטרים משפת הכביש",
-                "id": "subj1Roadside"
-            },
-            {
-                "secTitle": "גורמים לירידה לשול",
-                "text": "לחצו על הארגזים כדי לראות את הגורמים!",
-                "id": "factors"
-            },
-            {
-                "planned": "מתוכננים",
-                "text": "גורמים שנשאר לפתוח",
-                "factor1": "1. עצירה לתיקון תקלה",
-                "factor2": "2. עצירה לצורך העלאת והורדת נוסעים",
-                "id": "planned"
-            },
-            {
-                "unplanned": "לא מתוכננים",
-                "factor1": "1. סטייה חדה בגלל רכב הבא מולנו",
-                "factor2": "2. סטייה בשל היסח דעת",
-                "id": "unPlanned"
-            },
-            {
-                "secTitle": "הסכנות בירידה לשול",
-                "text1": "הבדלי גובה בין הכביש לשול",
-                "text2": "מקדמי חיכוך שונים בין הכביש לכורכר",
-                "text3": "עצמים מסוכנים בשול"
-            },
-            {
-                "secTitle": "ירידה נכונה לשול",
-                "id": "down"
-            },
-            {
-                "secTitle": "דגשים לירידה מאולצת",
-                "text": "לחצו על האבנים!",
-                "highlight1": "הישארו רגועים- גם על השול אפשר לנסוע",
-                "highlight2": "החזיקו את ההגה בשתי ידיים",
-                "highlight3": "לחצו קלות על דבשת הבלם, כדי שהגלגלים לא יינעלו",
-                "highlight4": "בשום מקרה אין לבלום בלימת חירום",
-                "highlight5": "אין לבצע פנייה חדה של ההגה!",
-                "id": "highlights-down"
-            },
-            {
-                "secTitle": "עלייה נכונה מהשול",
-                "id": "up"
-            },
-            {
-                "secTitle": "דגשים לעלייה נכונה",
-                "right": "יש להעלות לכביש עם מדרס הצמיג, כדי למנוע הפעלת לחץ על הגלגלים הקדמיים ואובדן שליטה ברכב",
-                "wrong": "אין להתחכך עם דופן הצמיג במדרגת הכביש, למניעת פגיעה בדופן הצמיג",
-                "id": "highlights-up"
-            }
-        ],
-        "titledGraphics": [
-            {
-                "roadside": [
-                    {
-                        "text1": "הבדלי גובה בין הכביש לשול",
-                        "text2": "מקדמי חיכוך שונים בין הכביש לכורכר",
-                        "text3": "עצמים מסוכנים בשול"
-                    }
-                ],
-                "animalAccidents": [
-                    {
-                        "text1": "הכר את מאפייני השטח שבו אתה נמצא",
-                        "text2": "שים לב לתמרורי האזהרה",
-                        "text3": "התחשב בתנאי הדרך ובראות"
-                    }
-                ],
-                "flippingDrill": [
-                    {
-                        "text1": "כל הצוות יחגור חגורות בטיחות.",
-                        "text2": "חבישת קסדה, ברכב המחויב לפי פקודות.",
-                        "text3": "הציוד ברכב יקובע: ארגז פעילות, קשר וכדומה."
-                    }
-                ]
-            }
-        ],
-        "payAttention": [
-            {
-                "intro": "כל אלו מקרים אמיתיים שקרו בגלל אי ציות להוראות בטיחות",
-                "roadside": "זכרו! גם על שול הדרך קיימות סכנות כגון: בורות, תמרורים והולכי רגל.",
-                "twoSec": "זכרו! בחורף מומלץ לשמור על מרווח של 3 שניות.",
-                "whyDistance": "זכרו! החוק קובע כי נהג חייב לשמור על מרווח, המאפשר עצירה של הרכב בכל עת, למניעת תאונה.",
-                "FlippingDrill": "התרגולת תבוצע על ידי המפקד משימה, יש לבצע תרגולת התהפכות סטטית לפני תחילת נסיעה."
-            }
-        ],
-        "keepingDistance": [
-            {
-                "secTitle": "שמירת מרחק",
-                "text1": "שמירת מרחק מהמכונית שלפנים חיונית ועשויה למנוע כ-4000 תאונות בכל שנה בישראל.",
-                "text2": "הזמן המומלץ לשמירת מרווח מהרכב שלפנים הוא 2 שניות, בחורף 3 שניות.",
-                "id": "keepingDistanceSubj1"
-            },
-            {
-                "secTitle": "כלל שתי השניות",
-                "text": "שניות",
-                "id": "animaition"
-            },
-            {
-                "secTitle": "מדוע יש לשמור מרחק?",
-                "text": "-לחצו על לוחיות הרישוי-",
-                "scroll": "שימו לב שיש גלילה",
-                "reason1": "למנוע תאונה “חזית-אחור” בעת עצירה או האטה.",
-                "reason2": "לשפר את שדה הראייה.",
-                "reason3": "לאפשר לרכב עוקף להיכנס למרווח שנוצר לפנים.",
-                "reason4": "לאפשר יציאה בטוחה לעקיפה",
-                "reason5": "למנוע שחיקת בלמים וצריכת דלק מופרזת.",
-                "reason6": "למנוע מתח ועייפות מהנהג - בשמירת מרחק הנהיגה רגועה ומשוחררת.",
-                "reason7": "למנוע החלקה בזמן בלימת חירום על כביש רטוב",
-                "reason8": "למנוע פגיעה של חפצים, הנופלים מהרכבים שלפנינו."
-            }
+          {
+            "text1": "הבדלי גובה בין הכביש לשול",
+            "text2": "מקדמי חיכוך שונים בין הכביש לכורכר",
+            "text3": "עצמים מסוכנים בשול"
+          }
         ],
         "animalAccidents": [
-            {
-                "secTitle": "רקע - תרונות עם בעלי חיים",
-                "text1-background": "כבישי הארץ מהווים מוקד לסיכון גבוה להתנגשות עם בעלי חיים בגלל קרבתם לכבישים.",
-                "text2-background": "סכנה זו מוחשית בעיקר באזורי הצפון והדרום.",
-                "id": "background-animals"
-            },
-            {
-                "secTitle": "קצין צה”ל במצב קשה לאחר שהתנגש בגמל",
-                "text1-accident": "תאונה קטלנית בדרום: קצין צה”ל רס”ן יואב איכר נפצע קשה לאחר שהתנגש עם מכוניתו בגמל, בכביש 40 סמוך למצפה רמון.",
-                "text2-accident": "רס”ן איכר, ששימש קצין האימון הגופני של זרוע היבשה, היה בדרכו חזרה ממרכז הארץ לביתו שבמצפה רמון.",
-                "text3-accident": "רס”ן איכר הוא מעמודי התווך של מערך הכושר הקרבי בצה”ל ועד לאחרונה שירת כקצין הכושר הקרבי של בה”ד 1.",
-                "id": "research-animals"
-            },
-            {
-                "secTitle": "דגשים להימנעות מהתנגשות בבעלי חיים",
-                "id": "highlights-animals"
-            }
+          {
+            "text1": "הכר את מאפייני השטח שבו אתה נמצא",
+            "text2": "שים לב לתמרורי האזהרה",
+            "text3": "התחשב בתנאי הדרך ובראות"
+          }
         ],
-        "changingWheel": [
-            {
-                "sectitle": "דגשי בטיחות להחלפת גלגל",
-                "text": "לחצו על הכלים"
-            },
-            {
-                "highlight1": "1. דומם מנוע והפעל את אורות החירום.",
-                "highlight2": "2. לבש אפוד זוהר.",
-                "highlight3": "3. מקם משולש אזהרה שייראה למרחק של 100 מטרים.",
-                "highlight4": "4. אבטח את הרכב מתזוזה.",
-                "highlight5": "5. הוצא את כלי הנהג ואת הגלגל הרזרבי",
-                "highlight6": "6. מקם את הג'ק במקום יציב בשלדת הרכב."
-            }
-        ],
-        "fireDrill": [
-            {
-                "secTitle": "הסיבות לשריפה ברכב",
-                "reason1": "קצר חשמלי במערכות החשמל ברכב.",
-                "reason2": "נזילת דלק או שמן על מערכות חמות ברכב.",
-                "reason3": "השלכת מקור חום לעבר ציוד ברכב",
-                "reason4": "חשמל סטטי במהלך תדלוק",
-                "id": "reasons-of-fire"
-            },
-            {
-                "secTitle": "תרגולת שריפה ברכב",
-                "id": "video-fire"
-            }
-        ],
-        "FlippingDrill": [
-            {
-                "secTitle": "רקע - התהפכות",
-                "text1": "התהפכויות כלי רכב בצה“ל הן תופעהשל נהיגה לא זהירה.",
-                "text2": "מדי שנה מתהפכים בין 90-110 כלים.",
-                "text3": "ההתהפכויות מתרחשות בשגרה, בפעילות מבצעית ובמהלך אימון.",
-                "id": "background-flipping"
-            },
-            {
-                "secTitle": "התנהלות לפני נסיעה",
-                "id": "preparation-ride"
-            },
-            {
-                "secTitle": "נקודות אחיזה במקרה של התהפכות",
-                "gripPointSteeringWheel": "הנהג - ההגה",
-                "gripPointChairs": "היושבים במושב האחורי - המושב שלפניהם וידיות האחיזה",
-                "gripPointHandles": "הנוסע ליד הנהג - ידיות האחיזה בקדמת הרכב או בצד למעלה"
-            }
-        ],
-        "practice": [
-            {
-                "secTitle": "לחצו על מקומות האחיזה ברכב!"
-            },
-            {
-                "moveOnText": "רוצה לעבור למסך סיום או להמשיך ללמוד?",
-                "ans1": "יאללה לסיים!",
-                "ans2": "ללמוד עוד!"
-            }
-        ],
-        "Questions": [
-            {
-                "id": 1,
-                "questionText": "מה הזמן המומלץ לשמירת מרחק?",
-                "ans1": "4 שניות",
-                "ans2": "6 שניות",
-                "ans3": "2 שניות",
-                "ans4": "0 שניות",
-                "correctAnswer": 3
-            },
-            {
-                "id": 2,
-                "questionText": "מה הן הסכנות האפשריות בירידה לשול?",
-                "ans1": "מקדמי חיכוך שונים בין הכביש לכורכר",
-                "ans2": "עצמים מסוכנים בשול",
-                "ans3": "הבדלי גובה בין הכביש לשוליים",
-                "ans4": "כל התשובות נכונות",
-                "correctAnswer": 4
-            },
-            {
-                "id": 3,
-                "questionText": "מה לא דגש לנסיעה בשטח שעלולים להימצא בו בעלי חיים?",
-                "ans1": "שים לב לתמרורי האזהרה.",
-                "ans2": "לבש אפוד זוהר",
-                "ans3": "הכר את מאפייני השטח שבו אתה נמצא.",
-                "ans4": "התחשב בתנאי הדרך ובנראות.",
-                "correctAnswer": 2
-            }
-        ],
-        "endScreen": [
-            {
-                "title": "כל הכבוד!",
-                "secTitle": "עכשיו אתם יודעים את הוראות הבטיחות!"
-            }
+        "flippingDrill": [
+          {
+            "text1": "כל הצוות יחגור חגורות בטיחות.",
+            "text2": "חבישת קסדה, ברכב המחויב לפי פקודות.",
+            "text3": "הציוד ברכב יקובע: ארגז פעילות, קשר וכדומה."
+          }
         ]
-    },
-
-    
-        "en": {
-            "openingPage": [
-                { "text": "Driving Safety", "id": "main-title" },
-                { "text": "Welcome to the course!", "id": "open-text1" },
-                {
-                  "text": "Learn safe driving and how to handle complex situations",
-                  "id": "open-text2"
-                },
-                { "text": "Go to the next page!", "id": "next-btn-opening" }
-              ],
-              "details": [
-                {
-                  "text": "Please enter your full name and personal number",
-                  "id": "details-text"
-                },
-                { "text": "Full name:", "id": "details-name" },
-                { "text": "Personal number:", "id": "details-nam" }
-              ],
-              "instractions": [
-                {
-                  "title": "Instructions",
-                  "moveOn": "Use these buttons to move back and forward:",
-                  "unable": "This is a disabled button"
-                },
-                {
-                  "videos": "Videos will appear during the course:",
-                  "play": "Play",
-                  "pause": "Pause"
-                },
-                {
-                  "leng": " Change language using this button:",
-                  "boldLeng": "Choose"
-                },
-                {
-                  "toMap": "If you click this button:",
-                  "seeMap": "You can see completed topics and your current location."
-                },
-                {
-                  "narration": " Narration settings:",
-                  "boldNar": "Click",
-                  "with": "With narration",
-                  "without": "Without narration",
-                  "anytime": "Narration can be turned on or off anytime."
-                }
-              ],
-              "subjMap": [
-                { "text": "Topic Map", "id": "map-title" },
-                { "text": "Select a topic!", "id": "microcopy-map" },
-                {
-                  "text-open": "Open map",
-                  "text-close": "Close map",
-                  "id": "back-to-map-btn"
-                },
-                {
-                  "text": "Introduction",
-                  "id": "introduction",
-                  "img": "intro",
-                  "nextId": "roadside"
-                },
-                {
-                  "text": "Road Shoulder",
-                  "id": "roadside",
-                  "img": "roadside",
-                  "nextId": "keepingDistance"
-                },
-                {
-                  "text": "Keeping Distance",
-                  "id": "keepingDistance",
-                  "img": "distance",
-                  "nextId": "animalAccidents"
-                },
-                {
-                  "text": "Animal Accidents",
-                  "id": "animalAccidents",
-                  "img": "animals",
-                  "nextId": "changingWheel"
-                },
-                {
-                  "text": "Changing a Wheel",
-                  "id": "changingWheel",
-                  "img": "wheel",
-                  "nextId": "fireDrill"
-                },
-                {
-                  "text": "Vehicle Fire Drill",
-                  "id": "fireDrill",
-                  "img": "fire",
-                  "nextId": "flippingDrill"
-                },
-                {
-                  "text": "Rollover Drill",
-                  "id": "flippingDrill",
-                  "img": "turning-over",
-                  "nextId": "practice"
-                },
-                { "text": "Practice", "id": "practice", "img": "practice" }
-              ],
-              "buttons": [
-                { "text": "Next", "id": "next-btn" },
-                { "text": "Back", "id": "back-btn" }
-              ],
-              "introduction": [
-                {
-                  "text": "Why is driving safety important?",
-                  "id": "sec-title-intro"
-                },
-                {
-                  "text": "Every year many traffic accidents occur in the IDF.",
-                  "id": "text1-intro"
-                },
-                {
-                  "text": "Accidents happen during routine, operations, and training.",
-                  "id": "text2-intro"
-                },
-                {
-                  "text": "Today we will learn how to act in emergencies.",
-                  "id": "text3-intro"
-                }
-              ],
-              "roadside": [
-                {
-                  "secTitle": "Road Shoulder",
-                  "text": "Area next to the road, up to 3 meters wide or until the drainage ditch",
-                  "id": "subj1Roadside"
-                },
-                {
-                  "secTitle": "Reasons for Leaving the Road",
-                  "text": "Click the boxes to see the reasons!",
-                  "id": "factors"
-                },
-                {
-                  "planned": "Planned",
-                  "text": "Common reasons",
-                  "factor1": "1. Vehicle repair",
-                  "factor2": "2. Picking up or dropping off passengers",
-                  "id": "planned"
-                },
-                {
-                  "unplanned": "Unplanned",
-                  "factor1": "1. Sharp deviation",
-                  "factor2": "2. Driver distraction",
-                  "id": "unPlanned"
-                },
-                {
-                  "secTitle": "Dangers on the Shoulder",
-                  "text1": "Height differences",
-                  "text2": "Different friction",
-                  "text3": "Hazardous objects"
-                },
-                { "secTitle": "Proper Descent", "id": "down" },
-                {
-                  "secTitle": "Forced Descent Guidelines",
-                  "text": "Click the stones!",
-                  "highlight1": "Stay calm",
-                  "highlight2": "Hold the wheel with both hands",
-                  "highlight3": "Brake gently",
-                  "highlight4": "Never brake hard",
-                  "highlight5": "Avoid sharp steering",
-                  "id": "highlights-down"
-                },
-                { "secTitle": "Proper Return", "id": "up" },
-                {
-                  "secTitle": "Return Guidelines",
-                  "right": "Return using tire tread",
-                  "wrong": "Do not rub tire sidewall",
-                  "id": "highlights-up"
-                }
-              ],
-              "titledGraphics": [
-                {
-                  "roadside": [
-                    {
-                      "text1": "Height differences",
-                      "text2": "Different friction",
-                      "text3": "Hazardous objects"
-                    }
-                  ],
-                  "animalAccidents": [
-                    {
-                      "text1": "Know your terrain",
-                      "text2": "Watch for warning signs",
-                      "text3": "Adjust to road conditions"
-                    }
-                  ],
-                  "flippingDrill": [
-                    {
-                      "text1": "Seat belts on",
-                      "text2": "Wear helmet if required",
-                      "text3": "Secure all equipment"
-                    }
-                  ]
-                }
-              ],
-              "endScreen": [
-                {
-                  "title": "Well done!",
-                  "secTitle": "You know the safety rules!"
-                }
-              ]
-            }
-          
-        }
-      
+      }
+    ],
+    "payAttention": [
+      {
+        "intro": "כל אלו מקרים אמיתיים שקרו בגלל אי ציות להוראות בטיחות",
+        "roadside": "זכרו! גם על שול הדרך קיימות סכנות כגון: בורות, תמרורים והולכי רגל.",
+        "twoSec": "זכרו! בחורף מומלץ לשמור על מרווח של 3 שניות.",
+        "whyDistance": "זכרו! החוק קובע כי נהג חייב לשמור על מרווח, המאפשר עצירה של הרכב בכל עת, למניעת תאונה.",
+        "FlippingDrill": "התרגולת תבוצע על ידי המפקד משימה, יש לבצע תרגולת התהפכות סטטית לפני תחילת נסיעה."
+      }
+    ],
+    "keepingDistance": [
+      {
+        "secTitle": "שמירת מרחק",
+        "text1": "שמירת מרחק מהמכונית שלפנים חיונית ועשויה למנוע כ-4000 תאונות בכל שנה בישראל.",
+        "text2": "הזמן המומלץ לשמירת מרווח מהרכב שלפנים הוא 2 שניות, בחורף 3 שניות.",
+        "id": "keepingDistanceSubj1"
+      },
+      {
+        "secTitle": "כלל שתי השניות",
+        "text": "שניות",
+        "id": "animaition"
+      },
+      {
+        "secTitle": "מדוע יש לשמור מרחק?",
+        "text": "-לחצו על לוחיות הרישוי-",
+        "scroll": "שימו לב שיש גלילה",
+        "reason1": "למנוע תאונה “חזית-אחור” בעת עצירה או האטה.",
+        "reason2": "לשפר את שדה הראייה.",
+        "reason3": "לאפשר לרכב עוקף להיכנס למרווח שנוצר לפנים.",
+        "reason4": "לאפשר יציאה בטוחה לעקיפה",
+        "reason5": "למנוע שחיקת בלמים וצריכת דלק מופרזת.",
+        "reason6": "למנוע מתח ועייפות מהנהג - בשמירת מרחק הנהיגה רגועה ומשוחררת.",
+        "reason7": "למנוע החלקה בזמן בלימת חירום על כביש רטוב",
+        "reason8": "למנוע פגיעה של חפצים, הנופלים מהרכבים שלפנינו."
+      }
+    ],
+    "animalAccidents": [
+      {
+        "secTitle": "רקע - תרונות עם בעלי חיים",
+        "text1-background": "כבישי הארץ מהווים מוקד לסיכון גבוה להתנגשות עם בעלי חיים בגלל קרבתם לכבישים.",
+        "text2-background": "סכנה זו מוחשית בעיקר באזורי הצפון והדרום.",
+        "id": "background-animals"
+      },
+      {
+        "secTitle": "קצין צה”ל במצב קשה לאחר שהתנגש בגמל",
+        "text1-accident": "תאונה קטלנית בדרום: קצין צה”ל רס”ן יואב איכר נפצע קשה לאחר שהתנגש עם מכוניתו בגמל, בכביש 40 סמוך למצפה רמון.",
+        "text2-accident": "רס”ן איכר, ששימש קצין האימון הגופני של זרוע היבשה, היה בדרכו חזרה ממרכז הארץ לביתו שבמצפה רמון.",
+        "text3-accident": "רס”ן איכר הוא מעמודי התווך של מערך הכושר הקרבי בצה”ל ועד לאחרונה שירת כקצין הכושר הקרבי של בה”ד 1.",
+        "id": "research-animals"
+      },
+      {
+        "secTitle": "דגשים להימנעות מהתנגשות בבעלי חיים",
+        "id": "highlights-animals"
+      }
+    ],
+    "changingWheel": [
+      {
+        "sectitle": "דגשי בטיחות להחלפת גלגל",
+        "text": "לחצו על הכלים"
+      },
+      {
+        "highlight1": "1. דומם מנוע והפעל את אורות החירום.",
+        "highlight2": "2. לבש אפוד זוהר.",
+        "highlight3": "3. מקם משולש אזהרה שייראה למרחק של 100 מטרים.",
+        "highlight4": "4. אבטח את הרכב מתזוזה.",
+        "highlight5": "5. הוצא את כלי הנהג ואת הגלגל הרזרבי",
+        "highlight6": "6. מקם את הג'ק במקום יציב בשלדת הרכב."
+      }
+    ],
+    "fireDrill": [
+      {
+        "secTitle": "הסיבות לשריפה ברכב",
+        "reason1": "קצר חשמלי במערכות החשמל ברכב.",
+        "reason2": "נזילת דלק או שמן על מערכות חמות ברכב.",
+        "reason3": "השלכת מקור חום לעבר ציוד ברכב",
+        "reason4": "חשמל סטטי במהלך תדלוק",
+        "id": "reasons-of-fire"
+      },
+      {
+        "secTitle": "תרגולת שריפה ברכב",
+        "id": "video-fire"
+      }
+    ],
+    "FlippingDrill": [
+      {
+        "secTitle": "רקע - התהפכות",
+        "text1": "התהפכויות כלי רכב בצה“ל הן תופעהשל נהיגה לא זהירה.",
+        "text2": "מדי שנה מתהפכים בין 90-110 כלים.",
+        "text3": "ההתהפכויות מתרחשות בשגרה, בפעילות מבצעית ובמהלך אימון.",
+        "id": "background-flipping"
+      },
+      {
+        "secTitle": "התנהלות לפני נסיעה",
+        "id": "preparation-ride"
+      },
+      {
+        "secTitle": "נקודות אחיזה במקרה של התהפכות",
+        "gripPointSteeringWheel": "הנהג - ההגה",
+        "gripPointChairs": "היושבים במושב האחורי - המושב שלפניהם וידיות האחיזה",
+        "gripPointHandles": "הנוסע ליד הנהג - ידיות האחיזה בקדמת הרכב או בצד למעלה"
+      }
+    ],
+    "practice": [
+      {
+        "secTitle": "לחצו על מקומות האחיזה ברכב!"
+      },
+      {
+        "moveOnText": "רוצה לעבור למסך סיום או להמשיך ללמוד?",
+        "ans1": "יאללה לסיים!",
+        "ans2": "ללמוד עוד!"
+      }
+    ],
+    "Questions": [
+      {
+        "id": 1,
+        "questionText": "מה הזמן המומלץ לשמירת מרחק?",
+        "ans1": "4 שניות",
+        "ans2": "6 שניות",
+        "ans3": "2 שניות",
+        "ans4": "0 שניות",
+        "correctAnswer": 3
+      },
+      {
+        "id": 2,
+        "questionText": "מה הן הסכנות האפשריות בירידה לשול?",
+        "ans1": "מקדמי חיכוך שונים בין הכביש לכורכר",
+        "ans2": "עצמים מסוכנים בשול",
+        "ans3": "הבדלי גובה בין הכביש לשוליים",
+        "ans4": "כל התשובות נכונות",
+        "correctAnswer": 4
+      },
+      {
+        "id": 3,
+        "questionText": "מה לא דגש לנסיעה בשטח שעלולים להימצא בו בעלי חיים?",
+        "ans1": "שים לב לתמרורי האזהרה.",
+        "ans2": "לבש אפוד זוהר",
+        "ans3": "הכר את מאפייני השטח שבו אתה נמצא.",
+        "ans4": "התחשב בתנאי הדרך ובנראות.",
+        "correctAnswer": 2
+      }
+    ],
+    "endScreen": [
+      {
+        "title": "כל הכבוד!",
+        "secTitle": "עכשיו אתם יודעים את הוראות הבטיחות!"
+      }
+    ]
+  },
+  "en": {
+    "openingPage": [
+      {
+        "text": "Driving Safety Instructions",
+        "id": "main-title"
+      },
+      {
+        "text": "Welcome to our course!",
+        "id": "open-text1"
+      },
+      {
+        "text": "Today you will learn how to drive safely and how to handle complex driving situations",
+        "id": "open-text2"
+      },
+      {
+        "text": "Proceed to the next page!",
+        "id": "next-btn-opening"
+      }
+    ],
+    "details": [
+      {
+        "text": "Alright, enter your full name and personal number",
+        "id": "details-text"
+      },
+      {
+        "text": "Full name:",
+        "id": "details-name"
+      },
+      {
+        "text": "Personal number:",
+        "id": "details-nam"
+      }
+    ],
+    "instractions": [
+      {
+        "title": "Instructions",
+        "moveOn": "Use these buttons to move forward or back at any time:",
+        "unable": "This shows a disabled button"
+      },
+      {
+        "videos": "The course includes videos:",
+        "play": "Play",
+        "pause": "Pause"
+      },
+      {
+        "leng": " language with this button:",
+        "boldLeng": "Change"
+      },
+      {
+        "toMap": "Click this button:",
+        "seeMap": "View your progress and current topic."
+      },
+      {
+        "narration": " narration preference:",
+        "boldNar": "Click",
+        "with": "With narration",
+        "without": "Without narration",
+        "anytime": "You can toggle narration anytime."
+      }
+    ],
+    "subjMap": [
+      {
+        "text": "Topic Map",
+        "id": "map-title"
+      },
+      {
+        "text": "Click the desired topic!",
+        "id": "microcopy-map"
+      },
+      {
+        "text-open": "Open topic map",
+        "text-close": "Close map",
+        "id": "back-to-map-btn"
+      },
+      {
+        "text": "Introduction",
+        "id": "introduction",
+        "img": "intro",
+        "nextId": "roadside"
+      },
+      {
+        "text": "Shoulder Entry & Exit",
+        "id": "roadside",
+        "img": "roadside",
+        "nextId": "keepingDistance"
+      },
+      {
+        "text": "Keeping Distance",
+        "id": "keepingDistance",
+        "img": "distance",
+        "nextId": "animalAccidents"
+      },
+      {
+        "text": "Animal Accidents",
+        "id": "animalAccidents",
+        "img": "animals",
+        "nextId": "changingWheel"
+      },
+      {
+        "text": "Changing a Wheel",
+        "id": "changingWheel",
+        "img": "wheel",
+        "nextId": "fireDrill"
+      },
+      {
+        "text": "Vehicle Fire Drill",
+        "id": "fireDrill",
+        "img": "fire",
+        "nextId": "flippingDrill"
+      },
+      {
+        "text": "Rollover Drill",
+        "id": "flippingDrill",
+        "img": "turning-over",
+        "nextId": "practice"
+      },
+      {
+        "text": "Final Practice",
+        "id": "practice",
+        "img": "practice"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Next",
+        "id": "next-btn"
+      },
+      {
+        "text": "Back",
+        "id": "back-btn"
+      }
+    ],
+    "introduction": [
+      {
+        "text": "Why is it important to know driving safety rules?",
+        "id": "sec-title-intro"
+      },
+      {
+        "text": "Every year, dozens of road accidents occur in the IDF.",
+        "id": "text1-intro"
+      },
+      {
+        "text": "Accidents happen during routine activity, operations, and training.",
+        "id": "text2-intro"
+      },
+      {
+        "text": "Today we will learn how to handle various emergency situations.",
+        "id": "text3-intro"
+      }
+    ],
+    "roadside": [
+      {
+        "secTitle": "Road Shoulder",
+        "text": "The area next to the road edge without a sidewalk, up to three meters wide, or extending to the drainage ditch if its edge is less than six meters from the road.",
+        "id": "subj1Roadside"
+      },
+      {
+        "secTitle": "Reasons for Leaving the Road",
+        "text": "Click the boxes to see the reasons!",
+        "id": "factors"
+      },
+      {
+        "planned": "Planned",
+        "text": "Remaining causes",
+        "factor1": "1. Stopping to fix a malfunction",
+        "factor2": "2. Stopping to pick up or drop off passengers",
+        "id": "planned"
+      },
+      {
+        "unplanned": "Unplanned",
+        "factor1": "1. Sudden deviation due to an oncoming vehicle",
+        "factor2": "2. Deviation due to distraction",
+        "id": "unPlanned"
+      },
+      {
+        "secTitle": "Dangers of Driving on the Shoulder",
+        "text1": "Height differences between road and shoulder",
+        "text2": "Asphalt and gravel friction differences",
+        "text3": "Hazardous objects on the shoulder"
+      },
+      {
+        "secTitle": "Proper Descent to the Shoulder",
+        "id": "down"
+      },
+      {
+        "secTitle": "Forced Descent Guidelines",
+        "text": "Click the stones!",
+        "highlight1": "Stay calm – it is possible to drive on the shoulder",
+        "highlight2": "Hold the steering wheel with both hands",
+        "highlight3": "Brake gently to prevent wheel lock",
+        "highlight4": "Never perform emergency braking",
+        "highlight5": "Do not turn the steering wheel sharply!",
+        "id": "highlights-down"
+      },
+      {
+        "secTitle": "Proper Return to the Road",
+        "id": "up"
+      },
+      {
+        "secTitle": "Guidelines for Safe Return",
+        "right": "Return to the road using the tire tread to maintain control",
+        "wrong": "Avoid rubbing the tire sidewall against the road edge",
+        "id": "highlights-up"
+      }
+    ],
+    "titledGraphics": [
+      {
+        "roadside": [
+          {
+            "text1": "Height differences between road and shoulder",
+            "text2": "Asphalt and gravel friction differences",
+            "text3": "Hazardous objects on shoulder"
+          }
+        ],
+        "animalAccidents": [
+          {
+            "text1": "Know the terrain",
+            "text2": "Watch warning signs",
+            "text3": "Check road and visibility"
+          }
+        ],
+        "flippingDrill": [
+          {
+            "text1": "All crew must wear seatbelts",
+            "text2": "Helmet required when mandated",
+            "text3": "Secure all equipment: boxes, radio, etc."
+          }
+        ]
+      }
+    ],
+    "payAttention": [
+      {
+        "intro": "All of these are real cases caused by failure to follow safety instructions",
+        "roadside": "Remember! The shoulder also contains hazards such as pits, signs, and pedestrians.",
+        "twoSec": "Remember! In winter, it is recommended to keep a 3-second gap.",
+        "whyDistance": "Remember! The law requires maintaining a distance that allows stopping at any time to prevent accidents.",
+        "FlippingDrill": "The drill is conducted by the mission commander; a static rollover drill must be performed before driving."
+      }
+    ],
+    "keepingDistance": [
+      {
+        "secTitle": "Keeping Distance",
+        "text1": "Keeping distance from the vehicle ahead is critical and can prevent about 4,000 accidents each year in Israel.",
+        "text2": "The recommended following time is 2 seconds, and 3 seconds in winter.",
+        "id": "keepingDistanceSubj1"
+      },
+      {
+        "secTitle": "The Two-Second Rule",
+        "text": "Seconds",
+        "id": "animaition"
+      },
+      {
+        "secTitle": "Why Keep Distance?",
+        "text": "-Click the license plates-",
+        "scroll": "Note: scrolling is available",
+        "reason1": "To prevent rear-end collisions during braking or slowing down.",
+        "reason2": "To improve field of vision.",
+        "reason3": "To allow an overtaking vehicle to enter the gap ahead.",
+        "reason4": "To enable safe overtaking.",
+        "reason5": "To reduce brake wear and excessive fuel consumption.",
+        "reason6": "To reduce driver stress and fatigue – driving becomes calmer.",
+        "reason7": "To prevent skidding during emergency braking on wet roads.",
+        "reason8": "To avoid impact from objects falling from vehicles ahead."
+      }
+    ],
+    "animalAccidents": [
+      {
+        "secTitle": "Animal Accident Background",
+        "text1-background": "Roads across the country pose a high risk of collisions with animals due to their proximity to traffic.",
+        "text2-background": "This danger is especially significant in the northern and southern regions.",
+        "id": "background-animals"
+      },
+      {
+        "secTitle": "IDF Officer Seriously Injured After Hitting a Camel",
+        "text1-accident": "A severe accident in the south: IDF Major Yoav Icher was seriously injured after colliding with a camel while driving on Route 40 near Mitzpe Ramon.",
+        "text2-accident": "Major Icher, who served as the Physical Training Officer of the Ground Forces, was on his way home from central Israel to Mitzpe Ramon.",
+        "text3-accident": "Major Icher is a key figure in the IDF combat fitness system and until recently served as the combat fitness officer of Bahad 1.",
+        "id": "research-animals"
+      },
+      {
+        "secTitle": "Guidelines for Avoiding Collisions with Animals",
+        "id": "highlights-animals"
+      }
+    ],
+    "changingWheel": [
+      {
+        "sectitle": "Wheel Change Safety",
+        "text": "Click on the tools"
+      },
+      {
+        "highlight1": "1. Turn off engine and hazard lights.",
+        "highlight2": "2. Wear reflective vest.",
+        "highlight3": "3. Place warning triangle 100m away.",
+        "highlight4": "4. Secure the vehicle.",
+        "highlight5": "5. Take out tools and spare wheel.",
+        "highlight6": "6. Place jack on a stable chassis point."
+      }
+    ],
+    "fireDrill": [
+      {
+        "secTitle": "Causes of Vehicle Fire",
+        "reason1": "Electrical short in vehicle systems.",
+        "reason2": "Fuel or oil leak on hot parts.",
+        "reason3": "Throwing heat source at vehicle equipment.",
+        "reason4": "Static electricity while refueling.",
+        "id": "reasons-of-fire"
+      },
+      {
+        "secTitle": "Vehicle Fire Drill",
+        "id": "video-fire"
+      }
+    ],
+    "FlippingDrill": [
+      {
+        "secTitle": "Rollover Background",
+        "text1": "IDF vehicle rollovers are caused by unsafe driving.",
+        "text2": "90–110 vehicles overturn each year.",
+        "text3": "Rollovers happen during routine activity, operations, and training.",
+        "id": "background-flipping"
+      },
+      {
+        "secTitle": "Before Driving",
+        "id": "preparation-ride"
+      },
+      {
+        "secTitle": "Grip Points",
+        "gripPointSteeringWheel": "Driver – steering wheel",
+        "gripPointChairs": "Rear passengers – seat in front & grab handles",
+        "gripPointHandles": "Front passenger – front/upper grab handles"
+      }
+    ],
+    "practice": [
+      {
+        "secTitle": "Click on the grip points inside the vehicle!"
+      },
+      {
+        "moveOnText": "Want to move to the end screen or continue learning?",
+        "ans1": "Let’s finish!",
+        "ans2": "Keep learning!"
+      }
+    ],
+    "Questions": [
+      {
+        "id": 1,
+        "questionText": "What is the recommended following distance time?",
+        "ans1": "4 seconds",
+        "ans2": "6 seconds",
+        "ans3": "2 seconds",
+        "ans4": "0 seconds",
+        "correctAnswer": 3
+      },
+      {
+        "id": 2,
+        "questionText": "What are the possible dangers when driving onto the shoulder?",
+        "ans1": "Different friction levels between road and gravel",
+        "ans2": "Hazardous objects on the shoulder",
+        "ans3": "Height differences between the road and shoulder",
+        "ans4": "All answers are correct",
+        "correctAnswer": 4
+      },
+      {
+        "id": 3,
+        "questionText": "Which is NOT a guideline when driving in areas with animals?",
+        "ans1": "Pay attention to warning signs.",
+        "ans2": "Wear a reflective vest",
+        "ans3": "Know the characteristics of the terrain.",
+        "ans4": "Consider road and visibility conditions.",
+        "correctAnswer": 2
+      }
+    ],
+    "endScreen": [
+      {
+        "title": "Well done!",
+        "secTitle": "Now you know the safety instructions!"
+      }
+    ]
+  }
+}
