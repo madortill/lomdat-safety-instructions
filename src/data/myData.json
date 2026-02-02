@@ -475,7 +475,7 @@
         "nextId": "changingWheel"
       },
       {
-        "text": "Changing a Wheel",
+        "text": "Changing  Wheel",
         "id": "changingWheel",
         "img": "wheel",
         "nextId": "fireDrill"
@@ -649,10 +649,10 @@
         "id": "background-animals"
       },
       {
-        "secTitle": "IDF Officer Seriously Injured After Hitting a Camel",
-        "text1-accident": "A severe accident in the south: IDF Major Yoav Icher was seriously injured after colliding with a camel while driving on Route 40 near Mitzpe Ramon.",
-        "text2-accident": "Major Icher, who served as the Physical Training Officer of the Ground Forces, was on his way home from central Israel to Mitzpe Ramon.",
-        "text3-accident": "Major Icher is a key figure in the IDF combat fitness system and until recently served as the combat fitness officer of Bahad 1.",
+        "secTitle": "IDF Officer Injured in Camel Collision",
+        "text1-accident": "In the south, IDF Major Yoav Icher was seriously injured after hitting a camel on Route 40 near Mitzpe Ramon.",
+        "text2-accident": "He was returning home from central Israel to Mitzpe Ramon.",
+        "text3-accident": "Major Icher is a key figure in IDF combat fitness and recently served as Bahad 1’s fitness officer.",
         "id": "research-animals"
       },
       {

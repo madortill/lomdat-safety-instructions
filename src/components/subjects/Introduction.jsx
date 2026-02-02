@@ -32,14 +32,14 @@ function Introduction({ onNext }) {
       <p className="title-subjects">{titleIntro}</p>
 
       {pageIndex === 0 && (
-        <div className="intro-page1">
+        <div className=" page intro-page1">
           <p>תוכן של עמוד ראשון — לדוגמה הסבר ראשוני</p>
           <PayAttention text={important} />
         </div>
       )}
 
       {pageIndex === 1 && (
-        <div className="intro-page2">
+        <div className="page intro-page2">
           <p className="sec-title-intro">{secTitleIntro}</p>
           <div className="sign-crash">
             <ul className="my-list">

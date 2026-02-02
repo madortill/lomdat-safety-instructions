@@ -3,7 +3,7 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-    /* margin-top: 2.3rem; */
+    margin-top: -1.5rem;
 }
 
 .title-subjects {
@@ -12,6 +12,7 @@
     font-size: 2.4rem;
     font-family: "abraham";
     color: #FFEE97;
+    margin-top: -0.8rem;
 }
 
 .intro-page2 {
@@ -19,12 +20,13 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
+    
 }
 
 .sec-title-intro {
     position: relative;
     width: 25rem;
-    top: 6rem;
+    top: 4rem;
     font-size: 1.4rem;
     font-family: "rubik";
     color: #FFEE97;
@@ -88,7 +90,7 @@
   }
   .nav-button1{
     position: absolute;
-    top: 85%;
+    top: 83%;
     right: 18%;
     transform: translate(+50%,-50%);
     width: 4rem;
@@ -110,7 +112,7 @@
   }
   .nav-button2{
     position: absolute;
-    top: 85%;
+    top: 83%;
     right: 78%;
     transform: translate(+50%,-50%);
     width: 4rem;

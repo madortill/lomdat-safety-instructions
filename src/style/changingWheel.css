@@ -1,28 +1,34 @@
 .wheel-text-microfopy {
     position: relative;
-    top: -1.5rem;
+    top: 1.5rem;
     font-size: 1.2rem;
     color: #FFEE97;
     font-family: "rubik";
     text-align: right;
-    margin: 0rem 1rem;
+    margin: 0rem 5.5rem;
     padding-top: 0.5rem;
 }
 .wheel-text {
     position: relative;
-    top: 7rem;
+    top: 4rem;
+    /* left: 0.3rem; */
     font-size: 1.2rem;
-    /* margin-bottom: 1rem; */
     color: #FFEE97;
     font-family: "rubik";
-    text-align: right;
+    text-align: right; /* עדיין נשאר לימין עבור עברית */
     margin: 0rem 1rem;
     padding-top: 0.5rem;
-    /* font-weight: 700; */
-    /* width: 15rem; */
+    display: flex;           /* חדש */
+    flex-direction: column;  /* הטקסט מעל הכלים */
+    align-items: flex-end;   /* לתמוך גם בעברית וגם באנגלית */
+    /* gap: 1rem;               רווח בין הטקסט לכלים */
 }
+
 .tools {
-    position: absolute;
-    top: -0.5rem;
-    left: -4.55rem;
+    position: relative;  /* משנה מ-absolute ל-relative */
+    top: 0;              /* לא צריך */
+    left: 0;             /* לא צריך */
+    display: flex;       /* להצגת הכלים בשורה */
+    /* gap: 1rem;           רווח בין הכלים */
+    flex-wrap: wrap;     /* אם המסך קטן או הטקסט ארוך */
 }

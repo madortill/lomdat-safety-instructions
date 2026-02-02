@@ -26,7 +26,7 @@
   .gripPointsCar {
     width: 22rem;
     position: absolute;
-    top: 53%;
+    top: 51.5%;
     left: 50%;
     transform: translate(-50%,-50%);
   }
@@ -51,7 +51,7 @@
   @media (max-width: 375px) {
     .gripPointsCar {
         width: 19rem;
-        top: 53.5%;
+        top: 51.5%;
       }
       .steeringWheel {
         top: 9rem;

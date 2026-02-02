@@ -38,7 +38,7 @@ function Home() {
   const [closeInst, setCloseInst] = useState(false);
   const [showMap, setShowMap] = useState(true);
   const [currentSubject, setCurrentSubject] = useState("");
-  const [unlockedSubjects, setUnlockedSubjects] = useState(["roadside"]);
+  const [unlockedSubjects, setUnlockedSubjects] = useState(["introduction"]);
   const [highlightedSubject, setHighlightedSubject] = useState("introduction");
   const [hasEnteredFirstSubject, setHasEnteredFirstSubject] = useState(false);
   const [isOverlayMap, setIsOverlayMap] = useState(false);
@@ -124,7 +124,7 @@ function Home() {
         aria-hidden={isOverlayMap ? "true" : "false"}
       >
         {currentSubject === "introduction" && (
-          <Introduction onNext={() => handleNext("introduction")} />
+          <Introduction className="page" onNext={() => handleNext("introduction")} />
         )}
 
         {currentSubject === "roadside" && (

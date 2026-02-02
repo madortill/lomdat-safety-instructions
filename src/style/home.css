@@ -1,6 +1,10 @@
 
   /* ======= כפתור פתיחת/סגירת המפה ======= */
 /* כפתור פתיחת / סגירת מפה */
+/* .page {
+  position: relative;
+  margin-top: -2rem;
+} */
 .toggle-map-btn {
   position: absolute;
   top: 0.5rem;
