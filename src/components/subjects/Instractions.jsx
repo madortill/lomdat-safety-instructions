@@ -79,43 +79,12 @@ function Instractions({ setCloseInst }) {
           <p className="text-inst map-text2">{allText[3].seeMap}</p>
 
           {/* קריינות */}
-          <p className="text-inst">
-            <strong>{allText[4].boldNar}</strong>
-            {allText[4].narration}
-          </p>
-
-          <div className="img-sound">
-            <div className="text-img-sound">
-              <img
-                id="sound"
-                className={`icon-sound ${
-                  soundHighlight === "sound" ? "active" : ""
-                }`}
-                src={sound}
-                alt="sound"
-                onClick={highlightSound}
-              />
-              <p className="text-inst text-icon-sound">{allText[4].with}</p>
-            </div>
-
-            <div className="text-img-sound">
-              <img
-                id="noSound"
-                className={`icon-sound ${
-                  soundHighlight === "noSound" ? "active" : ""
-                }`}
-                src={noSound}
-                alt="noSound"
-                onClick={highlightSound}
-              />
-              <p className="text-inst text-icon-sound">{allText[4].without}</p>
+          <p className="text-inst">{allText[4].anytime}</p>
             </div>
           </div>
 
-          <p className="text-inst sound-text">{allText[4].anytime}</p>
+         
         </div>
-      </div>
-    </div>
   );
 }
 

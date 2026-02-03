@@ -1,7 +1,7 @@
 import React from "react";
 import progressCar from "../assets/images/subjMap/progressCar.png";
 import "../style/subjMap.css";
-import { useData } from "../context/DataContext.jsx"; // קונטקסט
+import { useData } from "../context/DataContext.jsx";
 
 // טעינת תמונות הנושאים דינמית
 const images = import.meta.glob("../assets/images/subjMap/subjects/*.png", {
@@ -10,13 +10,29 @@ const images = import.meta.glob("../assets/images/subjMap/subjects/*.png", {
 });
 
 function SubjMap({ onSelectSubject, unlockedSubjects, highlightedSubject }) {
-  const { data } = useData(); // כאן מקבלים את ה-JSON הנוכחי
+  const { data } = useData();
 
   const mapTitle = data.subjMap[0].text;
   const microcopyMap = data.subjMap[1].text;
 
-  // כל הנושאים
+  // כל הנושאים (מדלגים על כותרות)
   const subjects = data.subjMap.slice(3);
+
+  // 🎉 עידוד
+  const encouragementArr = data.encouragement[0];
+  const encouragementTexts = Object.values(encouragementArr);
+
+  // הראשון פתוח כברירת מחדל
+  const completedCount = unlockedSubjects.length - 1;
+
+  // עידוד יופיע רק מהנושא השני
+  const showEncouragement = unlockedSubjects.length >= 2;
+
+  const encouragementText = showEncouragement
+    ? encouragementTexts[
+        (completedCount - 1) % encouragementTexts.length
+      ]
+    : "";
 
   return (
     <>
@@ -26,7 +42,11 @@ function SubjMap({ onSelectSubject, unlockedSubjects, highlightedSubject }) {
       </div>
 
       <div className="container-map">
-        <img src={progressCar} alt="progressCar" className="progressCar" />
+        <img
+          src={progressCar}
+          alt="progressCar"
+          className="progressCar"
+        />
 
         <div className="subjects-wrapper">
           {subjects.map((item) => {
@@ -43,12 +63,13 @@ function SubjMap({ onSelectSubject, unlockedSubjects, highlightedSubject }) {
                 style={{
                   opacity: isUnlocked ? 1 : 0.5,
                   transition: "opacity 0.3s",
-                  cursor: "default",
                 }}
               >
                 <img
                   src={imgSrc}
-                  className={`subject ${item.id} ${isHighlighted ? "pop-animation" : ""}`}
+                  className={`subject ${item.id} ${
+                    isHighlighted ? "pop-animation" : ""
+                  }`}
                   alt={item.text}
                   onClick={() => {
                     if (isUnlocked && onSelectSubject) {
@@ -63,6 +84,16 @@ function SubjMap({ onSelectSubject, unlockedSubjects, highlightedSubject }) {
             );
           })}
         </div>
+
+        {/* 🎯 עידוד עם אנימציה */}
+        {showEncouragement && (
+          <p
+            key={completedCount}
+            className="encouragement"
+          >
+            {encouragementText}
+          </p>
+        )}
       </div>
     </>
   );

@@ -90,7 +90,7 @@
   }
   .nav-button1{
     position: absolute;
-    top: 83%;
+    top: 81%;
     right: 18%;
     transform: translate(+50%,-50%);
     width: 4rem;
@@ -112,7 +112,7 @@
   }
   .nav-button2{
     position: absolute;
-    top: 83%;
+    top: 81%;
     right: 78%;
     transform: translate(+50%,-50%);
     width: 4rem;

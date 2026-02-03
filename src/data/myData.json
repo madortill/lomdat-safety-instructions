@@ -121,6 +121,17 @@
         "img": "practice"
       }
     ],
+    "encouragement": [
+      {
+        "text1": "כל הכבוד!",
+        "text2": "אלופים!",
+        "text3": "אין עליכם!",
+        "text4": "המשיכו כך!",
+        "text5": "כל הכבוד!",
+        "text6": "עוד קצת!",
+        "text7": "יאללה תרגול!"
+      }
+    ],
     "buttons": [
       {
         "text": "הבא",
@@ -498,6 +509,17 @@
         "img": "practice"
       }
     ],
+    "encouragement": [
+  {
+    "text1": "Great job!",
+    "text2": "Awesome!",
+    "text3": "You’re doing great!",
+    "text4": "Keep it up!",
+    "text5": "Well done!",
+    "text6": "Almost there!",
+    "text7": "Let’s practice!"
+  }
+],
     "buttons": [
       {
         "text": "Next",
@@ -729,20 +751,20 @@
       },
       {
         "id": 2,
-        "questionText": "What are the possible dangers when driving onto the shoulder?",
-        "ans1": "Different friction levels between road and gravel",
+        "questionText": "What dangers exist when driving onto the shoulder?",
+        "ans1": "Different friction between road and gravel",
         "ans2": "Hazardous objects on the shoulder",
-        "ans3": "Height differences between the road and shoulder",
+        "ans3": "Height differences between road and shoulder",
         "ans4": "All answers are correct",
         "correctAnswer": 4
       },
       {
         "id": 3,
         "questionText": "Which is NOT a guideline when driving in areas with animals?",
-        "ans1": "Pay attention to warning signs.",
+        "ans1": "Pay attention to warning signs",
         "ans2": "Wear a reflective vest",
-        "ans3": "Know the characteristics of the terrain.",
-        "ans4": "Consider road and visibility conditions.",
+        "ans3": "Know the terrain",
+        "ans4": "Consider road and visibility conditions",
         "correctAnswer": 2
       }
     ],

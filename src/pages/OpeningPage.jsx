@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../style/openingPage.css";
 import Details from "../components/Details";
@@ -8,9 +8,10 @@ import carGraphic from "../assets/images/openingPage/carGraphic.png";
 import cloud from "../assets/images/openingPage/cloud.png";
 import cloud2 from "../assets/images/openingPage/cloud2.png";
 import startBtn from "../assets/images/openingPage/startBtn.svg";
+import openingPage2 from "../assets/audio/openingPage2.mp4";
 
 function OpeningPage() {
-  const { data, switchJSON, currentJSON } = useData();
+  const { data, switchJSON, currentJSON, playAudio } = useData();
   const navigate = useNavigate();
 
   const headTitleText = data.openingPage[0].text;
@@ -24,6 +25,7 @@ function OpeningPage() {
   const [fadeOut, setFadeOut] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [showText, setShowText] = useState(false);
+  const [audioPlayed, setAudioPlayed] = useState(false); // ✔️ רק פעם אחת
 
   const [name, setName] = useState("");
   const [personalNumber, setPersonalNumber] = useState("");
@@ -54,12 +56,25 @@ function OpeningPage() {
     navigate("/Home");
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     return () => {
       document.body.style.zoom = "100%";
       document.body.style.transform = "none";
     };
   }, []);
+
+  // 🔑 פונקציה שמופעלת אחרי הפייד-אין של הרכב
+  const handleCarFadeOut = () => {
+    setFadeOut(true);
+    setHidden(true);
+    setShowText(true);
+
+    // ניגון קריינות רק בעברית, רק פעם אחת
+    if (!audioPlayed && currentJSON === "he") {
+      playAudio(openingPage2);
+      setAudioPlayed(true);
+    }
+  };
 
   return (
     <>
@@ -67,12 +82,6 @@ function OpeningPage() {
         <div
           className={`opening-page ${fadeOut ? "fade-out1" : ""}`}
           onClick={() => setShowAbout(false)}
-          onTransitionEnd={() => {
-            if (fadeOut) {
-              setHidden(true);
-              setShowText(true);
-            }
-          }}
         >
           {/* כפתור אודות */}
           <div>
@@ -89,7 +98,9 @@ function OpeningPage() {
           </div>
 
           {/* כפתור שפה */}
-          
+          <button className="lang-btn" onClick={toggleLanguage}>
+            {currentJSON === "he" ? "EN" : "עב"}
+          </button>
 
           {/* אודות */}
           <div
@@ -124,7 +135,7 @@ function OpeningPage() {
               src={carGraphic}
               alt="carGraphic"
               className={`carGraphic ${carMoving ? "car-animate" : ""}`}
-              onAnimationEnd={() => setFadeOut(true)}
+              onAnimationEnd={handleCarFadeOut} // ⬅️ כאן
             />
 
             {!btnClicked && (
@@ -138,9 +149,6 @@ function OpeningPage() {
                 }}
               />
             )}
-            <button className="lang-btn" onClick={toggleLanguage}>
-            {currentJSON === "he" ? "EN" : "עב"}
-          </button>
           </div>
         </div>
       )}

@@ -26,7 +26,7 @@
   .gripPointsCar {
     width: 22rem;
     position: absolute;
-    top: 51.5%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
   }
@@ -45,8 +45,8 @@
     left: 6rem;
   }
   .handles {
-    top: 30.7rem;
-    left: 17rem;
+    top: 29.5rem;
+    left: 16.5rem;
   }
   @media (max-width: 375px) {
     .gripPointsCar {
@@ -64,6 +64,7 @@
       .handles {
         top: 29.5rem;
         left: 15rem;
+        font-size: 0.9rem;
       }
       .carFlippedImg {
         width: 7rem;
