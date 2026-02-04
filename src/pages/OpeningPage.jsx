@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../style/openingPage.css";
 import Details from "../components/Details";
@@ -7,7 +7,6 @@ import { useData } from "../context/DataContext";
 import carGraphic from "../assets/images/openingPage/carGraphic.png";
 import cloud from "../assets/images/openingPage/cloud.png";
 import cloud2 from "../assets/images/openingPage/cloud2.png";
-import startBtn from "../assets/images/openingPage/startBtn.svg";
 import openingPage2 from "../assets/audio/openingPage2.mp4";
 
 function OpeningPage() {
@@ -25,12 +24,12 @@ function OpeningPage() {
   const [fadeOut, setFadeOut] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [showText, setShowText] = useState(false);
-  const [audioPlayed, setAudioPlayed] = useState(false); // ✔️ רק פעם אחת
+  const [audioPlayed, setAudioPlayed] = useState(false);
 
   const [name, setName] = useState("");
   const [personalNumber, setPersonalNumber] = useState("");
 
-  const toggleAbout = () => setShowAbout((prev) => !prev);
+  const toggleAbout = () => setShowAbout(prev => !prev);
 
   const toggleLanguage = (e) => {
     e.stopPropagation();
@@ -56,20 +55,18 @@ function OpeningPage() {
     navigate("/Home");
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     return () => {
       document.body.style.zoom = "100%";
       document.body.style.transform = "none";
     };
   }, []);
 
-  // 🔑 פונקציה שמופעלת אחרי הפייד-אין של הרכב
   const handleCarFadeOut = () => {
     setFadeOut(true);
     setHidden(true);
     setShowText(true);
 
-    // ניגון קריינות רק בעברית, רק פעם אחת
     if (!audioPlayed && currentJSON === "he") {
       playAudio(openingPage2);
       setAudioPlayed(true);
@@ -112,7 +109,7 @@ function OpeningPage() {
             <h3 className="list-text-about">גרפיקה:</h3>
             <p className="list-text-about">רב"ט מאיה מרום</p>
             <h3 className="list-text-about">מומחה תוכן:</h3>
-            <p className="list-text-about">סמל יוסי</p>
+            <p className="list-text-about">רנ"ג יוסי</p>
             <h3 className="list-text-about">רמ"ד טי"ל:</h3>
             <p className="list-text-about">רס"מ עדן בן חמו</p>
             <h3 className="list-text-about">גרסה:</h3>
@@ -135,19 +132,21 @@ function OpeningPage() {
               src={carGraphic}
               alt="carGraphic"
               className={`carGraphic ${carMoving ? "car-animate" : ""}`}
-              onAnimationEnd={handleCarFadeOut} // ⬅️ כאן
+              onAnimationEnd={handleCarFadeOut}
             />
 
             {!btnClicked && (
-              <img
-                src={startBtn}
-                alt="startBtn"
-                className="start-btn"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleStart();
-                }}
-              />
+              <div className="start-btn-wrapper">
+                <div
+                  className="start-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleStart();
+                  }}
+                >
+                  צאו לדרך
+                </div>
+              </div>
             )}
           </div>
         </div>

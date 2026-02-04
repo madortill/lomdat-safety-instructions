@@ -23,7 +23,7 @@ function App() {
         className={`narration-toggle floating ${isNarrationOn ? "on" : "off"}`}
         onClick={toggleNarration}
       >
-        {isNarrationOn ? "עם קריינות" : "ללא קריינות"}
+        {isNarrationOn ? "🔊 קריינות" : "🔇 קריינות"}
       </button>
 
       <img src={screen} alt="screen" className="bg-container" />

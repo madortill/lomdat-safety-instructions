@@ -30,8 +30,8 @@
     border-radius: 150px;
     width: 2rem;
     height: 2rem;
-    left: 1.3rem;
-    top: 5rem;
+    left: 6.5rem;
+    top: 1rem;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     cursor: pointer;
@@ -43,8 +43,8 @@
   font-weight: 600;
   width: 2rem;
   height: 2rem;
-  left: 1.5rem;
-  top: 7rem;
+  left: 6.7rem;
+  top: 3rem;
   text-align: center;
   cursor: pointer;
   z-index: 2;
@@ -123,7 +123,7 @@
   }
   .carGraphic {
     position: relative;
-    top: -11rem;       /* מיקום רגיל במסך */
+    top: -12rem;       /* מיקום רגיל במסך */
     left: 0.3rem;
     width: 12rem;
     height: 13rem;
@@ -190,13 +190,52 @@
     0% { transform: translateX(25px); }
     100% { transform: translateX(0); } /* כמה פיקסלים להעביר ימינה */
   }
+  .start-btn-wrapper {
+    position: relative;
+    display: inline-block;
+    top: -11rem;
+    left: 0.5rem;
+    animation: growShrink 2s infinite;
+  }
+  
+  /* ✨ ההילה */
+  .start-btn-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: -5px; /* כמה הזוהר יוצא החוצה */
+    background: #FFEE97;
+    filter: blur(14px);
+    border-radius: 14px;
+    z-index: 0;
+  }
+  
+  /* הכפתור עצמו */
   .start-btn {
     position: relative;
-    top: -10rem;
-    left: 0.45rem;
+    top: 0.2rem;
+    z-index: 1;
+  
+    background: #6C6C6C;
+    color: #FFEE97;
+    font-family: Rubik;
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.3s ease; /* אנימציה חלקה */
+    text-align: center;
   }
+  @keyframes growShrink {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
   .start-btn:hover {
     transform: scale(1.1); /* גדילה של 10% */
   }

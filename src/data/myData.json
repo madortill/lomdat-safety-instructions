@@ -25,10 +25,12 @@
       },
       {
         "text": "שם מלא:",
+        "verifyName": "יש להזין שם מלא",
         "id": "details-name"
       },
       {
         "text": "מספר אישי:",
+        "verifyPerNum": "מספר אישי מכיל 7 ספרות",
         "id": "details-nam"
       }
     ],
@@ -402,7 +404,7 @@
         "id": "open-text2"
       },
       {
-        "text": "Proceed to the next page!",
+        "text": "Drive on!",
         "id": "next-btn-opening"
       }
     ],
@@ -411,14 +413,16 @@
         "text": "Alright, enter your full name and personal number",
         "id": "details-text"
       },
-      {
-        "text": "Full name:",
-        "id": "details-name"
-      },
-      {
-        "text": "Personal number:",
-        "id": "details-nam"
-      }
+        {
+          "text": "Full name:",
+          "verifyName": "Enter your full name",
+          "id": "details-name"
+        },
+        {
+          "text": "Personal number:",
+          "verifyPerNum": "Personal number must be 7 digits",
+          "id": "details-num"
+        }
     ],
     "instractions": [
       {
@@ -752,9 +756,9 @@
       {
         "id": 2,
         "questionText": "What dangers exist when driving onto the shoulder?",
-        "ans1": "Different friction between road and gravel",
-        "ans2": "Hazardous objects on the shoulder",
-        "ans3": "Height differences between road and shoulder",
+        "ans1": "Different road friction",
+        "ans2": "Hazards on the shoulder",
+        "ans3": "Height differences",
         "ans4": "All answers are correct",
         "correctAnswer": 4
       },

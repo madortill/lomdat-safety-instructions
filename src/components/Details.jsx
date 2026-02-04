@@ -10,19 +10,21 @@ function Details({ name, setName, personalNumber, setPersonalNumber }) {
   if (!data || !data.details) return null;
 
   const detailsTitle = data.details[0].text; 
-  const nameText = data.details[1].text; 
-  const numText = data.details[2].text; 
+  const nameText = data.details[1].text;
+  const verifyName = data.details[1].verifyName; 
+  const numText = data.details[2].text;
+  const verifyPerNum = data.details[2].verifyPerNum;
 
   // בדיקות תקינות
   const isValidName = (value) => value.trim().includes(" ") && !/\d/.test(value);
   const isValidPersonalNumber = (value) => /^\d{7}$/.test(value);
 
   const nameError =
-    !isValidName(name) && name.length > 0 ? "יש להזין שם מלא" : "";
+    !isValidName(name) && name.length > 0 ? `${verifyName}` : "";
 
   const personalNumberError =
     !isValidPersonalNumber(personalNumber) && personalNumber.length > 0
-      ? "מספר אישי מכיל 7 ספרות"
+      ? `${verifyPerNum}`
       : "";
 
   const isFormValid = isValidName(name) && isValidPersonalNumber(personalNumber);
