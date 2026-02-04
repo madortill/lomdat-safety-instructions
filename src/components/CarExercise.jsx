@@ -55,7 +55,7 @@ const [showSteering, setShowSteering] = useState(false);
 <g   
     onClick={() => {
 setShowSteering(true);
-  onPointClick?.();
+  onPointClick?.("steering");
   console.log("הגה נלחץ!");
 }}
     style={{ cursor: "pointer", pointerEvents: "all" }}
@@ -104,7 +104,7 @@ setShowSteering(true);
 <g
      onClick={() => {
         setShowChair(true);
-          onPointClick?.();
+          onPointClick?.("chair");
           console.log("כיסא נלחץ!");
         }}
   style={{ cursor: "pointer", pointerEvents: "all", zIndex: 1 }}
@@ -156,7 +156,7 @@ setShowSteering(true);
 <g
             onClick={() => {
                 setShowHandle(true);
-                  onPointClick?.();
+                  onPointClick?.("handle");
                   console.log("ידית נלחץ!");
                 }}
         style={{ cursor: "pointer", pointerEvents: "all", zIndex: 1 }}

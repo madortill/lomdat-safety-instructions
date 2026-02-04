@@ -30,7 +30,7 @@
     border-radius: 150px;
     width: 2rem;
     height: 2rem;
-    left: 6.5rem;
+    left: 8.5rem;
     top: 1rem;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
@@ -43,7 +43,7 @@
   font-weight: 600;
   width: 2rem;
   height: 2rem;
-  left: 6.7rem;
+  left: 8.7rem;
   top: 3rem;
   text-align: center;
   cursor: pointer;
@@ -103,6 +103,7 @@
     width: 20rem;
     position: relative;
     top: -5.5rem;
+    z-index: 1;
 }
 
 /* .carGraphic {
@@ -318,7 +319,7 @@
   font-weight: 600;
   width: 2rem;
   height: 2rem;
-  left: 4rem;
+  left: 11rem;
   top: 1rem;
   text-align: center;
   cursor: pointer;

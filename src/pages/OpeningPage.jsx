@@ -14,6 +14,7 @@ function OpeningPage() {
   const navigate = useNavigate();
 
   const headTitleText = data.openingPage[0].text;
+  const startBtn = data.openingPage[0].startBtn;
   const openText1 = data.openingPage[1].text;
   const openText2 = data.openingPage[2].text;
   const nextBtnText = data.openingPage[3].text;
@@ -144,7 +145,7 @@ function OpeningPage() {
                     handleStart();
                   }}
                 >
-                  צאו לדרך
+                  {startBtn}
                 </div>
               </div>
             )}

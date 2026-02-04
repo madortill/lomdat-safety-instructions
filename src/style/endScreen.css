@@ -1,0 +1,49 @@
+.start-over-btn-wrapper {
+    position: relative;
+    display: inline-block;
+    top: -2.5rem;
+    left: 0.5rem;
+    animation: growShrink 2s infinite;
+  }
+  
+  /* ✨ ההילה */
+  .start-over-btn-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: -5px; /* כמה הזוהר יוצא החוצה */
+    background: #FFEE97;
+    filter: blur(14px);
+    border-radius: 14px;
+    z-index: 0;
+  }
+  
+  /* הכפתור עצמו */
+  .start-over-btn {
+    position: relative;
+    top: 0.2rem;
+    z-index: 1;
+  
+    background: #6C6C6C;
+    color: #FFEE97;
+    font-family: Rubik;
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+  }
+  @keyframes growShrink {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .start-over-btn:hover {
+    transform: scale(1.1); /* גדילה של 10% */
+  }

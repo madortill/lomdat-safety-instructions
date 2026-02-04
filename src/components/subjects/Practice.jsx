@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useData } from "../../context/DataContext.jsx";
 import { useNavigate } from "react-router-dom";
 import "../../style/Question.css";
@@ -11,7 +11,8 @@ function Practice() {
 
   const [pageIndex, setPageIndex] = useState(0);
   const [answeredCorrect, setAnsweredCorrect] = useState({});
-  const [clickedPoints, setClickedPoints] = useState(0);
+  const [clickedPoints, setClickedPoints] = useState({});
+  const [carExerciseCompleted, setCarExerciseCompleted] = useState(false);
   const [showNextDiv, setShowNextDiv] = useState(false);
 
   const questions = data.Questions;
@@ -26,17 +27,26 @@ function Practice() {
   const totalPages = questions.length + 1;
 
   const nextPage = () => {
-    setPageIndex((prev) => {
-      const next = Math.min(prev + 1, totalPages - 1);
-      if (next === questions.length) setClickedPoints(0);
-      return next;
-    });
+    setPageIndex((prev) => Math.min(prev + 1, totalPages - 1));
   };
 
   const prevPage = () => setPageIndex((prev) => Math.max(prev - 1, 0));
 
-  const handlePointClick = () =>
-    setClickedPoints((prev) => Math.min(prev + 1, 3));
+  const handlePointClick = (partName) => {
+    setClickedPoints((prev) => {
+      const updated = { ...prev, [partName]: true };
+
+      if (
+        updated.steering &&
+        updated.chair &&
+        updated.handle
+      ) {
+        setCarExerciseCompleted(true);
+      }
+
+      return updated;
+    });
+  };
 
   const handleNextClick = () => setShowNextDiv(true);
 
@@ -60,7 +70,7 @@ function Practice() {
         </div>
       ))}
 
-      {/* עמוד אחרון */}
+      {/* עמוד תרגול רכב */}
       {pageIndex === questions.length && (
         <div className="page page-end">
           <p className="sec-title-subjects">{pages[0].secTitle}</p>
@@ -74,10 +84,11 @@ function Practice() {
           <div className="container-next">
             <p>{moveOnDiv}</p>
             <div className="container-next-buttons">
-              <button onClick={() => setShowNextDiv(false)}>{stayBtn}</button>
+              <button onClick={() => setShowNextDiv(false)}>
+                {stayBtn}
+              </button>
               <button
                 onClick={() => {
-                  // שליפת נתונים מ-localStorage
                   const name = localStorage.getItem("name") || "";
                   const personalNumber =
                     localStorage.getItem("personalNumber") || "";
@@ -105,7 +116,7 @@ function Practice() {
           className="nav-button2"
           disabled={
             (pageIndex < questions.length && !answeredCorrect[pageIndex]) ||
-            (pageIndex === questions.length && clickedPoints < 3)
+            (pageIndex === questions.length && !carExerciseCompleted)
           }
           onClick={pageIndex === totalPages - 1 ? handleNextClick : nextPage}
         >

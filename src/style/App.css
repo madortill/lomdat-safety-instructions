@@ -61,8 +61,8 @@ body {
 }
 .narration-toggle {
   position: absolute;
-  left: 0.3rem;
-  top: 5rem;
+  left: 4rem;
+  top: 1rem;
   z-index: 2;
 
   display: inline-flex;

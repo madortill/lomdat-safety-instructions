@@ -1,43 +1,57 @@
 import React, { useState, useEffect } from "react";
-import "../style/openingPage.css";
+import "../style/endScreen.css";
 import { useData } from "../context/DataContext";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import cloud from "../assets/images/openingPage/cloud.png";
 import carEnd from "../assets/images/openingPage/carEnd.png";
 
 function EndScreen() {
   const location = useLocation();
-  
-  // שם ומספר אישי מגיעים מה-OpeningPage או מ-localStorage
-  const name = location.state?.name || localStorage.getItem("name") || "לא הוזן שם";
+  const navigate = useNavigate();
+
+  // שם ומספר אישי
+  const name =
+    location.state?.name ||
+    localStorage.getItem("name") ||
+    "לא הוזן שם";
+
   const personalNumber =
-    location.state?.personalNumber || localStorage.getItem("personalNumber") || "לא הוזן מספר אישי";
+    location.state?.personalNumber ||
+    localStorage.getItem("personalNumber") ||
+    "לא הוזן מספר אישי";
 
   const { data } = useData();
   const endTitle = data.endScreen[0].title;
   const endSecTitle = data.endScreen[0].secTitle;
+  const startBtn = data.endScreen[0].startOverBtn;
 
   const [showAbout, setShowAbout] = useState(false);
   const [timeSpent, setTimeSpent] = useState("00:00");
 
   const toggleAbout = () => setShowAbout((prev) => !prev);
 
-  // חישוב הזמן שהושקע מרגע ההתחלה ב-OpeningPage
+  // חישוב זמן
   useEffect(() => {
     const startTime = localStorage.getItem("startTime");
     if (!startTime) return;
-  
+
     const elapsedMs = Date.now() - Number(startTime);
     const totalSeconds = Math.floor(elapsedMs / 1000);
-  
+
     const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, "0");
     const seconds = String(totalSeconds % 60).padStart(2, "0");
-  
+
     setTimeSpent(`${minutes}:${seconds}`);
   }, []);
 
+  // 🔁 חזרה להתחלה
+  const handleStartOver = () => {
+    localStorage.removeItem("startTime");
+    navigate("/");
+  };
+
   return (
-    <div>
+    <div onClick={() => setShowAbout(false)}>
       {/* כפתור אודות */}
       <div>
         <button
@@ -82,6 +96,16 @@ function EndScreen() {
         <p className="end-sec-title">{endSecTitle}</p>
 
         <img src={carEnd} alt="carEnd" className="carEnd" />
+      </div>
+
+      {/* כפתור התחלה מחדש */}
+      <div className="start-over-btn-wrapper">
+        <div
+          className="start-over-btn"
+          onClick={handleStartOver}
+        >
+          {startBtn}
+        </div>
       </div>
     </div>
   );

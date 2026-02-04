@@ -3,6 +3,7 @@
     "openingPage": [
       {
         "text": "הוראות בטיחות בנהיגה",
+        "startBtn": "צאו לדרך",
         "id": "main-title"
       },
       {
@@ -385,7 +386,8 @@
     "endScreen": [
       {
         "title": "כל הכבוד!",
-        "secTitle": "עכשיו אתם יודעים את הוראות הבטיחות!"
+        "secTitle": "עכשיו אתם יודעים את הוראות הבטיחות!",
+        "startOverBtn": "בא לי שוב!"
       }
     ]
   },
@@ -393,6 +395,7 @@
     "openingPage": [
       {
         "text": "Driving Safety Instructions",
+        "startBtn": "צאו לדרך",
         "id": "main-title"
       },
       {
