@@ -4,10 +4,10 @@ import "../style/subjMap.css";
 import { useData } from "../context/DataContext.jsx";
 
 // טעינת תמונות הנושאים דינמית
-const images = import.meta.glob("../assets/images/subjMap/subjects/*.png", {
-  eager: true,
-  import: "default",
-});
+const images = import.meta.glob(
+  "../assets/images/subjMap/subjects/*.png",
+  { eager: true, import: "default" }
+);
 
 function SubjMap({ onSelectSubject, unlockedSubjects, highlightedSubject }) {
   const { data } = useData();
@@ -15,17 +15,14 @@ function SubjMap({ onSelectSubject, unlockedSubjects, highlightedSubject }) {
   const mapTitle = data.subjMap[0].text;
   const microcopyMap = data.subjMap[1].text;
 
-  // כל הנושאים (מדלגים על כותרות)
+  // רשימת הנושאים (מדלגים על כותרות)
   const subjects = data.subjMap.slice(3);
 
   // 🎉 עידוד
   const encouragementArr = data.encouragement[0];
   const encouragementTexts = Object.values(encouragementArr);
 
-  // הראשון פתוח כברירת מחדל
   const completedCount = unlockedSubjects.length - 1;
-
-  // עידוד יופיע רק מהנושא השני
   const showEncouragement = unlockedSubjects.length >= 2;
 
   const encouragementText = showEncouragement
@@ -36,6 +33,7 @@ function SubjMap({ onSelectSubject, unlockedSubjects, highlightedSubject }) {
 
   return (
     <>
+      {/* כותרות */}
       <div className="map-title-container">
         <p className="map-title">{mapTitle}</p>
         <p className="map-sec-title">{microcopyMap}</p>
@@ -44,10 +42,11 @@ function SubjMap({ onSelectSubject, unlockedSubjects, highlightedSubject }) {
       <div className="container-map">
         <img
           src={progressCar}
-          alt="progressCar"
+          alt="progress car"
           className="progressCar"
         />
 
+        {/* נושאים */}
         <div className="subjects-wrapper">
           {subjects.map((item) => {
             const isUnlocked = unlockedSubjects.includes(item.id);
@@ -60,17 +59,14 @@ function SubjMap({ onSelectSubject, unlockedSubjects, highlightedSubject }) {
               <div
                 key={item.id}
                 className={`subjects ${isUnlocked ? "active" : "disabled"}`}
-                style={{
-                  opacity: isUnlocked ? 1 : 0.5,
-                  transition: "opacity 0.3s",
-                }}
+                style={{ opacity: isUnlocked ? 1 : 0.5 }}
               >
                 <img
                   src={imgSrc}
+                  alt={item.text}
                   className={`subject ${item.id} ${
                     isHighlighted ? "pop-animation" : ""
                   }`}
-                  alt={item.text}
                   onClick={() => {
                     if (isUnlocked && onSelectSubject) {
                       onSelectSubject(item.id);
@@ -85,12 +81,9 @@ function SubjMap({ onSelectSubject, unlockedSubjects, highlightedSubject }) {
           })}
         </div>
 
-        {/* 🎯 עידוד עם אנימציה */}
+        {/* 🎯 עידוד */}
         {showEncouragement && (
-          <p
-            key={completedCount}
-            className="encouragement"
-          >
+          <p key={completedCount} className="encouragement">
             {encouragementText}
           </p>
         )}

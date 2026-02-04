@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import SubjMap from "./SubjMap";
 import Instractions from "../components/subjects/Instractions";
 
-// ← הוספתי את כל ה‐imports החדשים
 import Introduction from "../components/subjects/Introduction";
 import Roadside from "../components/subjects/Roadside";
 import KeepingDistance from "../components/subjects/KeepingDistance";
@@ -19,7 +18,6 @@ import { useData } from "../context/DataContext.jsx";
 function Home() {
   const { data } = useData();
 
-  // סדר כל הנושאים במפה — כולל כולם
   const subjectsOrder = [
     "introduction",
     "roadside",
@@ -31,7 +29,6 @@ function Home() {
     "practice",
   ];
 
-  // טקסטים לפתיחה/סגירה
   const openMapText = data.subjMap[2]["text-open"];
   const closeMapText = data.subjMap[2]["text-close"];
 
@@ -39,9 +36,12 @@ function Home() {
   const [showMap, setShowMap] = useState(true);
   const [currentSubject, setCurrentSubject] = useState("");
   const [unlockedSubjects, setUnlockedSubjects] = useState(["introduction"]);
-  const [highlightedSubject, setHighlightedSubject] = useState("introduction");
   const [hasEnteredFirstSubject, setHasEnteredFirstSubject] = useState(false);
   const [isOverlayMap, setIsOverlayMap] = useState(false);
+
+  // 🔥 ההבהוב תמיד על הנושא הבא לביצוע
+  const highlightedSubject =
+    unlockedSubjects[unlockedSubjects.length - 1];
 
   useEffect(() => {
     if (isOverlayMap) document.body.classList.add("no-scroll");
@@ -49,7 +49,6 @@ function Home() {
     return () => document.body.classList.remove("no-scroll");
   }, [isOverlayMap]);
 
-  // עובר אוטומטית לנושא הבא ומסמן אותו כפתוח
   const handleNext = (finishedSubject) => {
     const finished = finishedSubject ?? currentSubject;
     const currentIndex = subjectsOrder.indexOf(finished);
@@ -57,14 +56,9 @@ function Home() {
     const nextSubject = subjectsOrder[nextIndex];
 
     if (nextSubject) {
-      setUnlockedSubjects((prev) => {
-        if (!prev.includes(nextSubject)) {
-          return [...prev, nextSubject];
-        }
-        return prev;
-      });
-
-      setHighlightedSubject(nextSubject);
+      setUnlockedSubjects((prev) =>
+        prev.includes(nextSubject) ? prev : [...prev, nextSubject]
+      );
     }
 
     setCurrentSubject(null);
@@ -77,7 +71,6 @@ function Home() {
     setShowMap(false);
     setIsOverlayMap(false);
     setHasEnteredFirstSubject(true);
-    setHighlightedSubject(subjectId);
   };
 
   const toggleOverlayMap = () => {
@@ -88,19 +81,15 @@ function Home() {
     });
   };
 
-  // הדגשה ראשונית של הצעד הראשון
-  useEffect(() => {
-    setHighlightedSubject("introduction");
-  }, []);
-
   return (
     <div className="home-container">
-      { closeInst === false && (
+      {closeInst === false && (
         <div>
-      <div className="map-overlay"></div>
-        <Instractions setCloseInst={setCloseInst} />
+          <div className="map-overlay"></div>
+          <Instractions setCloseInst={setCloseInst} />
         </div>
       )}
+
       {hasEnteredFirstSubject && currentSubject && (
         <button className="toggle-map-btn" onClick={toggleOverlayMap}>
           {isOverlayMap ? closeMapText : openMapText}
@@ -124,7 +113,7 @@ function Home() {
         aria-hidden={isOverlayMap ? "true" : "false"}
       >
         {currentSubject === "introduction" && (
-          <Introduction className="page" onNext={() => handleNext("introduction")} />
+          <Introduction onNext={() => handleNext("introduction")} />
         )}
 
         {currentSubject === "roadside" && (
@@ -159,13 +148,15 @@ function Home() {
       {/* Overlay map */}
       {isOverlayMap && (
         <div className="map-overlay">
-          <div className="overlay-background" onClick={toggleOverlayMap}></div>
+          <div
+            className="overlay-background"
+            onClick={toggleOverlayMap}
+          ></div>
           <div className="overlay-content" role="dialog" aria-modal="true">
             <div className="overlay-subjmap">
               <SubjMap
                 onSelectSubject={(id) => {
                   setCurrentSubject(id);
-                  setHighlightedSubject(id);
                   setIsOverlayMap(false);
                   setHasEnteredFirstSubject(true);
                 }}
