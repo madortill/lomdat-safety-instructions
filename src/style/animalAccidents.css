@@ -30,8 +30,9 @@
     margin-top: 1rem;
   }
   .animalAccidentsImg {
+    width: 9rem;
     position: relative;
-    top: 8rem;
+    top: 7rem;
     left: 7rem;
   }
   .carCrashed {

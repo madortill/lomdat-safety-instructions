@@ -416,16 +416,16 @@
         "text": "Alright, enter your full name and personal number",
         "id": "details-text"
       },
-        {
-          "text": "Full name:",
-          "verifyName": "Enter your full name",
-          "id": "details-name"
-        },
-        {
-          "text": "Personal number:",
-          "verifyPerNum": "Must be 7 digits",
-          "id": "details-num"
-        }
+      {
+        "text": "Full name:",
+        "verifyName": "Enter your full name",
+        "id": "details-name"
+      },
+      {
+        "text": "Personal number:",
+        "verifyPerNum": "Must be 7 digits",
+        "id": "details-num"
+      }
     ],
     "instractions": [
       {
@@ -471,62 +471,62 @@
       {
         "text": "Introduction",
         "id": "introduction",
-        "img": "intro",
+        "img": "introEn",
         "nextId": "roadside"
       },
       {
         "text": "Shoulder Entry & Exit",
         "id": "roadside",
-        "img": "roadside",
+        "img": "roadsideEn",
         "nextId": "keepingDistance"
       },
       {
         "text": "Keeping Distance",
         "id": "keepingDistance",
-        "img": "distance",
+        "img": "distanceEn",
         "nextId": "animalAccidents"
       },
       {
         "text": "Animal Accidents",
         "id": "animalAccidents",
-        "img": "animals",
+        "img": "animalsEn",
         "nextId": "changingWheel"
       },
       {
         "text": "Changing  Wheel",
         "id": "changingWheel",
-        "img": "wheel",
+        "img": "wheelEn",
         "nextId": "fireDrill"
       },
       {
         "text": "Vehicle Fire Drill",
         "id": "fireDrill",
-        "img": "fire",
+        "img": "fireEn",
         "nextId": "flippingDrill"
       },
       {
         "text": "Rollover Drill",
         "id": "flippingDrill",
-        "img": "turning-over",
+        "img": "turning-overEn",
         "nextId": "practice"
       },
       {
         "text": "Final Practice",
         "id": "practice",
-        "img": "practice"
+        "img": "practiceEn"
       }
     ],
     "encouragement": [
-  {
-    "text1": "Great job!",
-    "text2": "Awesome!",
-    "text3": "You’re great!",
-    "text4": "Keep it up!",
-    "text5": "Well done!",
-    "text6": "Almost there!",
-    "text7": "Let’s practice!"
-  }
-],
+      {
+        "text1": "Great job!",
+        "text2": "Awesome!",
+        "text3": "You’re great!",
+        "text4": "Keep it up!",
+        "text5": "Well done!",
+        "text6": "Almost there!",
+        "text7": "Let’s practice!"
+      }
+    ],
     "buttons": [
       {
         "text": "Next",
@@ -569,14 +569,14 @@
       {
         "planned": "Planned",
         "text": "Remaining causes",
-        "factor1": "1. Stopping to fix a malfunction",
-        "factor2": "2. Stopping to pick up or drop off passengers",
+        "factor1": "1. Vehicle repair stop",
+        "factor2": "2. Passenger pickup or drop-off",
         "id": "planned"
       },
       {
         "unplanned": "Unplanned",
-        "factor1": "1. Sudden deviation due to an oncoming vehicle",
-        "factor2": "2. Deviation due to distraction",
+        "factor1": "1. Avoiding oncoming vehicle",
+        "factor2": "2. Driver distraction",
         "id": "unPlanned"
       },
       {
@@ -778,7 +778,8 @@
     "endScreen": [
       {
         "title": "Well done!",
-        "secTitle": "Now you know the safety instructions!"
+        "secTitle": "Now you know the safety instructions!",
+        "startOverBtn": "start over!"
       }
     ]
   }

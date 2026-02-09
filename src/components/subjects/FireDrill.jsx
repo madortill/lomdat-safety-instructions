@@ -51,7 +51,7 @@ function FireDrill({ onNext }) {
         style={{ display: pageIndex === 1 ? "block" : "none" }}
       >
         <p className="sec-title-subjects">{pages[1].secTitle}</p>
-        <p>כאן יופיע סרטון תרגולת שריפה ברכב</p>
+        <p class="roadside-text">סרטון יגיע בהמשך</p>
       </div>
 
       {/* ניווט */}

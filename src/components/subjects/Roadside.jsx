@@ -171,7 +171,7 @@ function Roadside({ onNext }) {
       case 3:
         return (
           <div key={index} className="page4 margin">
-            <TitledGraphics />
+            <p class="roadside-text">סרטון יגיע בהמשך</p>
           </div>
         );
       case 4:
@@ -206,6 +206,7 @@ function Roadside({ onNext }) {
         return (
           <div key={index}>
             <p>{page.text}</p>
+            <p class="roadside-text">סרטון יגיע בהמשך</p>
           </div>
         );
     }
