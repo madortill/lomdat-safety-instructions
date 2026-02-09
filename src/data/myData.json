@@ -395,7 +395,7 @@
     "openingPage": [
       {
         "text": "Driving Safety Instructions",
-        "startBtn": "צאו לדרך",
+        "startBtn": "let's drive!",
         "id": "main-title"
       },
       {
