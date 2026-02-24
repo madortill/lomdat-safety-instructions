@@ -309,7 +309,10 @@
         "highlight4": "4. אבטח את הרכב מתזוזה.",
         "highlight5": "5. הוצא את כלי הנהג ואת הגלגל הרזרבי",
         "highlight6": "6. מקם את הג'ק במקום יציב בשלדת הרכב."
-      }
+      },
+  {
+    "sectitle": "תרגולת החלפת גלגל"
+  }
     ],
     "fireDrill": [
       {
@@ -342,6 +345,9 @@
         "gripPointSteeringWheel": "הנהג - ההגה",
         "gripPointChairs": "היושבים במושב האחורי - המושב שלפניהם וידיות האחיזה",
         "gripPointHandles": "הנוסע ליד הנהג - ידיות האחיזה בקדמת הרכב או בצד למעלה"
+      },
+      {
+        "secTitle": "תרגולת התהפכות"
       }
     ],
     "practice": [
@@ -505,7 +511,7 @@
         "nextId": "flippingDrill"
       },
       {
-        "text": "Rollover Drill",
+        "text": "Flipping Drill",
         "id": "flippingDrill",
         "img": "turning-overEn",
         "nextId": "practice"
@@ -701,6 +707,9 @@
         "highlight4": "4. Secure the vehicle.",
         "highlight5": "5. Take out tools and spare wheel.",
         "highlight6": "6. Place jack on a stable chassis point."
+      },
+      {
+        "sectitle": "practice wheel changing"
       }
     ],
     "fireDrill": [
@@ -719,7 +728,7 @@
     ],
     "FlippingDrill": [
       {
-        "secTitle": "Rollover Background",
+        "secTitle": "Flipping Background",
         "text1": "IDF vehicle rollovers are caused by unsafe driving.",
         "text2": "90–110 vehicles overturn each year.",
         "text3": "Rollovers happen during routine activity, operations, and training.",
@@ -734,6 +743,9 @@
         "gripPointSteeringWheel": "Driver – steering wheel",
         "gripPointChairs": "Rear passengers – seat in front & grab handles",
         "gripPointHandles": "Front passenger – front/upper grab handles"
+      },
+      {
+        "secTitle": "Flipping drill explanation"
       }
     ],
     "practice": [
@@ -782,5 +794,403 @@
         "startOverBtn": "start over!"
       }
     ]
+  },
+  "ru": {
+"openingPage": [
+  {
+    "text": "Безопасное вождение",
+    "startBtn": "Поехали!",
+    "id": "main-title"
+  },
+  {
+    "text": "Добро пожаловать на курс!",
+    "id": "open-text1"
+  },
+  {
+    "text": "Сегодня вы узнаете, как безопасно водить и решать сложные ситуации.",
+    "id": "open-text2"
+  },
+  {
+    "text": "Вперед!",
+    "id": "next-btn-opening"
   }
+],
+"details": [
+  {
+    "text": "Введите имя и номер",
+    "id": "details-text"
+  },
+  {
+    "text": "Полное имя:",
+    "verifyName": "Введите полное имя",
+    "id": "details-name"
+  },
+  {
+    "text": "Персональный номер:",
+    "verifyPerNum": "7 цифр",
+    "id": "details-num"
+  }
+],
+"instractions": [
+  {
+    "title": "Инструкции",
+    "moveOn": "Кнопки для перехода вперед и назад",
+    "unable": "Кнопка отключена"
+  },
+  {
+    "videos": "В курсе есть все обучающие видео:",
+    "play": "Старт",
+    "pause": "Пауза"
+  },
+  {
+    "leng": "Выберите язык через кнопку:",
+    "boldLeng": "Изменить"
+  },
+  {
+    "toMap": "Нажмите кнопку:",
+    "seeMap": "Смотрите прогресс и тему"
+  },
+  {
+    "narration": " озвучка:",
+    "boldNar": "Нажмите",
+    "with": "С озвучкой",
+    "without": "Без озвучки",
+    "anytime": "Можно включать/выключать в любое время"
+  }
+],
+   "subjMap": [
+  {
+    "text": "Карта тем",
+    "id": "map-title"
+  },
+  {
+    "text": "Выберите тему!",
+    "id": "microcopy-map"
+  },
+  {
+    "text-open": "Открыть",
+    "text-close": "Закрыть",
+    "id": "back-to-map-btn"
+  },
+  {
+    "text": "Введение",
+    "id": "introduction",
+    "img": "introEn",
+    "nextId": "roadside"
+  },
+  {
+    "text": "Обочина",
+    "id": "roadside",
+    "img": "roadsideEn",
+    "nextId": "keepingDistance"
+  },
+  {
+    "text": "Дистанция",
+    "id": "keepingDistance",
+    "img": "distanceEn",
+    "nextId": "animalAccidents"
+  },
+  {
+    "text": "Животные",
+    "id": "animalAccidents",
+    "img": "animalsEn",
+    "nextId": "changingWheel"
+  },
+  {
+    "text": "Смена колеса",
+    "id": "changingWheel",
+    "img": "wheelEn",
+    "nextId": "fireDrill"
+  },
+  {
+    "text": "Пожар",
+    "id": "fireDrill",
+    "img": "fireEn",
+    "nextId": "flippingDrill"
+  },
+  {
+    "text": "Опрокидывание",
+    "id": "flippingDrill",
+    "img": "turning-overEn",
+    "nextId": "practice"
+  },
+  {
+    "text": "Практика",
+    "id": "practice",
+    "img": "practiceEn"
+  }
+],
+    "encouragement": [
+      {
+        "text1": "Отлично!",
+        "text2": "Превосходно!",
+        "text3": "Молодец!",
+        "text4": "Продолжай!",
+        "text5": "Хорошо!",
+        "text6": "Почти готово!",
+        "text7": "Тренируемся!"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Далее",
+        "id": "next-btn"
+      },
+      {
+        "text": "Назад",
+        "id": "back-btn"
+      }
+    ],
+"introduction": [
+  {
+    "text": "Почему важны правила безопасности?",
+    "id": "sec-title-intro"
+  },
+  {
+    "text": "В ЦАХАЛе ежегодно происходят десятки аварий.",
+    "id": "text1-intro"
+  },
+  {
+    "text": "Аварии бывают во время работы, операций и тренировок.",
+    "id": "text2-intro"
+  },
+  {
+    "text": "Сегодня научимся справляться с ЧС.",
+    "id": "text3-intro"
+  }
+],
+"roadside": [
+  {
+    "secTitle": "Обочина",
+    "text": "Пояс рядом с краем дороги, до 3 м или до канала, если меньше 6 м.",
+    "id": "subj1Roadside"
+  },
+  {
+    "secTitle": "Причины покинуть дорогу",
+    "text": "Нажмите квадраты для причин!",
+    "id": "factors"
+  },
+  {
+    "planned": "Плановые",
+    "text": "Другие причины",
+    "factor1": "1. Остановка для ремонта",
+    "factor2": "2. Погрузка/высадка пассажиров",
+    "id": "planned"
+  },
+  {
+    "unplanned": "Неплановые",
+    "factor1": "1. Избежать встречного транспорта",
+    "factor2": "2. Отвлечение водителя",
+    "id": "unPlanned"
+  },
+  {
+    "secTitle": "Опасности езды по обочине",
+    "text1": "Разница в высоте",
+    "text2": "Различие в сцеплении",
+    "text3": "Опасные предметы"
+  },
+  {
+    "secTitle": "Правильный спуск",
+    "id": "down"
+  },
+  {
+    "secTitle": "Принудительный спуск",
+    "text": "Нажмите на камни!",
+    "highlight1": "Сохраняйте спокойствие",
+    "highlight2": "Держите руль обеими руками",
+    "highlight3": "Тормозите плавно",
+    "highlight4": "Не экстренно тормозите",
+    "highlight5": "Не крутьте руль резко!",
+    "id": "highlights-down"
+  },
+  {
+    "secTitle": "Возврат на дорогу",
+    "id": "up"
+  },
+  {
+    "secTitle": "Рекомендации",
+    "right": "Возвращайтесь с контролем по протектору",
+    "wrong": "Не трите боковину шины о край",
+    "id": "highlights-up"
+  }
+],
+"titledGraphics": [
+  {
+    "roadside": [
+      {
+        "text1": "Разница в высоте",
+        "text2": "Сцепление асфальта и гравия",
+        "text3": "Опасные предметы"
+      }
+    ],
+    "animalAccidents": [
+      {
+        "text1": "Изучите местность",
+        "text2": "Следите за знаками",
+        "text3": "Проверяйте дорогу и видимость"
+      }
+    ],
+    "flippingDrill": [
+      {
+        "text1": "Экипаж в ремнях",
+        "text2": "Шлем обязателен при необходимости",
+        "text3": "Закрепите оборудование"
+      }
+    ]
+  }
+],
+"payAttention": [
+  {
+    "intro": "Все случаи реальные, из-за несоблюдения инструкций.",
+    "roadside": "Внимание! На обочине ямы, знаки, пешеходы.",
+    "twoSec": "Зимой держите дистанцию 3 сек.",
+    "whyDistance": "Держите безопасную дистанцию, чтобы успеть остановиться.",
+    "FlippingDrill": "Учение под командиром; опрокидывание перед движением."
+  }
+],
+"keepingDistance": [
+  {
+    "secTitle": "Дистанция",
+    "text1": "Соблюдение дистанции предотвращает аварии.",
+    "text2": "Рекомендуемая: 2 сек, зимой – 3 сек.",
+    "id": "keepingDistanceSubj1"
+  },
+  {
+    "secTitle": "Правило 2 секунд",
+    "text": "Секунды",
+    "id": "animaition"
+  },
+  {
+    "secTitle": "Почему дистанция важна?",
+    "text": "-Нажмите на номерные знаки-",
+    "scroll": "Прокрутка доступна",
+    "reason1": "Предотвращает столкновения при торможении.",
+    "reason2": "Улучшает обзор.",
+    "reason3": "Позволяет обгонять безопасно.",
+    "reason4": "Обеспечивает безопасный обгон.",
+    "reason5": "Снижает износ тормозов и расход топлива.",
+    "reason6": "Уменьшает стресс и усталость водителя.",
+    "reason7": "Предотвращает занос на мокрой дороге.",
+    "reason8": "Избегайте ударов от падающих предметов."
+  }
+],
+"animalAccidents": [
+  {
+    "secTitle": "ДТП с животными",
+    "text1-background": "Дороги опасны из-за животных рядом с движением.",
+    "text2-background": "Особенно на севере и юге.",
+    "id": "background-animals"
+  },
+  {
+    "secTitle": "Пример травмы",
+    "text1-accident": "Майор Йоав Ичер пострадал от столкновения с верблюдом на юге.",
+    "text2-accident": "Возвращался из центрального Израиля в Мицпе Рамон.",
+    "text3-accident": "Он ключевой офицер в подготовке ЦАХАЛа.",
+    "id": "research-animals"
+  },
+  {
+    "secTitle": "Советы по ДТП",
+    "id": "highlights-animals"
+  }
+],
+"changingWheel": [
+  {
+    "sectitle": "Смена колеса",
+    "text": "Нажмите на инструменты"
+  },
+  {
+"highlight1": "1. Двигатель и аварийка",
+"highlight2": "2. Надевать жилет",
+"highlight3": "3. Треугольник 100 м",
+"highlight4": "4. Закрепить машину",
+"highlight5": "5. Инструменты и колесо",
+"highlight6": "6. Домкрат стабильно"
+  },
+  {
+    "sectitle": "Практика смены колеса"
+  }
+],
+"fireDrill": [
+  {
+    "secTitle": "Причины возгорания",
+    "reason1": "Короткое замыкание.",
+    "reason2": "Утечка топлива/масла.",
+    "reason3": "Горячие предметы в машине.",
+    "reason4": "Статическое электричество при заправке.",
+    "id": "reasons-of-fire"
+  },
+  {
+    "secTitle": "Учение по пожарной безопасности",
+    "id": "video-fire"
+  }
+],
+"FlippingDrill": [
+  {
+    "secTitle": "Опрокидывания",
+    "text1": "Из-за небезопасного вождения.",
+    "text2": "Каждый год 90–110 машин.",
+    "text3": "Во время работы и тренировок.",
+    "id": "background-flipping"
+  },
+  {
+    "secTitle": "Перед движением",
+    "id": "preparation-ride"
+  },
+  {
+    "secTitle": "Точки захвата",
+    "gripPointSteeringWheel": "Водитель – руль",
+    "gripPointChairs": "Задние – сиденья и поручни",
+    "gripPointHandles": "Передний – поручни"
+  },
+  {
+    "secTitle": "Учение"
+  }
+],
+"practice": [
+  {
+    "secTitle": "Нажмите точки захвата внутри машины!"
+  },
+  {
+    "moveOnText": "Перейти к экрану завершения или продолжить?",
+    "ans1": "Закончить",
+    "ans2": "Продолжить"
+  }
+    ],
+    "Questions": [
+      {
+        "id": 1,
+        "questionText": "Какое рекомендуемое время следования?",
+        "ans1": "4 секунды",
+        "ans2": "6 секунд",
+        "ans3": "2 секунды",
+        "ans4": "0 секунд",
+        "correctAnswer": 3
+      },
+      {
+        "id": 2,
+        "questionText": "Какие опасности существуют при езде по обочине?",
+        "ans1": "Различное сцепление с дорогой",
+        "ans2": "Опасности на обочине",
+        "ans3": "Разница в высоте",
+        "ans4": "Все ответы верны",
+        "correctAnswer": 4
+      },
+      {
+        "id": 3,
+        "questionText": "Что НЕ рекомендуется при вождении рядом с животными?",
+        "ans1": "Следить за знаками",
+        "ans2": "Надевать жилет",
+        "ans3": "Знать местность",
+        "ans4": "Учитывать дорогу и видимость",
+        "correctAnswer": 2
+      }
+    ],
+    "endScreen": [
+      {
+        "title": "Молодец!",
+        "secTitle": "Теперь вы знаете правила!",
+        "startOverBtn": "начать заново!"
+      }
+    ]
+}
 }

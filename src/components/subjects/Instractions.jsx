@@ -21,8 +21,14 @@ function Instractions({ setCloseInst }) {
     setSoundHighlight(e.target.id);
   };
 
-  const toggleLanguage = () => {
-    switchJSON(currentJSON === "he" ? "en" : "he");
+  const toggleLanguage = (e) => {
+    e.stopPropagation();
+
+    // מערך השפות בתור סדר המחזור
+    const languages = ["he", "en", "ru"];
+    const currentIndex = languages.indexOf(currentJSON);
+    const nextIndex = (currentIndex + 1) % languages.length; // מחזור
+    switchJSON(languages[nextIndex]);
   };
 
   return (
@@ -69,7 +75,7 @@ function Instractions({ setCloseInst }) {
 
           <button className="change-leng-btn" onClick={toggleLanguage}>
             <p className="change-leng-text">
-              {currentJSON === "he" ? "EN" : "עב"}
+            {currentJSON === "he" ? "EN" : currentJSON === "en" ? "RU" : "עב"}
             </p>
           </button>
 

@@ -18,24 +18,31 @@ function FlippingDrill({ onNext }) {
   const importantText = data.payAttention[0].FlippingDrill;
 
   const nextPage = () => {
-    // בעמוד האחרון – לחיצה ראשונה מציגה PayAttention
-    if (pageIndex === pages.length - 1 && !showPayAttention) {
+    // בעמוד 3 (נקודות אחיזה) – הצגת PayAttention
+    if (pageIndex === 2 && !showPayAttention) {
       setShowPayAttention(true);
       return;
     }
 
-    // לחיצה שנייה – מעבר למפה
-    if (pageIndex === pages.length - 1 && showPayAttention) {
+    // בעמוד 3 – מעבר לעמוד 4
+    if (pageIndex === 2 && showPayAttention) {
+      setShowPayAttention(false);
+      setPageIndex(3);
+      return;
+    }
+
+    // בעמוד 4 – מעבר ל-Practice
+    if (pageIndex === 3) {
       onNext("Practice");
       return;
     }
 
-    // מעבר רגיל בין עמודים
-    setPageIndex((prev) => Math.min(prev + 1, pages.length - 1));
+    // מעבר רגיל
+    setPageIndex((prev) => prev + 1);
   };
 
   const prevPage = () => {
-    // אם PayAttention פתוח – רק סוגרים אותו
+    // אם PayAttention פתוח – רק סוגרים
     if (showPayAttention) {
       setShowPayAttention(false);
       return;
@@ -46,66 +53,70 @@ function FlippingDrill({ onNext }) {
 
   return (
     <div className="subject-container">
-      {/* כותרת ראשית */}
       <p className="title-subjects">{titleFlippingDrill}</p>
 
       {/* עמוד 1 – רקע */}
-      <div
-        className="page page1"
-        style={{ display: pageIndex === 0 ? "block" : "none" }}
-      >
-        <p className="sec-title-subjects">{pages[0].secTitle}</p>
+      {pageIndex === 0 && (
+        <div className="page page1">
+          <p className="sec-title-subjects">{pages[0].secTitle}</p>
 
-        <ul className="flipping-text">
-          <li>{pages[0].text1}</li>
-          <li>{pages[0].text2}</li>
-          <li>{pages[0].text3}</li>
-        </ul>
+          <ul className="flipping-text">
+            <li>{pages[0].text1}</li>
+            <li>{pages[0].text2}</li>
+            <li>{pages[0].text3}</li>
+          </ul>
 
-        <img
-          className="carFlippedImg"
-          src={carFlipped}
-          alt="carFlipped"
-        />
-      </div>
+          <img
+            className="carFlippedImg"
+            src={carFlipped}
+            alt="carFlipped"
+          />
+        </div>
+      )}
 
       {/* עמוד 2 – התנהלות לפני נסיעה */}
-      <div
-        className="page page2"
-        style={{ display: pageIndex === 1 ? "block" : "none" }}
-      >
-        <p className="sec-title-subjects">{pages[1].secTitle}</p>
-        <TitledGraphics subject="flippingDrill" />
-      </div>
-
-      {/* עמוד 3 – נקודות אחיזה + תשומת לב */}
-      <div
-        className="page page3"
-        style={{ display: pageIndex === 2 ? "block" : "none" }}
-      >
-        <p className="sec-title-subjects">{pages[2].secTitle}</p>
-
-        <div className="gripPointsContainer">
-          <img
-            className="gripPointsCar"
-            src={gripPointsCar}
-            alt="gripPointsCar"
-          />
-
-          <p className="gripPointsCarText steeringWheel">
-            {pages[2].gripPointSteeringWheel}
-          </p>
-          <p className="gripPointsCarText chairs">
-            {pages[2].gripPointChairs}
-          </p>
-          <p className="gripPointsCarText handles">
-            {pages[2].gripPointHandles}
-          </p>
+      {pageIndex === 1 && (
+        <div className="page page2">
+          <p className="sec-title-subjects">{pages[1].secTitle}</p>
+          <TitledGraphics subject="flippingDrill" />
         </div>
+      )}
 
-        {/* PayAttention – מופיע בלי מעבר עמוד */}
-        {showPayAttention && <PayAttention text={importantText} />}
-      </div>
+      {/* עמוד 3 – נקודות אחיזה */}
+      {pageIndex === 2 && (
+        <div className="page page3">
+          <p className="sec-title-subjects">{pages[2].secTitle}</p>
+
+          <div className="gripPointsContainer">
+            <img
+              className="gripPointsCar"
+              src={gripPointsCar}
+              alt="gripPointsCar"
+            />
+
+            <p className="gripPointsCarText steeringWheel">
+              {pages[2].gripPointSteeringWheel}
+            </p>
+            <p className="gripPointsCarText chairs">
+              {pages[2].gripPointChairs}
+            </p>
+            <p className="gripPointsCarText handles">
+              {pages[2].gripPointHandles}
+            </p>
+          </div>
+
+          {showPayAttention && (
+            <PayAttention text={importantText} />
+          )}
+        </div>
+      )}
+
+      {/* עמוד 4 – תרגולת התהפכות */}
+      {pageIndex === 3 && (
+        <div className="page page4">
+          <p className="sec-title-subjects">{pages[3].secTitle}</p>
+        </div>
+      )}
 
       {/* ניווט */}
       <div className="nav-buttons">

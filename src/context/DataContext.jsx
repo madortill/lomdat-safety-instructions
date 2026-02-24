@@ -4,14 +4,14 @@ import myData from "../data/myData.json";
 const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  // 🌍 שפה – כמו אצלך
+  // 🌍 שפה – "he" / "en" / "ru"
   const [currentJSON, setCurrentJSON] = useState("he");
 
   // 🔊 קריינות (עברית בלבד)
   const [isNarrationOn, setIsNarrationOn] = useState(true);
   const audioRef = useRef(null);
 
-  // שינוי שפה – כמו שהיה
+  // שינוי שפה
   const switchJSON = (key) => {
     setCurrentJSON(key);
 
@@ -24,7 +24,7 @@ export const DataProvider = ({ children }) => {
 
   // הדלקה / כיבוי קריינות (רק בעברית)
   const toggleNarration = () => {
-    if (currentJSON !== "he") return; // 🔒 אין קריינות באנגלית
+    if (currentJSON !== "he") return; // 🔒 אין קריינות באנגלית/רוסית
     setIsNarrationOn((prev) => !prev);
     stopAudio();
   };
@@ -51,7 +51,7 @@ export const DataProvider = ({ children }) => {
   return (
     <DataContext.Provider
       value={{
-        data: myData[currentJSON],
+        data: myData[currentJSON], // נותן עכשיו "he", "en" או "ru"
         currentJSON,
         switchJSON,
 

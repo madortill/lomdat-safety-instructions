@@ -30,11 +30,16 @@ function OpeningPage() {
   const [name, setName] = useState("");
   const [personalNumber, setPersonalNumber] = useState("");
 
-  const toggleAbout = () => setShowAbout(prev => !prev);
+  const toggleAbout = () => setShowAbout((prev) => !prev);
 
   const toggleLanguage = (e) => {
     e.stopPropagation();
-    switchJSON(currentJSON === "he" ? "en" : "he");
+
+    // מערך השפות בתור סדר המחזור
+    const languages = ["he", "en", "ru"];
+    const currentIndex = languages.indexOf(currentJSON);
+    const nextIndex = (currentIndex + 1) % languages.length; // מחזור
+    switchJSON(languages[nextIndex]);
   };
 
   const handleStart = () => {
@@ -97,7 +102,7 @@ function OpeningPage() {
 
           {/* כפתור שפה */}
           <button className="lang-btn" onClick={toggleLanguage}>
-            {currentJSON === "he" ? "EN" : "עב"}
+            {currentJSON === "he" ? "EN" : currentJSON === "en" ? "RU" : "עב"}
           </button>
 
           {/* אודות */}

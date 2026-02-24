@@ -18,8 +18,8 @@ function SvgTools({ onToolFlip }) {
       <svg width="310" height="462" viewBox="0 0 356 462" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="10" y="288" width="19" height="174" fill="#626262"/>
 <rect x="42" y="249" width="19" height="169" fill="#626262"/>
-<rect x="312" y="291" width="19" height="171" fill="#626262"/>
-<rect x="282" y="249" width="19" height="169" fill="#626262"/>
+<rect x="330" y="291" width="19" height="171" fill="#626262"/>
+<rect x="298" y="249" width="19" height="169" fill="#626262"/>
 <rect width="356" height="388" rx="2" fill="#9CB6C4"/>
 <line x1="9.99902" y1="55.5" x2="342.001" y2="55.5" stroke="white" strokeWidth="2"/>
 <line x1="9.99316" y1="231.488" x2="342.007" y2="231.488" stroke="white" strokeWidth="2"/>
