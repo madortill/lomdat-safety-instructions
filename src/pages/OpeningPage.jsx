@@ -100,10 +100,10 @@ function OpeningPage() {
             <p className="about-text-btn">אודות</p>
           </div>
 
-          {/* כפתור שפה */}
+          {/* כפתור שפה
           <button className="lang-btn" onClick={toggleLanguage}>
             {currentJSON === "he" ? "EN" : currentJSON === "en" ? "RU" : "עב"}
-          </button>
+          </button> */}
 
           {/* אודות */}
           <div

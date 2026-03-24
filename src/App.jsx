@@ -19,12 +19,12 @@ function App() {
       <div className="bahad-symbols">
         <img src={bahad6icon} alt="bahad6icon" className="bahad6" />
       </div>
-      <button
+      {/* <button
         className={`narration-toggle floating ${isNarrationOn ? "on" : "off"}`}
         onClick={toggleNarration}
       >
         {isNarrationOn ? "🔊 קריינות" : "🔇 קריינות"}
-      </button>
+      </button> */}
 
       <img src={screen} alt="screen" className="bg-container" />
       <img src={til} alt="til" className="til-logo" />

@@ -226,7 +226,7 @@ margin-top: 1rem;
   border: none;
   margin-top: -2.5rem;
   margin-right: 14rem;
-  animation: pulse 1.6s ease-in-out infinite;
+  /* animation: pulse 1.6s ease-in-out infinite; */
 }
 
 .change-leng-text {

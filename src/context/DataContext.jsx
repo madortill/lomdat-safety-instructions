@@ -8,7 +8,7 @@ export const DataProvider = ({ children }) => {
   const [currentJSON, setCurrentJSON] = useState("he");
 
   // 🔊 קריינות (עברית בלבד)
-  const [isNarrationOn, setIsNarrationOn] = useState(true);
+  const [isNarrationOn, setIsNarrationOn] = useState(false);
   const audioRef = useRef(null);
 
   // שינוי שפה

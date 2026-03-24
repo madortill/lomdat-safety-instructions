@@ -73,7 +73,7 @@ function Instractions({ setCloseInst }) {
             {allText[2].leng}
           </p>
 
-          <button className="change-leng-btn" onClick={toggleLanguage}>
+          <button className="change-leng-btn" disabled={true} onClick={toggleLanguage}>
             <p className="change-leng-text">
             {currentJSON === "he" ? "EN" : currentJSON === "en" ? "RU" : "עב"}
             </p>
