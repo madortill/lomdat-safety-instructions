@@ -173,6 +173,51 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
   }
+
+  .accident1 {
+    position: relative;
+    left: 5rem;
+    margin-top: 5rem;
+    border-radius: 1rem;
+    width: 20rem;
+    transform: rotate(5deg);
+  }
+  .accident2 {
+    position: relative;
+    top: -8rem;
+    right: 5rem;
+    border-radius: 1rem;
+    width: 20rem;
+    transform: rotate(-5deg);
+  }
+  .accident3 {
+    position: relative;
+    top: -12rem;
+    left: 5rem;
+    border-radius: 1rem;
+    width: 20rem;
+    transform: rotate(5deg);
+  }
+  .accident4 {
+    position: relative;
+    top: -20rem;
+    right: 5rem;
+    border-radius: 1rem;
+    width: 20rem;
+    transform: rotate(-5deg);
+  }
+
+  .accident1,
+  .accident2,
+  .accident3,
+  .accident4 {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+  }
+
+.fade-in {
+  opacity: 1;
+}
   
   @media (max-width: 380px) {
     .sign-crash {

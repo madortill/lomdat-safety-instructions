@@ -12,6 +12,8 @@ import FireDrill from "../components/subjects/FireDrill";
 import FlippingDrill from "../components/subjects/FlippingDrill";
 import Practice from "../components/subjects/Practice";
 
+
+
 import "../style/home.css";
 import { useData } from "../context/DataContext.jsx";
 

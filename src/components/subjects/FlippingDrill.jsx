@@ -6,6 +6,9 @@ import gripPointsCar from "../../assets/images/flippingDrill/gripPointsCar.png";
 import TitledGraphics from "../../components/TitledGraphics";
 import PayAttention from "../../components/PayAttention";
 
+import flippingDrillVideo from "../../assets/videos/flippingDrillVideo.mp4";
+
+
 function FlippingDrill({ onNext }) {
   const { data } = useData();
   const [pageIndex, setPageIndex] = useState(0);
@@ -16,6 +19,9 @@ function FlippingDrill({ onNext }) {
   const nextBtn = data.buttons[0].text;
   const backBtn = data.buttons[1].text;
   const importantText = data.payAttention[0].FlippingDrill;
+
+  const [isVideoEnded, setIsVideoEnded] = useState(false);
+
 
   const nextPage = () => {
     // בעמוד 3 (נקודות אחיזה) – הצגת PayAttention
@@ -115,6 +121,8 @@ function FlippingDrill({ onNext }) {
       {pageIndex === 3 && (
         <div className="page page4">
           <p className="sec-title-subjects">{pages[3].secTitle}</p>
+          <video className="videos" src={flippingDrillVideo} alt="flippingDrillVideo" onEnded={() => setIsVideoEnded(true)} controls autoPlay muted></video>
+
         </div>
       )}
 
@@ -128,9 +136,23 @@ function FlippingDrill({ onNext }) {
           {backBtn}
         </button>
 
-        <button className="nav-button2" onClick={nextPage}>
-          {nextBtn}
-        </button>
+        <button
+  className="nav-button2"
+  onClick={nextPage}
+  disabled={pageIndex === 3 && !isVideoEnded}
+  style={{
+    opacity:
+      pageIndex === 3 && !isVideoEnded
+        ? 0.4
+        : 1,
+    cursor:
+      pageIndex === 3 && !isVideoEnded
+        ? "not-allowed"
+        : "pointer",
+  }}
+>
+  {nextBtn}
+</button>
       </div>
     </div>
   );

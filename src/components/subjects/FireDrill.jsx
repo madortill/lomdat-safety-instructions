@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../../style/fireDrill.css";
 import { useData } from "../../context/DataContext.jsx";
+import fireDrillVideo from "../../assets/videos/fireDrillVideo.mp4";
+
 
 function FireDrill({ onNext }) {
   const { data } = useData();
@@ -10,6 +12,10 @@ function FireDrill({ onNext }) {
   const titleFireDrill = data.subjMap[8].text;
   const nextBtn = data.buttons[0].text;
   const backBtn = data.buttons[1].text;
+
+
+  const [isVideoEnded, setIsVideoEnded] = useState(false);
+
 
   const nextPage = () =>
     setPageIndex((prev) => Math.min(prev + 1, pages.length - 1));
@@ -51,7 +57,8 @@ function FireDrill({ onNext }) {
         style={{ display: pageIndex === 1 ? "block" : "none" }}
       >
         <p className="sec-title-subjects">{pages[1].secTitle}</p>
-        <p class="roadside-text">סרטון יגיע בהמשך</p>
+        <video className="videos" src={fireDrillVideo} alt="fireDrillVideo" onEnded={() => setIsVideoEnded(true)} controls autoPlay muted></video>
+
       </div>
 
       {/* ניווט */}
@@ -65,15 +72,28 @@ function FireDrill({ onNext }) {
         </button>
 
         <button
-          className="nav-button2"
-          onClick={
-            pageIndex === pages.length - 1
-              ? () => onNext("Map") // או השם האמיתי של המפה
-              : nextPage
-          }
-        >
-          {nextBtn}
-        </button>
+  className="nav-button2"
+  onClick={
+    pageIndex === pages.length - 1
+      ? () => onNext("Map")
+      : nextPage
+  }
+  disabled={
+    pageIndex === 1 && !isVideoEnded
+  }
+  style={{
+    opacity:
+      pageIndex === 1 && !isVideoEnded
+        ? 0.4
+        : 1,
+    cursor:
+      pageIndex === 1 && !isVideoEnded
+        ? "not-allowed"
+        : "pointer",
+  }}
+>
+  {nextBtn}
+</button>
       </div>
     </div>
   );

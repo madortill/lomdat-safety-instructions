@@ -10,6 +10,10 @@ import PayAttention from "../../components/PayAttention";
 import bigVi from "../../assets/images/roadside/big-vi.svg";
 import bigX from "../../assets/images/roadside/big-X.svg";
 
+import roadSideDown from "../../assets/videos/roadSideDown.mp4";
+import roadSideUp from "../../assets/videos/roadSideUp.mp4";
+
+
 function Roadside({ onNext }) {
   const { data } = useData();
   const [pageIndex, setPageIndex] = useState(0);
@@ -22,6 +26,9 @@ function Roadside({ onNext }) {
   const [showMirror, setShowMirror] = useState(false);
   const [rocksDone, setRocksDone] = useState(false);
   const [showAttentionRocks, setShowAttentionRocks] = useState(false);
+
+  const [isVideoDownEnded, setIsVideoDownEnded] = useState(false);
+  const [isVideoUpEnded, setIsVideoUpEnded] = useState(false);
 
   const pages = data.roadside.filter((_, index) => index !== 2 && index !== 3);
 
@@ -171,7 +178,7 @@ function Roadside({ onNext }) {
       case 3:
         return (
           <div key={index} className="page4 margin">
-            <p class="roadside-text">סרטון יגיע בהמשך</p>
+            <video className="videos" src={roadSideDown} alt="roadSideDown" onEnded={() => setIsVideoDownEnded(true)} controls autoPlay muted></video>
           </div>
         );
       case 4:
@@ -206,7 +213,7 @@ function Roadside({ onNext }) {
         return (
           <div key={index}>
             <p>{page.text}</p>
-            <p class="roadside-text">סרטון יגיע בהמשך</p>
+            <video className="videos" src={roadSideUp} alt="roadSideDown" onEnded={() => setIsVideoUpEnded(true)} controls autoPlay muted></video>
           </div>
         );
     }
@@ -230,15 +237,21 @@ function Roadside({ onNext }) {
         </button>
 
         <button
-          className="nav-button2"
-          onClick={nextPage}
-          disabled={
-            (pageIndex === 1 && !(numOfPlanned === 0 && numOfUnplanned === 0)) ||
-            (pageIndex === 4 && !rocksDone)
-          }
-        >
-          {nextBtn}
-        </button>
+  className="nav-button2"
+  onClick={nextPage}
+  disabled={
+    (pageIndex === 1 &&
+      !(numOfPlanned === 0 && numOfUnplanned === 0)) ||
+
+    (pageIndex === 3 && !isVideoDownEnded) ||
+
+    (pageIndex === 4 && !rocksDone) ||
+
+    (pageIndex === 5 && !isVideoUpEnded)
+  }
+>
+  {nextBtn}
+</button>
       </div>
     </div>
   );

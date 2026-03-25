@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../style/introduction.css";
 import { useData } from "../../context/DataContext.jsx"; // import של הקונטקסט
 import PayAttention from "../PayAttention.jsx";
+
+import accident1 from "../../assets/images/introduction/accident1.jpg";
+import accident2 from "../../assets/images/introduction/accident2.jpg";
+import accident3 from "../../assets/images/introduction/accident3.jpg";
+import accident4 from "../../assets/images/introduction/accident4.jpg";
 
 function Introduction({ onNext }) {
   const { data } = useData(); // כאן מקבלים את ה-JSON הנוכחי לפי השפה שנבחרה
@@ -16,6 +21,8 @@ function Introduction({ onNext }) {
   const important = data.payAttention[0].intro;
 
   const [pageIndex, setPageIndex] = useState(0);
+  const [visibleImages, setVisibleImages] = useState(0);
+const [showAttention, setShowAttention] = useState(false);
 
   // מעבר לעמוד הבא
   const nextPage = () => {
@@ -27,14 +34,53 @@ function Introduction({ onNext }) {
     setPageIndex((prev) => Math.max(prev - 1, 0));
   };
 
+  const fadeDuration = 1500; // כמה זמן לוקח לתמונה להופיע (1.5 שניות)
+const gap = 300; // זמן המתנה אחרי שהיא הופיעה
+const delayAfterLast = 1000;
+useEffect(() => {
+  let timeouts = [];
+
+  timeouts.push(setTimeout(() => setVisibleImages(1), 0));
+  timeouts.push(setTimeout(() => setVisibleImages(2), fadeDuration + gap));
+  timeouts.push(setTimeout(() => setVisibleImages(3), 2 * (fadeDuration + gap)));
+  timeouts.push(setTimeout(() => setVisibleImages(4), 3 * (fadeDuration + gap)));
+
+  timeouts.push(
+    setTimeout(
+      () => setShowAttention(true),
+      4 * (fadeDuration + gap) + delayAfterLast
+    )
+  );
+
+  return () => timeouts.forEach(clearTimeout);
+}, []);
+
   return (
     <div className="intro-container">
       <p className="title-subjects">{titleIntro}</p>
 
       {pageIndex === 0 && (
         <div className=" page intro-page1">
-          <p>תוכן של עמוד ראשון — לדוגמה הסבר ראשוני</p>
-          <PayAttention text={important} />
+          <img
+  src={accident1}
+  className={`accident1 ${visibleImages >= 1 ? "fade-in" : ""}`}
+/>
+
+<img
+  src={accident2}
+  className={`accident2 ${visibleImages >= 2 ? "fade-in" : ""}`}
+/>
+
+<img
+  src={accident3}
+  className={`accident3 ${visibleImages >= 3 ? "fade-in" : ""}`}
+/>
+
+<img
+  src={accident4}
+  className={`accident4 ${visibleImages >= 4 ? "fade-in" : ""}`}
+/>
+{showAttention && <PayAttention text={important} />}
         </div>
       )}
 
@@ -61,11 +107,12 @@ function Introduction({ onNext }) {
         </button>
 
         <button
-          className="nav-button2"
-          onClick={pageIndex === 1 ? onNext : nextPage}
-        >
-          {nextBtn}
-        </button>
+  className="nav-button2"
+  onClick={pageIndex === 1 ? onNext : nextPage}
+  disabled={pageIndex === 0 && !showAttention}
+>
+  {nextBtn}
+</button>
       </div>
     </div>
   );

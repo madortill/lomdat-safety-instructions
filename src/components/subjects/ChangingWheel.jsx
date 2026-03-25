@@ -3,6 +3,8 @@ import { useData } from "../../context/DataContext.jsx";
 import "../../style/changingWheel.css";
 import SvgTools from "../../components/SvgTools";
 
+import wheelChangeVideo from "../../assets/videos/wheelChangeVideo.mp4";
+
 function ChangingWheel({ onNext }) {
   const { data } = useData();
   const [pageIndex, setPageIndex] = useState(0);
@@ -14,6 +16,8 @@ function ChangingWheel({ onNext }) {
   const titleChangingWheel = data.subjMap[7].text;
   const nextBtn = data.buttons[0].text;
   const backBtn = data.buttons[1].text;
+
+  const [isVideoEnded, setIsVideoEnded] = useState(false);
 
   const handleToolFlip = () => {
     setFlippedCount((prev) => Math.min(prev + 1, TOTAL_CARDS));
@@ -50,12 +54,7 @@ function ChangingWheel({ onNext }) {
           <p className="sec-title-subjects">
             {pages[2].sectitle}
           </p>
-
-          <div className="wheel-text">
-            <p className="wheel-text-microfopy">
-              כאן יוצג תוכן הסבר על תהליך החלפת הגלגל.
-            </p>
-          </div>
+          <video className="videos" src={wheelChangeVideo} alt="wheelChangeVideo" onEnded={() => setIsVideoEnded(true)} controls autoPlay muted></video>
         </div>
       )}
 
@@ -71,28 +70,33 @@ function ChangingWheel({ onNext }) {
         </button>
 
         <button
-          className="nav-button2"
-          disabled={pageIndex === 0 && !isNextEnabled}
-          onClick={() => {
-            if (pageIndex === 0) {
-              setPageIndex(1);
-            } else {
-              onNext("Map");
-            }
-          }}
-          style={{
-            opacity:
-              pageIndex === 0 && !isNextEnabled
-                ? 0.4
-                : 1,
-            cursor:
-              pageIndex === 0 && !isNextEnabled
-                ? "not-allowed"
-                : "pointer",
-          }}
-        >
-          {nextBtn}
-        </button>
+  className="nav-button2"
+  disabled={
+    (pageIndex === 0 && !isNextEnabled) ||
+    (pageIndex === 1 && !isVideoEnded)
+  }
+  onClick={() => {
+    if (pageIndex === 0) {
+      setPageIndex(1);
+    } else {
+      onNext("Map");
+    }
+  }}
+  style={{
+    opacity:
+      (pageIndex === 0 && !isNextEnabled) ||
+      (pageIndex === 1 && !isVideoEnded)
+        ? 0.4
+        : 1,
+    cursor:
+      (pageIndex === 0 && !isNextEnabled) ||
+      (pageIndex === 1 && !isVideoEnded)
+        ? "not-allowed"
+        : "pointer",
+  }}
+>
+  {nextBtn}
+</button>
       </div>
     </div>
   );
